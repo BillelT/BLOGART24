@@ -10,7 +10,7 @@ include '../../../header.php';
         </div>
         <div class="col-md-12">
             <!-- Form to create a new member -->
-            <form action="<?php echo ROOT_URL . '/api/members/create.php' ?>" method="post">
+            <form action="<?php echo ROOT_URL . '/api/members/create.php' ?>" method="post" id="form-recaptcha">
                 <div class="form-group">
                     <!-- PSEUDO -->
                     <label for="pseudoMemb">Pseudo du membre (non modifiable)</label>
@@ -39,22 +39,25 @@ include '../../../header.php';
                     <label for="eMailMemb2">Confirmez email du membre</label>
                     <input id="eMailMemb2" name="eMailMemb2" class="form-control" type="text" autofocus="autofocus" />
                     <!-- PARTAGE DES DONNEES -->
-                    <label for="accordMemb">J'accepte que mes données soient conservées</label>
-                    <input type="radio" id="accordMemb" name="accordMemb" value="true" />
-                    <label for="accordMemb">Yes</label>
-                    <input type="radio" id="accordMemb" name="accordMemb" value="false" checked />
-                    <label for="accordMemb">No</label>
+                    <label for="accordMemb">J'accepte que mes données soient conservées :</label>
+                    <input type="radio" id="accordMemb" name="accordMemb" value="OUI" />
+                    <label for="accordMemb">Oui</label>
+                    <input type="radio" id="accordMemb" name="accordMemb" value="NON" checked />
+                    <label for="accordMemb">Non</label>
                     <br><br>
                     <!-- STATUT -->
                     <label for="statutMemb">Statut :</label>
                     <select name="statutMemb" id="statutMemb">
-                    <option value="">--Choisir un statut--</option>
-                    <option value="1">Administrateur</option>
-                    <option value="2">Modérateur</option>
-                    <option value="3">Membre</option>
+                    <option value="">---Choisir un statut---</option>
+                    <option value="'1'">Administrateur</option>
+                    <option value="'2'">Modérateur</option>
+                    <option value="'3'">Membre</option>
                     </select>
-                    <!-- ROBOT -->
-                    <!-- VOIR GOOGLE CAPTCHA V3 A INSTALLER!!!!!!-->
+                    <!-- CAPTCHA ROBOT -->
+                    <button class="g-recaptcha" data-sitekey="[6LcsWWkpAAAAAHnMUZ7lc2m15AYDMHjyNFGgiY4t]"
+                    data-callback='onSubmit' data-action='submit'>Submit
+                    </button>
+                    <!-- FIN -->
                 </div>
                 <br />
                 <div class="form-group mt-2">
@@ -88,4 +91,11 @@ document.getElementById( 'afficher' ).addEventListener( "click", function() {
    }
    
 });
+
+// CAPTCHA 
+function onSubmit(token) {
+document.getElementById("recaptcha").submit();
+console.log(document.getElementById("recaptcha"));
+}
+
 </script>
