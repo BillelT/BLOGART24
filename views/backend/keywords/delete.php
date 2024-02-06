@@ -15,7 +15,7 @@ if(isset($_GET['numMotCle'])){
             <!-- Form to delete a thematique -->
             <form action="<?php echo ROOT_URL . '/api/keywords/delete.php' ?>" method="post">
                 <div class="form-group">
-                    <label for="libMotClé">Nom du Mot-Clé</label>
+                    <label for="libMotCle">Nom du Mot-Clé</label>
                     <input id="numMotCle" name="numMotCle" class="form-control" style="display: none" type="text" value="<?php echo($numMotCle); ?>" readonly="readonly" />
                     <input id="libMotCle" name="libMotCle" class="form-control" type="text" value="<?php echo($libMotCle); ?>" readonly="readonly" disabled />
                 </div>
@@ -38,7 +38,7 @@ if(isset($_GET['numMotCle'])){
             <!-- Form to delete a thematique -->
             <form action="<?php echo ROOT_URL . '/api/keywords/delete.php' ?>" method="post">
                 <div class="form-group">
-                    <label for="numMotCle">Nom du Mot-Clé/label>
+                    <label for="numMotCle">Nom du Mot-Clé</label>
                     <br>
                     <select name="numMotCle" id="numMotCle">
                         <option value="">Choisir un Mot-Clé</option>
@@ -52,11 +52,12 @@ if(isset($_GET['numMotCle'])){
                 </div>
                 <br />
                 <div class="form-group mt-2">
-                    <button type="submit" class="btn btn-danger">Confirmer delete ?</button>
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Est-ce que tu es sûr(e)?')">Confirmer delete ?</button>
                 </div>
             </form>
         </div>
     </div>
-</div>';
+</div>
+
 <?php 
 }
