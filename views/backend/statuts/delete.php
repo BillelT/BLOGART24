@@ -19,7 +19,7 @@ if(isset($_GET['numStat'])){
                 <div class="form-group">
                     <label for="numStat">Nom du statut</label>
                     <br>
-                    <select name="numStat" id="numStat">
+                    <select name="libStat" id="libStat">
                         <option value="">Choisir un statut</option>
                         <?php 
                             $result = sql_select('statut');

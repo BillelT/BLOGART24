@@ -11,20 +11,20 @@ if(isset($_GET['numThem'])){
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Suppression Statut</h1>
+            <h1>Suppression Thématique</h1>
         </div>
         <div class="col-md-12">
             <!-- Form to create a new statut -->
-            <form action="<?php echo ROOT_URL . './api/statuts/delete.php' ?>" method="post">
+            <form action="<?php echo ROOT_URL . './api/thematiques/delete.php' ?>" method="post">
                 <div class="form-group">
-                    <label for="numStat">Nom du statut</label>
+                    <label for="numThem">Nom de la thématique</label>
                     <br>
-                    <select name="numStat" id="numStat">
-                        <option value="">Choisir un statut</option>
+                    <select name="numThem" id="numThem">
+                        <option value="">Choisir une thématique</option>
                         <?php 
-                            $result = sql_select('statut');
+                            $result = sql_select('thematique');
                             foreach($result as $req){
-                                echo '<option value="' . $req['numStat'] . '">' . $req['libStat'] . '</option>';
+                                echo '<option value="' . $req['numThem'] . '">' . $req['libThem'] . '</option>';
                             }
                         ?>
                     </select>

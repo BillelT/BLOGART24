@@ -6,4 +6,4 @@ $numThem = ctrlSaisies($_POST['numThem']);
 
 sql_delete('THEMATIQUE', "numThem = $numThem");
 
-header('Location: ../../views/backend/statuts/list.php');
+header('Location: ../../views/backend/thematiques/list.php');
