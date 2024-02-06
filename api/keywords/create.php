@@ -7,3 +7,4 @@ $libMotCle = ctrlSaisies($_POST['libMotCle']);
 sql_insert('motcle', 'libMotCle', "'$libMotCle'");
 
 header('Location: ../../views/backend/keywords/list.php');
+header('Location: ../../views/backend/keywords/list.php');
