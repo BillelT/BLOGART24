@@ -6,5 +6,4 @@ $libStat = ctrlSaisies($_POST['libStat']);
 
 sql_insert('STATUT', 'libStat', "'$libStat'");
 
-
 header('Location: ../../views/backend/statuts/list.php');

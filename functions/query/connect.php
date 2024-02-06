@@ -7,3 +7,4 @@ function sql_connect(){
     // Avec encodage UTF8
     $DB = new PDO('mysql:host=' . SQL_HOST . ';charset=utf8;dbname=' . SQL_DB, SQL_USER, SQL_PWD);
 }
+
