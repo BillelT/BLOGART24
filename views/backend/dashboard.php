@@ -28,7 +28,7 @@ include '../../header.php';
                                 <a href="/views/backend/statuts/list.php" class="btn btn-primary">List</a>
                                 <a href="/views/backend/statuts/create.php" class="btn btn-success">Create</a>
                                 <a href="/views/backend/statuts/edit.php" class="btn btn-warning disabled">Edit</a>
-                                <a href="/views/backend/statuts/delete.php" class="btn btn-danger disabled">Delete</a>
+                                <a href="/views/backend/statuts/delete.php" class="btn btn-danger">Delete</a>
                             </td>
                             <td>
                                 <p>Exemple fourni, s'y référer pour les autres CRUD</p>
