@@ -31,8 +31,8 @@ $member = sql_select("membre INNER JOIN statut ON membre.numStat = statut.numSta
                             <td><?php echo($mem['accordMemb']); ?></td>
                             <td><?php echo($mem['libStat']); ?></td>
                             <td>
-                                <a href="edit.php?numMemb=<?php echo($mot['numMemb']); ?>" class="btn btn-primary">Edit</a>
-                                <a href="delete.php?numMemb=<?php echo($mot['numMemb']); ?>" class="btn btn-danger">Delete</a>
+                                <a href="edit.php?numMemb=<?php echo($mem['numMemb']); ?>" class="btn btn-primary">Edit</a>
+                                <a href="delete.php?numMemb=<?php echo($mem['numMemb']); ?>" class="btn btn-danger">Delete</a>
                             </td>
                         </tr>
                     <?php } ?>
