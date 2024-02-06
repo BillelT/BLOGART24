@@ -3,7 +3,17 @@ include '../../../header.php'; // contains the header and call to config.php
 
 //Load all statuts
 
-$articles = sql_select("article", "*");
+
+
+$articles = sql_select("article INNER JOIN thematique ON thematique.numThem = article.numThem
+INNER JOIN motclearticle ON article.numArt = motclearticle.numArt
+INNER JOIN motcle ON motclearticle.numMotCle = motcle.numMotCle GROUP BY 
+article.numArt, dtCreaArt, libTitrArt, libChapoArt, libAccrochArt, libThem;", "article.numArt, dtCreaArt, libTitrArt, libChapoArt, libAccrochArt, libThem, GROUP_CONCAT(DISTINCT motcle.libMotCle SEPARATOR ', ') AS motscles
+");
+
+
+
+
 ?>
 
 <!-- Bootstrap default layout to display all statuts in foreach -->
@@ -19,8 +29,8 @@ $articles = sql_select("article", "*");
                         <th>Titre</th>
                         <th>Chapeau</th>
                         <th>Accroche</th>
-                        <!-- <th>Mot Cle</th> 
-                        <th>Thématique</th> !-->
+                        <th>Mot Cle</th> 
+                        <th>Thématique</th> 
                         <th>Action</th> 
                     </tr>
                 </thead>
@@ -32,8 +42,8 @@ $articles = sql_select("article", "*");
                             <td><?php echo($article['libTitrArt']); ?></td>
                             <td><?php echo($article['libChapoArt']); ?></td>
                             <td><?php echo($article['libAccrochArt']); ?></td>
-                            <!-- <td><?php echo($article['libMotCle']); ?></td> !-->
-                            <!--<td><?php echo($article['libThem']); ?></td>!-->
+                            <td><?php echo($article['motscles']); ?></td> 
+                            <td><?php echo($article['libThem']); ?></td>
                             <td>
                                 <a href="edit.php?numArt=<?php echo($article['numArt']); ?>" class="btn btn-primary">Edit</a>
                                 <a href="delete.php?numArt=<?php echo($article['numArt']); ?>" class="btn btn-danger">Delete</a>
