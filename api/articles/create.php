@@ -8,3 +8,4 @@ $contenuArt = ctrlSaisies($_POST['*']);
 sql_insert('article', 'numArt'.'dtCreaArt'.'libTitrArt'.'libChapoArt'.'libAccrocheArt'.'libMotCle'.'libThem', "'$contenuArt'");
 
 header('Location: ../../views/backend/articles/list.php');
+
