@@ -21,22 +21,16 @@ $passMemb = ctrlSaisies($_POST['passMemb']); // 8-15 CARACS + MAJ / MIN / CHIFFR
 if ($passMemb < 8 && $passMemb > 15) {
     echo 'Erreur, le mot de passe doit contenir entre 8 et 15 caratères.<br>';
     $passMemb = null; 
-} else {
-    echo 'Le mot de passe est assez long<br>';
-}
+} 
 
 if (!preg_match('/[A-Z]/', $passMemb) && !preg_match('/[a-z]/', $passMemb)){ // checke maj & min
     echo 'Erreur, le mot de passe doit contenir au moins une majuscule et une minuscule.<br>';
     $passMemb = null;
-} else {
-    echo 'Le mot de passe a une majuscule et une minuscule<br>';
 }
 
 if (!preg_match('/[0-9]/', $passMemb)){
     echo 'Erreur, le mot de passe doit contenir au moins un chiffre.<br>';
     $passMemb = null;
-} else {
-    echo 'Le mot de passe a un chiffre<br>';
 }
 
 $passMemb2 = ctrlSaisies($_POST['passMemb2']); // DOIT ÊTRE IDENTIQUE A PASSWORD
@@ -44,9 +38,7 @@ $passMemb2 = ctrlSaisies($_POST['passMemb2']); // DOIT ÊTRE IDENTIQUE A PASSWOR
 if ($passMemb != $passMemb2){ 
     echo 'Les mots de passe doivent être identiques.<br>';
     $passMemb2 = null;
-} else {
-    echo 'Le mot de passe est bon<br>';
-}
+} 
 
 $hash_password = password_hash($passMemb, PASSWORD_DEFAULT);
 var_dump($hash_password);
@@ -65,12 +57,14 @@ if (filter_var($eMailMemb, FILTER_VALIDATE_EMAIL)) {
 if ($eMailMemb != $eMailMemb2){
     echo 'Les adresses mail doivent être identiques.<br>';
     $eMailMemb2 = null;
-} else {
-    echo 'Le mail est bon<br>';
-}
+} 
 
 //ACCORD DONNEES
 $accordMemb = ctrlSaisies($_POST['accordMemb']);
+
+if ($accordMemb !== 'OUI') {
+    echo 'Veuillez accepter de partager vos données.';
+}
 
 //STATUT
 $statutMemb = ctrlSaisies($_POST['statutMemb']);
@@ -92,18 +86,76 @@ echo '<br>';
 $numMemb = substr($numMemb, 1, 1);
 echo $numMemb;
 
+//PARTIE PHP GOOGLE CAPTCHA
 
-/*if (isset($pseudoMemb, $prenomMemb, $nomMemb, $passMemb, $passMemb2, $eMailMemb, $eMailMemb2, $accordMemb, $statutMemb)){
-    sql_insert('MEMBRE', 
-    'prenomMemb, nomMemb, pseudoMemb, passMemb, eMailMemb, dtCreaMemb, accordMemb, numMemb, dtMajMemb', 
-    "'$prenomMemb', '$nomMemb', '$pseudoMemb', '$passMemb', '$eMailMemb', '$dtCreaMemb', '$accordMemb', '$numMemb', '$dtMajMemb'");
+if(isset($_POST['g-recaptcha-response'])){
+    $token = $_POST['g-recaptcha-response'];
+    $url = 'https://www.google.com/recaptcha/api/siteverify';
+    $data = array(
+    'secret' => '[6LcsWWkpAAAAAHnMUZ7lc2m15AYDMHjyNFGgiY4t]',
+    'response' => $token
+    );
+    $options = array(
+    'http' => array (
     
-    echo "Le membre $nomMemb, $prenomMemb a été créé.";
+    'header' => "Content-Type: application/x-www-form-
+    urlencoded\r\n",
+    
+    'method' => 'POST',
+    'content' => http_build_query($data)
+    )
+    );
+    $context = stream_context_create($options);
+    $result = file_get_contents($url, false, $context);
+    $response = json_decode($result);
+    /*
+    - google response score is between 0.0 to 1.0
+    - if score is 0.5, it's a human
+    - if score is 0.0, it's a bot
+    - google recommend to use score 0.5 for verify human
+    */
+    if ($response->success && $response->score >= 0.5) {
+    //Le test est réussi, on peut inscrire la personne si le pseudo et
+    var_dump(array('success' => true, "msg"=>"You are not a robot!",
+    
+    "response"=>$response));
+    
+    }else{
+    /*
+    * if score is less than 0.5, you can do following things
+    * login => With low scores, require 2-factor-authentication or
+    email
+    verification to prevent credential stuffing attacks.
+    
+    * social => With low scores, require additional verification
+    steps, such as a
+    CAPTCHA or email verification.
+    
+    * - Limit unanswered friend requests from abusive users and send
+    risky
+    comments to moderation.
+    
+    * e-commerce => Put your real sales ahead of bots and identify risky
+    
+    transactions.
+    
+    * */
+    var_dump(array('success' => false, "msg"=>"You are a robot!",
+    
+    "response"=>$response));
+    
+    }
+    }
+
+// FIN PARTIE CAPTCHA
+
+if (isset($pseudoMemb, $prenomMemb, $nomMemb, $passMemb, $passMemb2, $eMailMemb, $eMailMemb2, $accordMemb, $statutMemb)){
+    sql_insert('MEMBRE', 
+    'prenomMemb, nomMemb, pseudoMemb, passMemb, eMailMemb, dtCreaMemb, accordMemb, numMemb, dtMajMemb, numStat', 
+    "'$prenomMemb', '$nomMemb', '$pseudoMemb', '$passMemb', '$eMailMemb', '$dtCreaMemb', '$accordMemb', '$numMemb', '$dtMajMemb', '$statutMemb'");
+    
+    header('Location: ../../views/backend/members/list.php');
 } else {
     echo 'Veuillez remplir tout le formulaire.';
-}*/
+}
 
-
-echo '<br>';
-
-// header('Location: ../../views/backend/members/list.php');
