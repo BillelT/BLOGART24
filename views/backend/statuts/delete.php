@@ -21,7 +21,7 @@ if(isset($_GET['numStat'])){
                 </div>
                 <br />
                 <div class="form-group mt-2">
-                    <button type="submit" class="btn btn-danger">Confirmer delete ?</button>
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Est-ce que tu es sûr(e)?')">Confirmer delete ?</button>
                 </div>
             </form>
         </div>
@@ -52,7 +52,7 @@ if(isset($_GET['numStat'])){
                 </div>
                 <br />
                 <div class="form-group mt-2">
-                    <button type="submit" class="btn btn-danger">Confirmer delete ?</button>
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Est-ce que tu es sûr(e)?')">Confirmer delete ?</button>
                 </div>
             </form>
         </div>

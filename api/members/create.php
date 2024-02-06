@@ -2,6 +2,7 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
 require_once '../../functions/ctrlSaisies.php';
 
+// PSEUDO
 $pseudoMemb= ctrlSaisies($_POST['pseudoMemb']); // ENTRE 6-70 CARACS
 
 if ($pseudoMemb < 6 && $pseudoMemb > 70) {
@@ -10,10 +11,11 @@ if ($pseudoMemb < 6 && $pseudoMemb > 70) {
     echo 'Le pseudo est bon<br>';
 }
 
+//PRENOM
 $prenomMemb = ctrlSaisies($_POST['prenomMemb']);
-
+//NOM
 $nomMemb = ctrlSaisies($_POST['nomMemb']);
-
+//PASSWORD
 $passMemb = ctrlSaisies($_POST['passMemb']); // 8-15 CARACS + MAJ / MIN / CHIFFRE, ACCEPTE CARACS SPECIAUX
 
 if ($passMemb < 8 && $passMemb > 15) {
@@ -46,8 +48,19 @@ if ($passMemb != $passMemb2){
     echo 'Le mot de passe est bon<br>';
 }
 
+$hash_password = password_hash($passMemb, PASSWORD_DEFAULT);
+var_dump($hash_password);
+
+
+//EMAIL
 $eMailMemb = ctrlSaisies($_POST['eMailMemb']);
 $eMailMemb2 = ctrlSaisies($_POST['eMailMemb2']); // DOIT Ê IDENTIQUE
+
+if (filter_var($eMailMemb, FILTER_VALIDATE_EMAIL)) {
+    echo("$eMailMemb est une adresse mail valide.<br>");
+  } else {
+    echo("$eMailMemb n'est pas une adresse mail valide.<br>");
+  }
 
 if ($eMailMemb != $eMailMemb2){
     echo 'Les adresses mail doivent être identiques.<br>';
@@ -56,11 +69,16 @@ if ($eMailMemb != $eMailMemb2){
     echo 'Le mail est bon<br>';
 }
 
+//ACCORD DONNEES
 $accordMemb = ctrlSaisies($_POST['accordMemb']);
+
+//STATUT
 $statutMemb = ctrlSaisies($_POST['statutMemb']);
 
+//DATE CREATION
 $dtCreaMemb = date_create()->format('Y-m-d H:i:s');
 echo $dtCreaMemb; // donne la date & heure d'inscription
+$dtMajMemb = NULL;
 
 $max = 'MAX('. 'numMemb' . ')';
 $numMemb = sql_select('MEMBRE', $max);
@@ -75,13 +93,15 @@ $numMemb = substr($numMemb, 1, 1);
 echo $numMemb;
 
 
-if (isset($pseudoMemb, $prenomMemb, $nomMemb, $passMemb, $passMemb2, $eMailMemb, $eMailMemb2, $accordMemb, $statutMemb)){
+/*if (isset($pseudoMemb, $prenomMemb, $nomMemb, $passMemb, $passMemb2, $eMailMemb, $eMailMemb2, $accordMemb, $statutMemb)){
     sql_insert('MEMBRE', 
-    'prenomMemb, nomMemb, pseudoMemb, passMemb, eMailMemb, dtCreaMemb, accordMemb, numMemb', 
-    "'$prenomMemb', '$nomMemb', '$pseudoMemb', '$passMemb', '$eMailMemb', '$dtCreaMemb', '$accordMemb', '$numMemb'");
+    'prenomMemb, nomMemb, pseudoMemb, passMemb, eMailMemb, dtCreaMemb, accordMemb, numMemb, dtMajMemb', 
+    "'$prenomMemb', '$nomMemb', '$pseudoMemb', '$passMemb', '$eMailMemb', '$dtCreaMemb', '$accordMemb', '$numMemb', '$dtMajMemb'");
     
     echo "Le membre $nomMemb, $prenomMemb a été créé.";
-}
+} else {
+    echo 'Veuillez remplir tout le formulaire.';
+}*/
 
 
 echo '<br>';

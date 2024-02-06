@@ -24,16 +24,14 @@ include '../../../header.php';
                     <input id="nomMemb" name="nomMemb" class="form-control" type="text" autofocus="autofocus" />
                     <!-- MDP -->
                     <label for="passMemb">Mot de passe du membre</label>
-                    <input id="passMemb" name="passMemb" class="form-control" type="text" autofocus="autofocus" />
+                    <input id="passMemb" name="passMemb" class="form-control" type="password" autofocus="autofocus" />
                     <p>(Entre 8 et 15 car., au - une majuscule, une minuscule, un chiffre, car. spéciaux acceptés)</p>
-                    <label for="afficher">Afficher le mot de passe</label>
-                    <input type="checkbox" id="afficher" name="afficher" /><br><br>
+                    <button type="button" id="afficher"  class="btn btn-secondary">Afficher le mot de passe</button><br><br>
                     <!-- MDP VERIFICATION -->
                     <label for="passMemb2">Confirmez mot de passe du membre</label>
-                    <input id="passMemb2" name="passMemb2" class="form-control" type="text" autofocus="autofocus" />
+                    <input id="passMemb2" name="passMemb2" class="form-control" type="password" autofocus="autofocus" />
                     <p>(Entre 8 et 15 car., au - une majuscule, une minuscule, un chiffre, car. spéciaux acceptés)</p>
-                    <label for="afficher2">Afficher le mot de passe</label>
-                    <input type="checkbox" id="afficher2" name="afficher2" /><br><br>
+                    <button type="button" id="afficher2" class="btn btn-secondary">Afficher le mot de passe</button><br><br>
                     <!-- EMAIL -->
                     <label for="eMailMemb">Email du membre</label>
                     <input id="eMailMemb" name="eMailMemb" class="form-control" type="text" autofocus="autofocus" />
@@ -66,3 +64,28 @@ include '../../../header.php';
         </div>
     </div>
 </div>
+
+<!-- JS POUR CACHER/AFFICHER MDP-->
+<script>
+document.getElementById( 'afficher' ).addEventListener( "click", function() {
+   
+    attribut = document.getElementById( 'passMemb' ).getAttribute( 'type');
+    if(attribut == 'password'){
+        document.getElementById( 'passMemb' ).setAttribute( 'type', 'text');
+    } else {
+        document.getElementById( 'passMemb' ).setAttribute( 'type', 'password');
+    }
+    
+ });
+ 
+ document.getElementById( 'afficher2' ).addEventListener( "click", function() {
+   
+   attribut = document.getElementById( 'passMemb2' ).getAttribute( 'type');
+   if(attribut == 'password'){
+       document.getElementById( 'passMemb2' ).setAttribute( 'type', 'text');
+   } else {
+       document.getElementById( 'passMemb2' ).setAttribute( 'type', 'password');
+   }
+   
+});
+</script>

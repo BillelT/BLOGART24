@@ -1,50 +1,63 @@
 <?php
 include '../../../header.php';
-?>
 
-<!-- Bootstrap form to create a new member -->
+if(isset($_GET['numMemb'])){
+    $numMemb = $_GET['numMemb'];
+ ?>
+<!-- Bootstrap form to delete a thematique -->
 <div class="container">
     <div class="row">
         <div class="col-md-12">
             <h1>Suppression Membre</h1>
         </div>
         <div class="col-md-12">
-            <!-- Form to delete a member -->
+            <!-- Form to delete a thematique -->
             <form action="<?php echo ROOT_URL . '/api/members/delete.php' ?>" method="post">
                 <div class="form-group">
-                    <!-- NUMERO DU MEMBRE -->
-                    <label for="numMemb">Numéro du membre</label>
-                    <input id="numMemb" name="numMemb" class="form-control" type="text" autofocus="autofocus" />
-                    <!-- PSEUDO -->
-                    <label for="pseudoMemb">Pseudo du membre</label>
-                    <input id="pseudoMemb" name="pseudoMemb" class="form-control" type="text" autofocus="autofocus" />
-                    <!-- DATE DE CREA -->
-                    <label for="dtCreaMemb">Date de création du compte</label>
-                    <input id="dtCreaMemb" name="dtCreaMemb" class="form-control" type="text" autofocus="autofocus" />
-                    <!-- NOM -->
-                    <label for="nomMemb">Nom du membre</label>
-                    <input id="nomMemb" name="nomMemb" class="form-control" type="text" autofocus="autofocus" />
-                    <!-- PRENOM -->
-                    <label for="prenomMemb">Prénom du membre</label>
-                    <input id="prenomMemb" name="prenomMemb" class="form-control" type="text" autofocus="autofocus" />
-                    <!-- EMAIL -->
-                    <label for="eMailMemb">Email du membre</label>
-                    <input id="eMailMemb" name="eMailMemb" class="form-control" type="text" autofocus="autofocus" />
-                    <!-- STATUT -->
-                    <label for="statutMemb">Statut :</label>
-                    <select name="statutMemb" id="statutMemb">
-                        <option value="admin">Administrateur</option>
-                        <option value="moderateur">Modérateur</option>
-                        <option value="member">Membre</option>
-                    </select>
-                    <p style="color:red">Attention : L'existence de Membres associés à un ou plusieurs commentaires/likes rendra la suppression impossible.</p>
-                    <!-- CAPTCHA ROBOT A AJOUTER!!!!!!!!!-->
+                    <label for="numMemb">Nom du Membre</label>
+                    <input id="numMemb" name="numMemb" class="form-control" style="display: none" type="text" value="<?php echo($numMemb); ?>" readonly="readonly" />
+                    <input id="prenomMemb" name="prenomMemb" class="form-control" type="text" value="<?php echo($prenomMemb); ?>" readonly="readonly" disabled />
+                    <input id="nomMemb" name="nomMemb" class="form-control" type="text" value="<?php echo($nomMemb); ?>" readonly="readonly" disabled />
                 </div>
                 <br />
                 <div class="form-group mt-2">
-                    <button type="submit" class="btn btn-primary">Confirmer delete ?</button>
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Est-ce que tu es sûr(e)?')">Confirmer delete ?</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div> 
+<?php } else {
+    ?> 
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Suppression Membre</h1>
+        </div>
+        <div class="col-md-12">
+            <!-- Form to delete a thematique -->
+            <form action="<?php echo ROOT_URL . '/api/members/delete.php' ?>" method="post">
+                <div class="form-group">
+                    <label for="numMemb">Nom du Membre</label>
+                    <br>
+                    <select name="numMemb" id="numMemb">
+                        <option value="">Choisir un Membre</option>
+                        <?php 
+                            $result = sql_select('membre');
+                            foreach($result as $req){
+                                echo '<option value="' . $req['numMemb'] . '">' . $req['nomMemb'] .', ' . $req['prenomMemb'] . '</option>';
+                            }
+                        ?>
+                    </select>
+                </div>
+                <br />
+                <div class="form-group mt-2">
+                    <button type="submit" class="btn btn-danger" onclick="return confirm('Est-ce que tu es sûr(e)?')">Confirmer delete ?</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
+
+<?php 
+}
