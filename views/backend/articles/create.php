@@ -1,8 +1,8 @@
 <?php
 include '../../../header.php';
 
-//conditions pour l'ajout d'une image
 
+//conditions pour l'ajout d'une image
 if (isset($_FILES['image'])) {
     // Récupère les informations du fichier
     $tmpName = $_FILES["image"]["tmp_name"];
@@ -14,8 +14,9 @@ if (isset($_FILES['image'])) {
     echo "Nom : " . $name . "<br>";
     echo "Taille : " . $size . "<br>";
 
-    if ($error == 0) {
-        echo "Erreur : " . $error . "<br>";
+    if ($error != UPLOAD_ERR_OK) {
+        echo "Erreur lors du téléchargement du fichier.";
+        exit();
     }
 
     // Vérifie que la taille du fichier est inférieure à 200 000px.
@@ -31,24 +32,27 @@ if (isset($_FILES['image'])) {
         echo "Hauteur image : " . $height . "<br>";
 
         $nom_image = time() . "_" . $name;
-//télécharger et placer enlocal sur ordi
-        move_uploaded_file($tmpName, 'images_uploaded/' . $nom_image);
+
+        // Déplacer le fichier téléchargé vers le dossier approprié
+        $destination = 'images_uploaded/' . $nom_image;
+        move_uploaded_file($tmpName, $destination);
         echo "L'image a été téléchargée avec succès.";
-//placer dans la BDD
-        $sql_requete="INSERT INTO image(lienImg) VALUES ('$nom_image');";
+
+        // Placer le lien de l'image dans la base de données
+        $sql_requete = "INSERT INTO image (lienImg) VALUES ('$destination');";
         $request = $bdd->query($sql_requete);
-       
 
         if ($request) {
-            echo "Image placée dans la base de donnée.";
+            echo "Image placée dans la base de données.";
         } else {
-            echo "Erreur lors de l'enregistrement dans la base de donnée.";
+            echo "Erreur lors de l'enregistrement dans la base de données.";
         }
     } else {
         echo "L'image dépasse les 80000 pixels.";
     }
 }
 ?>
+
 
 
 <!-- Bootstrap form to create a new article -->
@@ -106,14 +110,14 @@ if (isset($_FILES['image'])) {
                     <form action="<?php echo ROOT_URL . '/api/articles/create.php' ?>" method="post" enctype="multipart/form-data">
                         <p>Importez une image</p>
                         <input type="file" accept=".jpg, .jpeg, .png, .gif" name="image" />
-                        <input type="submit" value="Enregistrer">
                         <p>>> Extension des images acceptées : .jpg, .gif, .png, .jpeg <br>(largeur, hauteur, taille max : 80000px, 80000px, 200 000 Go)</p>
+                        <input type="submit" value="Enregistrer">
                         <p><br></p>
                     </form>
                     <form action="<?php echo ROOT_URL . '/api/articles/create.php' ?>" method="post">
                     <!-- choix de la thématique !-->
                     <label for="libThem">Thématique :<br></label>
-                    <select name="thematique" id="libTheme">
+                    <select name="thematique" id="libThem">
                     <option value="">Cliquez et selectionnez une thématique</option>
                     <?php 
                             $result = sql_select('thematique');
@@ -122,7 +126,56 @@ if (isset($_FILES['image'])) {
                             }
                         ?>
                     </select>
+                    <p><br></p>
                     </form>
+                    <!-- selection de mots clés dans la liste !--> 
+                    <form action="<?php echo ROOT_URL . '/api/articles/create.php' ?>" method="post">
+                    <form action="<?php echo ROOT_URL . '/api/articles/create.php' ?>" method="post">
+                        <!-- Liste déroulante pour les mots-clés disponibles -->
+                        <label for="libMotCle">Mots Clés Disponibles:</label>
+                        <p><br></p>
+                        <select name="motcle" id="libMotCle" multiple>
+                            <!-- Options de mots-clés ici -->
+                            <?php 
+                                $result = sql_select('motcle');
+                                foreach($result as $req){
+                                    echo '<option value="' . $req['libMotCle'] . '">' . $req['libMotCle'] . '</option>';
+                                }
+                            ?>
+                        </select>
+                        <button type="button" onclick="addKeyword()">Ajouter</button>
+                        <p><br></p>
+                        <!-- Liste déroulante pour les mots-clés sélectionnés -->
+                        <label for="selectMotCle">Mots Clés Sélectionnés:<br></label>
+                        <p><br></p>
+                        <select name="selectMotCle[]" id="selectMotCle" multiple>
+                            <!-- Options de mots-clés sélectionnés ici -->
+                        </select>
+                        <button type="button" onclick="removeKeyword()">Supprimer</button>
+                    </form>
+                    <p><br></p>
+
+<!-- Script JavaScript pour manipuler les sélections -->
+<script>
+    function moveSelectedOptions(fromSelect, toSelect) {
+        var selectedOptions = Array.from(fromSelect.selectedOptions);
+
+        selectedOptions.forEach(function(option) {
+            toSelect.add(new Option(option.text, option.value));
+            option.remove();
+        });
+    }
+
+    function addKeyword() {
+        moveSelectedOptions(document.getElementById('libMotCle'), document.getElementById('selectMotCle'));
+    }
+
+    function removeKeyword() {
+        moveSelectedOptions(document.getElementById('selectMotCle'), document.getElementById('libMotCle'));
+    }
+</script>
+
+
 
                     </div>
                 <br/>
@@ -134,3 +187,5 @@ if (isset($_FILES['image'])) {
     </div>
 </div>
 
+<?php
+include '../../../footer.php';
