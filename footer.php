@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>footer Bibble'S</title>
-    <link rel="stylesheet" href="./src/css/footer.css">
+    <link rel="stylesheet" href="/src/css/footer.css">
 </head>
 <body>
     <footer>
@@ -62,7 +62,7 @@
                 </li>
             </ul>
         </nav>
-        <img src="./src/images/footer logo bibble's.png" alt="logo Bibble'S">
+        <img src="/src/images/footer logo bibble's.png" alt="logo Bibble'S">
         <p>Tous droits réservés - 2024</p>
     </footer>
 </body>

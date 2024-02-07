@@ -5,19 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bord'Animaux</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="shortcut icon"  href="/src/images/logo bibble's header.png" type="image/x-icon" />
     <link rel="stylesheet" href="./src/css/index.css">
-    <link rel="icon" href="médias/logo bibble's header.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
 <body>
     <header>
         <?php
         require_once 'header.php';
-        sql_connect();
         ?>
     </header>
     <main>
+        <a href="./views/backend/articles/create.php">
+            LAAA
+        </a>
         <section class="container hero">
             <p>La Belle Endormie, malgré son surnom, est une ville qui a du chien ! Il est pourtant parfois difficile de
                 connaître les actions et infrastructures mises en place pour le bien-être et la préservation des animaux
