@@ -57,6 +57,7 @@ if(isset($_FILES['urlPhotArt'])){
 
     } else { // IF THERES NO ERROR
         $nom_image = time() . '_' . $urlPhotArt;
+        move_uploaded_file($tmpName, 'src/uploads' . $nom_image);
     }
 }
 
