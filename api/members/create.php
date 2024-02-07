@@ -152,7 +152,7 @@ if(isset($_POST['g-recaptcha-response'])){
 if (isset($pseudoMemb, $prenomMemb, $nomMemb, $passMemb, $passMemb2, $eMailMemb, $eMailMemb2, $accordMemb, $statutMemb)){
     sql_insert('MEMBRE', 
     'prenomMemb, nomMemb, pseudoMemb, passMemb, eMailMemb, dtCreaMemb, accordMemb, numMemb, dtMajMemb, numStat', 
-    "'$prenomMemb', '$nomMemb', '$pseudoMemb', '$passMemb', '$eMailMemb', '$dtCreaMemb', '$accordMemb', '$numMemb', '$dtMajMemb', '$statutMemb'");
+    "'$prenomMemb', '$nomMemb', '$pseudoMemb', '$hash_password', '$eMailMemb', '$dtCreaMemb', '$accordMemb', '$numMemb', '$dtMajMemb', '$statutMemb'");
     
     header('Location: ../../views/backend/members/list.php');
 } else {

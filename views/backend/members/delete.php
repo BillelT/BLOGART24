@@ -3,6 +3,13 @@ include '../../../header.php';
 
 if(isset($_GET['numMemb'])){
     $numMemb = $_GET['numMemb'];
+    $pseudoMemb = sql_select("MEMBRE", "pseudoMemb", "numMemb = $numMemb")[0]['pseudoMemb'];
+    $prenomMemb = sql_select("MEMBRE", "prenomMemb", "numMemb = $numMemb")[0]['prenomMemb'];
+    $nomMemb = sql_select("MEMBRE", "nomMemb", "numMemb = $numMemb")[0]['nomMemb'];
+    $passMemb = sql_select("MEMBRE", "passMemb", "numMemb = $numMemb")[0]['passMemb'];
+    $eMailMemb = sql_select("MEMBRE", "eMailMemb", "numMemb = $numMemb")[0]['eMailMemb'];
+    $dtCreaMemb = sql_select("MEMBRE", "dtCreaMemb", "numMemb = $numMemb")[0]['dtCreaMemb'];
+    $numStat = sql_select("MEMBRE", "numStat", "numMemb = $numMemb")[0]['numStat'];
  ?>
 <!-- Bootstrap form to delete a thematique -->
 <div class="container">
@@ -14,26 +21,46 @@ if(isset($_GET['numMemb'])){
             <!-- Form to delete a thematique -->
             <form action="<?php echo ROOT_URL . '/api/members/delete.php' ?>" method="post">
                 <div class="form-group">
-                    <label for="numMemb">Nom du Membre</label>
+                    <!-- NUM -->
+                    <label for="numMemb">Numéro du Membre</label>
                     <input id="numMemb" name="numMemb" class="form-control" style="display: none" type="text" value="<?php echo($numMemb); ?>" readonly="readonly" />
+                    <!-- PRENOM -->
+                    <label for="prenomMemb">Prénom du Membre</label>
                     <input id="prenomMemb" name="prenomMemb" class="form-control" type="text" value="<?php echo($prenomMemb); ?>" readonly="readonly" disabled />
+                    <!-- NOM -->
+                    <label for="nomMemb">Nom du Membre</label>
                     <input id="nomMemb" name="nomMemb" class="form-control" type="text" value="<?php echo($nomMemb); ?>" readonly="readonly" disabled />
-                    <input id="nomMemb" name="nomMemb" class="form-control" type="text" value="<?php echo($nomMemb); ?>" readonly="readonly" disabled />
+                    <!-- PSEUDO -->
+                    <label for="pseudoMemb">Nom du Membre</label>
                     <input id="pseudoMemb" name="pseudoMemb" class="form-control" type="text" value="<?php echo($pseudoMemb); ?>" readonly="readonly" disabled />
+                    <!-- MAIL -->
+                    <label for="eMailMemb">Adresse email du Membre</label>
                     <input id="eMailMemb" name="eMailMemb" class="form-control" type="text" value="<?php echo($eMailMemb); ?>" readonly="readonly" disabled />
+                    <!-- DATE CREA -->
+                    <label for="dtCreaMemb">Date de création du Membre</label>
                     <input id="dtCreaMemb" name="dtCreaMemb" class="form-control" type="text" value="<?php echo($dtCreaMemb); ?>" readonly="readonly" disabled />
-                    <input id="statut" name="statut" class="form-control" type="text" value="<?php 
-                    if ($numStat !== '1'){
+                    <!-- STATUT -->
+                    <label for="numStat">Statut du Membre</label>
+                    <input id="statutMemb" name="statutMemb" class="form-control" type="text" value="<?php 
+                        if ($numStat == '1'){
+                            echo 'Administrateur';
+                        } 
                         if ($numStat == '2'){
                             echo 'Modérateur';
                         }
                         if ($numStat == '3'){
                             echo 'Membre';
                         }
-                    echo($numStat); ?>" readonly="readonly" disabled />
+                     ?>" readonly="readonly" disabled />
+                     <input id="idMemb" name="idMemb" class="form-control" style="display: none" type="text" value="<?php echo($numStat); ?>" readonly="readonly" />
                 
                 </div>
                 <br />
+            <?php 
+                if ($numStat == 1){
+                    echo '<p>Un administrateur ne peut pas être supprimé.</p>';
+                } else {
+            ?>
                 <div class="form-group mt-2">
                     <button type="submit" class="btn btn-danger" onclick="return confirm('Est-ce que tu es sûr(e)?')">Confirmer delete ?</button>
                 </div>
@@ -42,6 +69,6 @@ if(isset($_GET['numMemb'])){
     </div>
 </div> 
 
-<?php } else {
-    echo 'Ce membre est administrateur et ne peut pas être supprimé.';
+<?php 
+}
 }
