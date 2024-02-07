@@ -3,13 +3,14 @@ include '../../../header.php';
 
 if(isset($_GET['numMemb'])){
     $numMemb = $_GET['numMemb'];
-    $pseudoMemb = sql_select("MEMBRE", "pseudoMemb", "numMemb = $numMemb")[0]['pseudoMemb'];
-    $prenomMemb = sql_select("MEMBRE", "prenomMemb", "numMemb = $numMemb")[0]['prenomMemb'];
-    $nomMemb = sql_select("MEMBRE", "nomMemb", "numMemb = $numMemb")[0]['nomMemb'];
-    $passMemb = sql_select("MEMBRE", "passMemb", "numMemb = $numMemb")[0]['passMemb'];
-    $eMailMemb = sql_select("MEMBRE", "eMailMemb", "numMemb = $numMemb")[0]['eMailMemb'];
-    $dtCreaMemb = sql_select("MEMBRE", "dtCreaMemb", "numMemb = $numMemb")[0]['dtCreaMemb'];
-    $numStat = sql_select("MEMBRE", "numStat", "numMemb = $numMemb")[0]['numStat'];
+    $member = sql_select ('membre', 'pseudoMemb', 'numMemb = $numMemb')[0];
+    $pseudoMemb = $member['pseudoMemb'];
+    $prenomMemb = $member['prenomMemb'];
+    $nomMemb = $member['nomMemb'];
+    $passMemb = $member['passMemb'];
+    $eMailMemb = $member['eMailMemb'];
+    $dtCreaMemb = $member['dtCreaMemb'];
+    $numStat = $member['numStat'];
  ?>
 <!-- Bootstrap form to delete a thematique -->
 <div class="container">
