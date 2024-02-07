@@ -1,7 +1,6 @@
 <?php
-        require_once 'header.php';
-        sql_connect();
-        ?>
+require_once '../../../header.php';
+?>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -41,24 +40,24 @@
                     <label for="libStat">Conclusion</label>
                     <textarea id="Conclusion" name="libConclArt" class="form-control" placeholder="Décrivez la conclusion. Sur 800 car." maxlength="500" style="height: 200px;"></textarea>
                     <br>
-                   
+
 
                     <!-- image !-->
                     <label for="imageInput">Choisir une image :</label>
                     <input type="file" id="urlPhotArt" name="urlPhotArt" accept=".jpg, .jpeg, .png, .gif" maxlength="80000" width="80000" height="80000" size="200000000000">
-                    
+
                     <p>>> Extension des images acceptées : .jpg, .gif, .png, .jpeg (lageur, hauteur, taille max : 80000px, 80000px, 200 000 Go)</p>
-                    
+
                     <!-- choix de la thématique !-->
                     <p><br></p>
                     <label for="libThem">Thématique :<br></label>
                     <select name="thematique" id="libThem">
-                    <option value="">Cliquez et selectionnez une thématique</option>
-                    <?php 
-                            $result = sql_select('thematique');
-                            foreach($result as $req){
-                                echo '<option value="' . $req['numThem'] . '">' . $req['libThem'] . '</option>';
-                            }
+                        <option value="">Cliquez et selectionnez une thématique</option>
+                        <?php
+                        $result = sql_select('thematique');
+                        foreach ($result as $req) {
+                            echo '<option value="' . $req['numThem'] . '">' . $req['libThem'] . '</option>';
+                        }
                         ?>
                     </select>
                     <p><br></p>
@@ -66,12 +65,12 @@
                     <label for="motCle">Choisissez des Mots-Clés:</label>
                     <select name="motCle" id="motCle" size="5">
                         <option value="">-- Choisir des mots clés --</option>
-                        <?php 
+                        <?php
                         $result = sql_select('motCle');
-                        foreach($result as $req){
-                        echo '<option id="mot" value="' . $req['numMotCle'] . '">' . $req['libMotCle'] . '</option>';
+                        foreach ($result as $req) {
+                            echo '<option id="mot" value="' . $req['numMotCle'] . '">' . $req['libMotCle'] . '</option>';
                         }
-                         ?>
+                        ?>
                     </select>
                     <button>Ajouter Mots-Clés ?</button>
                     <select id="numMotCle" name="numMotCle" size="5">
@@ -88,18 +87,18 @@
     </div>
 </div>
 
-<script> 
-document.addEventListener("click", (e) => {
-    if (e.target.id = "mot" ){
-        let motCle = e.target.innerText;
-    }
-    
-})
+<script>
+    document.addEventListener("click", (e) => {
+        if (e.target.id = "mot") {
+            let motCle = e.target.innerText;
+            console.log(motCle);
+            
+        }
 
+    })
 </script>
 
 
 <?php
 include '../../../footer.php';
 ?>
-

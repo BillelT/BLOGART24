@@ -26,6 +26,10 @@ header a{
     font-size: 14px;
     text-decoration: none;
 }
+header ul {
+    padding: 0;
+    margin: 0;
+}
 header p {
     margin: 0;
     font-size: 10px;
@@ -126,6 +130,7 @@ header nav a {
     height: 34px;
     width: 30%;
     min-width: 100px;
+    max-width: 190px;
     border-radius: 8px;
     font-size: 12px;
     margin-top: 24px;
@@ -145,9 +150,9 @@ header nav a {
 }
 
 .connect {
-    background: transparent;
-    border: 1px solid #5C7142;
-    color: #5C7142;
+    color: #fef5ea;
+    background: #5C7142;
+    max-width: 200px;
     font-size: 12px;
     height: 34px;
     margin-top: 16px;
@@ -158,13 +163,11 @@ header nav a {
 }
 
 .connect:hover {
-    color: #fef5ea;
-    background: #5C7142;
-}
-
-.connect.border:hover {
+    background-color: #fef5ea;
+    color: #5C7142;
     border: 1px solid #5C7142;
 }
+
 
 
 h1 {
@@ -214,6 +217,7 @@ header h2 {
         padding: 0;
         background: transparent;
         justify-items: center;
+        justify-content: end;
     }
     .nav ul {
         display: flex;

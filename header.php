@@ -66,6 +66,6 @@ require_once 'config.php';
     <div class="ariane">
         <p>Accueil</p>
     </div>
-    <script src="/src/js/header.js"></script>
+    <script src="/src/JS/header.js"></script>
 </body>
 </html>
