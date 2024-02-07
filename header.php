@@ -1,3 +1,10 @@
+<?php 
+// CREE SESSION DE CONNEXION
+session_start();
+
+if 
+?>
+
 <!DOCTYPE html>
 <html lang="fr-FR">
 <head>
