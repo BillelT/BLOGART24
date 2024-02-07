@@ -1,3 +1,10 @@
+<?php 
+// CREE SESSION DE CONNEXION
+session_start();
+
+if 
+?>
+
 <!DOCTYPE html>
 <html lang="fr-FR">
 <head>
@@ -56,7 +63,7 @@ require_once 'config.php';
             <span class="burger" id="burgerMenu">☰</span>
         </div>
         <h1>BORD'ANIMAUX</h1>
-        <h2>par l'équipe Bibble'S</h2>
+        <h2>par l'équipe Bibble's</h2>
     </header>
     <div class="ariane">
         <p>Accueil</p>

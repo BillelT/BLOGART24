@@ -8,10 +8,13 @@ $libTitrArt = ctrlSaisies($_POST['libTitrArt']);
 $libChapoArt = ctrlSaisies($_POST['libChapoArt']);
 $libAccrochArt = ctrlSaisies($_POST['libAccrochArt']);
 $parag1Art = ctrlSaisies($_POST['parag1Art']);
+$parag1Art = BBCode($para1Art);
 $libSsTitr1Art = ctrlSaisies($_POST['libSsTitr1Art']);
 $parag2Art = ctrlSaisies($_POST['parag2Art']);
+$parag2Art = BBCode($para2Art);
 $libSsTitr2Art = ctrlSaisies($_POST['libSsTitr2Art']);
 $parag3Art = ctrlSaisies($_POST['parag3Art']);
+$parag3Art = BBCode($para3Art);
 $libConclArt = ctrlSaisies($_POST['libConclArt']);
 $urlPhotArt = ctrlSaisies($_POST['urlPhotArt']);
 
@@ -54,6 +57,7 @@ if(isset($_FILES['urlPhotArt'])){
 
     } else { // IF THERES NO ERROR
         $nom_image = time() . '_' . $urlPhotArt;
+        move_uploaded_file($tmpName, 'src/uploads' . $nom_image);
     }
 }
 
