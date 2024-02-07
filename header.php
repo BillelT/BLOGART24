@@ -46,7 +46,7 @@ require_once 'config.php';
                         </a>
                     </li>
                     <li class="no-border">
-                        <a href="#">
+                        <a href="./views/frontend/connexion.php">
                             <button class="connect" id="connect">
                                 Se connecter <span>&#8594;</span>
                             </button>
