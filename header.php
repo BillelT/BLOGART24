@@ -4,12 +4,11 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog'Art</title>
+    <link rel="shortcut icon"  href="/src/images/logo bibble's header.png" type="image/x-icon" />
     <!-- Load CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
-    <link rel="stylesheet" href="src/css/style.css" />
-    <link rel="stylesheet" href="./src/css/header.css">
+    <link rel="stylesheet" href="/src/css/header.css">
     <!-- Bootstrap CSS only -->
-    <link rel="shortcut icon" type="image/x-icon" href="src/images/article.png" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
     <!-- CAPTCHA GOOGLE --> 
     <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
@@ -20,7 +19,9 @@ require_once 'config.php';
 <body>
 <header>
         <div class="navigation" id="headNav">
-            <img src="./src/images/logo bibble's header.png" alt="logo Bibbe'S" width="30" height="30">
+            <a href="./index.php">
+                <img src="/src/images/logo bibble's header.png" alt="logo Bibbe'S" width="30" height="30">
+            </a>
             <nav class="nav" id="nav">
                 <ul>
                     <li>
@@ -50,7 +51,7 @@ require_once 'config.php';
             </nav>
             <div class="search" id="search">
                 <p>Rechercher...</p>
-                <img src="./src/images/loupe header.svg" alt="loupe icon">
+                <img src="/src/images/loupe header.svg" alt="loupe icon">
             </div>
             <span class="burger" id="burgerMenu">☰</span>
         </div>
@@ -60,6 +61,6 @@ require_once 'config.php';
     <div class="ariane">
         <p>Accueil</p>
     </div>
-    <script src="./src/js/header.js"></script>
+    <script src="/src/js/header.js"></script>
 </body>
 </html>

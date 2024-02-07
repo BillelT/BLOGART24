@@ -1,7 +1,7 @@
 <?php
-include '../../../footer.php';
-include '../../../header.php';
-?>
+        require_once 'header.php';
+        sql_connect();
+        ?>
 <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -97,4 +97,9 @@ document.addEventListener("click", (e) => {
 })
 
 </script>
+
+
+<?php
+include '../../../footer.php';
+?>
 
