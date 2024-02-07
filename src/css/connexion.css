@@ -37,6 +37,8 @@ padding-bottom: 45px;
 
 .form-control {
 border-radius: 4px;
+background-color: transparent !important;
+border: 1px solid #5C7142 !important;
 border: 2px solid var(--BROWN-3RD, #885B3A);
 }
 

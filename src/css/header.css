@@ -217,6 +217,7 @@ header h2 {
         padding: 0;
         background: transparent;
         justify-items: center;
+        justify-content: end;
     }
     .nav ul {
         display: flex;
