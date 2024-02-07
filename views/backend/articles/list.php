@@ -12,6 +12,7 @@ GROUP BY article.numArt', 'dtCreaArt, article.numArt, dtCreaArt, libTitrArt, lib
 
 ?>
 
+
 <!-- Bootstrap default layout to display all statuts in foreach -->
 <div class="container">
     <div class="row">
@@ -38,7 +39,7 @@ GROUP BY article.numArt', 'dtCreaArt, article.numArt, dtCreaArt, libTitrArt, lib
                             <td><?php echo($article['libTitrArt']); ?></td>
                             <td><?php echo($article['libChapoArt']); ?></td>
                             <td><?php echo($article['libAccrochArt']); ?></td>
-                            <td><?php echo $article['libMotCle']?></td> 
+                            <td><?php echo ($article['libMotCle']); ?></td> 
                             <td><?php echo($article['libThem']); ?></td>
                             <td>
                                 <a href="edit.php?numArt=<?php echo($article['numArt']); ?>" class="btn btn-primary">Edit</a>
@@ -53,4 +54,6 @@ GROUP BY article.numArt', 'dtCreaArt, article.numArt, dtCreaArt, libTitrArt, lib
     </div>
 </div>
 <?php
+
+var_dump(($article['libMotCle']));
 include '../../../footer.php'; // contains the footer

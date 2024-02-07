@@ -28,16 +28,17 @@ require '../../header.php';
         utilisateurs</h3>
     </div>
     <div class="email">
-      <label for="exampleFormControlInput1" class="col-form-label">Email :</label>
+      <label for="eMailMemb" class="col-form-label">Email :</label>
       <br>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nom@exemple.com">
+      <input type="email" class="form-control" id="eMailMemb" placeholder="nom@exemple.com">
     </div>
     <div class="motdepasse">
       <div class="col-auto">
-        <label for="inputPassword6" class="col-form-label">Mot de passe :</label>
+        <label for="passMemb" class="col-form-label">Mot de passe :</label>
       </div>
       <div class="col-auto">
-        <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
+        <input type="password" id="passMemb" class="form-control" aria-describedby="passwordHelpInline">
+        <button type="button" id="afficher"  class="btn btn-secondary">Afficher le mot de passe</button><br><br>
       </div>
       <div class="col-auto">
         <span id="passwordHelpInline" class="form-text">
