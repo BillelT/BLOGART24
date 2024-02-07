@@ -12,6 +12,7 @@ function ctrlSaisies($saisie){
     // Conversion des caractères spéciaux en entités HTML
     $saisie = htmlentities($saisie);
     return $saisie;
+}
 
 //FONCTION BBCODE
 function BBCode($chaine)
@@ -52,5 +53,4 @@ $chaine);
 "<img src=\"\\1\" alt=\"\" />", $chaine);
    
     return $chaine;
-}
 }
