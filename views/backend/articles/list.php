@@ -5,13 +5,10 @@ include '../../../header.php'; // contains the header and call to config.php
 
 
 
-$articles = sql_select("article INNER JOIN thematique ON thematique.numThem = article.numThem
-GROUP BY 
-article.numArt, dtCreaArt, libTitrArt, libChapoArt, libAccrochArt, libThem;", "article.numArt, dtCreaArt, libTitrArt, libChapoArt, libAccrochArt, libThem
-");
-
-
-
+$articles = sql_select('motcle INNER JOIN motclearticle ON motclearticle.numMotCle = motcle.numMotCle
+INNER JOIN article ON article.numArt = motclearticle.numArt
+INNER JOIN thematique ON article.numThem = thematique.numThem
+GROUP BY article.numArt', 'dtCreaArt, article.numArt, dtCreaArt, libTitrArt, libChapoArt, libAccrochArt, libMotCle, libThem');
 
 ?>
 
@@ -41,7 +38,7 @@ article.numArt, dtCreaArt, libTitrArt, libChapoArt, libAccrochArt, libThem;", "a
                             <td><?php echo($article['libTitrArt']); ?></td>
                             <td><?php echo($article['libChapoArt']); ?></td>
                             <td><?php echo($article['libAccrochArt']); ?></td>
-                            <td><?php echo($article['motscles']); ?></td> 
+                            <td><?php echo $article['libMotCle']?></td> 
                             <td><?php echo($article['libThem']); ?></td>
                             <td>
                                 <a href="edit.php?numArt=<?php echo($article['numArt']); ?>" class="btn btn-primary">Edit</a>
