@@ -37,11 +37,12 @@ $passMemb2 = ctrlSaisies($_POST['passMemb2']); // DOIT ÊTRE IDENTIQUE A PASSWOR
 
 if ($passMemb != $passMemb2){ 
     echo 'Les mots de passe doivent être identiques.<br>';
-    $passMemb2 = null;
+    $passMemb = null;
 } 
 
 $hash_password = password_hash($passMemb, PASSWORD_DEFAULT);
 var_dump($hash_password);
+echo '<br>';
 
 
 //EMAIL
@@ -56,22 +57,26 @@ if (filter_var($eMailMemb, FILTER_VALIDATE_EMAIL)) {
 
 if ($eMailMemb != $eMailMemb2){
     echo 'Les adresses mail doivent être identiques.<br>';
-    $eMailMemb2 = null;
+    $eMailMemb = null;
 } 
 
 //ACCORD DONNEES
 $accordMemb = ctrlSaisies($_POST['accordMemb']);
 
 if ($accordMemb !== 'OUI') {
-    echo 'Veuillez accepter de partager vos données.';
+    echo 'Veuillez accepter de partager vos données.<br>';
+} else {
+    $accordMemb = TRUE;
 }
 
 //STATUT
-$statutMemb = ctrlSaisies($_POST['statutMemb']);
+$numStat = ctrlSaisies($_POST['numStat']);
+var_dump($numStat);
+echo '<br>';
 
 //DATE CREATION
 $dtCreaMemb = date_create()->format('Y-m-d H:i:s');
-echo $dtCreaMemb; // donne la date & heure d'inscription
+echo $dtCreaMemb . '<br>'; // donne la date & heure d'inscription
 $dtMajMemb = NULL;
 
 $max = 'MAX('. 'numMemb' . ')';
@@ -84,11 +89,11 @@ echo '<br>';
 // GENERE NBR DE MEMBRE (PREND +GRANDE VALEUR ET Y AJOUTE 1)
 ++$numMemb;
 $numMemb = substr($numMemb, 1, 1);
-echo $numMemb;
+echo $numMemb . '<br>';
 
 //PARTIE PHP GOOGLE CAPTCHA
 
-if(isset($_POST['g-recaptcha-response'])){
+/* if(isset($_POST['g-recaptcha-response'])){
     $token = $_POST['g-recaptcha-response'];
     $url = 'https://www.google.com/recaptcha/api/siteverify';
     $data = array(
@@ -113,7 +118,7 @@ if(isset($_POST['g-recaptcha-response'])){
     - if score is 0.5, it's a human
     - if score is 0.0, it's a bot
     - google recommend to use score 0.5 for verify human
-    */
+    *//*
     if ($response->success && $response->score >= 0.5) {
     //Le test est réussi, on peut inscrire la personne si le pseudo et
     var_dump(array('success' => true, "msg"=>"You are not a robot!",
@@ -140,22 +145,24 @@ if(isset($_POST['g-recaptcha-response'])){
     transactions.
     
     * */
-    var_dump(array('success' => false, "msg"=>"You are a robot!",
+    /* var_dump(array('success' => false, "msg"=>"You are a robot!",
     
     "response"=>$response));
     
     }
     }
 
+*/ 
 // FIN PARTIE CAPTCHA
+var_dump($pseudoMemb, $prenomMemb, $nomMemb, $passMemb, $eMailMemb, $accordMemb, $numStat);
 
-if (isset($pseudoMemb, $prenomMemb, $nomMemb, $passMemb, $passMemb2, $eMailMemb, $eMailMemb2, $accordMemb, $statutMemb)){
+if (isset($pseudoMemb, $prenomMemb, $nomMemb, $passMemb, $eMailMemb, $accordMemb, $numStat)){
     sql_insert('MEMBRE', 
     'prenomMemb, nomMemb, pseudoMemb, passMemb, eMailMemb, dtCreaMemb, accordMemb, numMemb, dtMajMemb, numStat', 
-    "'$prenomMemb', '$nomMemb', '$pseudoMemb', '$hash_password', '$eMailMemb', '$dtCreaMemb', '$accordMemb', '$numMemb', '$dtMajMemb', '$statutMemb'");
+    "'$prenomMemb', '$nomMemb', '$pseudoMemb', '$hash_password', '$eMailMemb', '$dtCreaMemb', '$accordMemb', '$numMemb', '$dtMajMemb', '$numStat'");
     
     header('Location: ../../views/backend/members/list.php');
 } else {
-    echo 'Veuillez remplir tout le formulaire.';
+    echo '<br><br><p style="color:red;">Veuillez remplir tout le formulaire.</p>';
 }
 

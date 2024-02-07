@@ -43,7 +43,7 @@ if(isset($_GET['numMotCle'])){
                     <select name="numMotCle" id="numMotCle">
                         <option value="">Choisir un Mot-Clé</option>
                         <?php 
-                            $result = sql_select('motcle');
+                            $result = sql_select('MOTCLE');
                             foreach($result as $req){
                                 echo '<option value="' . $req['numMotCle'] . '">' . $req['libMotCle'] . '</option>';
                             }
