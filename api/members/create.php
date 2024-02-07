@@ -42,6 +42,7 @@ if ($passMemb != $passMemb2){
 
 $hash_password = password_hash($passMemb, PASSWORD_DEFAULT);
 var_dump($hash_password);
+echo '<br>';
 
 
 //EMAIL
@@ -63,7 +64,7 @@ if ($eMailMemb != $eMailMemb2){
 $accordMemb = ctrlSaisies($_POST['accordMemb']);
 
 if ($accordMemb !== 'OUI') {
-    echo 'Veuillez accepter de partager vos données.';
+    echo 'Veuillez accepter de partager vos données.<br>';
 }
 
 //STATUT
@@ -71,7 +72,7 @@ $statutMemb = ctrlSaisies($_POST['statutMemb']);
 
 //DATE CREATION
 $dtCreaMemb = date_create()->format('Y-m-d H:i:s');
-echo $dtCreaMemb; // donne la date & heure d'inscription
+echo $dtCreaMemb . '<br>'; // donne la date & heure d'inscription
 $dtMajMemb = NULL;
 
 $max = 'MAX('. 'numMemb' . ')';
@@ -84,7 +85,7 @@ echo '<br>';
 // GENERE NBR DE MEMBRE (PREND +GRANDE VALEUR ET Y AJOUTE 1)
 ++$numMemb;
 $numMemb = substr($numMemb, 1, 1);
-echo $numMemb;
+echo $numMemb . '<br>';
 
 //PARTIE PHP GOOGLE CAPTCHA
 
@@ -156,6 +157,6 @@ if (isset($pseudoMemb, $prenomMemb, $nomMemb, $passMemb, $passMemb2, $eMailMemb,
     
     header('Location: ../../views/backend/members/list.php');
 } else {
-    echo 'Veuillez remplir tout le formulaire.';
+    echo '<br><br><p style="color:red;">Veuillez remplir tout le formulaire.</p>';
 }
 
