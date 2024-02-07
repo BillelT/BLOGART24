@@ -14,18 +14,53 @@ $libSsTitr2Art = ctrlSaisies($_POST['libSsTitr2Art']);
 $parag3Art = ctrlSaisies($_POST['parag3Art']);
 $libConclArt = ctrlSaisies($_POST['libConclArt']);
 $urlPhotArt = ctrlSaisies($_POST['urlPhotArt']);
+
+// VERIFIER FIELDS
+
+$requiredFields = ['libTitrArt', 'dtCreaArt', 'libChapoArt', 'libAccrochArt', 'parag1Art', 'libSsTitr1Art', 'parag2Art', 'libSsTitr2Art', 'parag3Art', 'libConclArt',];
+
+  foreach ($requiredFields as $field) {
+   if (empty($_POST[$field])) {
+   echo "Veuillez remplir tous les champs du formulaire.";
+  exit();
+     }
+  }
+
+
+// IMAGES TEST
+
+if(isset($_FILES['urlPhotArt'])){
+    var_dump($_FILES);
+    $files = $_FILES['urlPhotArt'];
+
+    $tmpName = $files['tmp_name'];
+    $name = $files['name'];
+    $size = $files['size'];
+    $error = $files['error'];
+    
+    if(!$error == 0){ // IF THERES AN ERROR
+        // VERIFY FILE SIZE
+        if ($size > 10000000) {
+        echo "Le fichier est trop volumineux.";
+        exit();
+        }
+
+        // VERIFY IMG SIZE
+        list($width, $height) = getimagesize($tmpName);
+        if ($width > 5000 || $height > 5000) {
+        echo "L'image est trop grande.";
+        exit();
+        }
+
+    } else { // IF THERES NO ERROR
+        $nom_image = time() . '_' . $urlPhotArt;
+    }
+}
+
 $numThem = ctrlSaisies($_POST['thematique']);
 
-
-
-
-
-
-
-sql_insert("article", "dtCreaArt, dtMajArt, libTitrArt, libChapoArt, libAccrochArt, parag1Art, libSsTitr1Art, parag2Art, libSsTitr2Art, parag3Art, libConclArt, urlPhotArt, numThem", "'$dtCreaArt', '$dtMajArt', '$libTitrArt', '$libChapoArt', '$libAccrochArt', '$parag1Art', '$libSsTitr1Art', '$parag2Art', '$libSsTitr2Art', '$parag3Art', '$libConclArt', '$urlPhotArt', '$numThem'");
-
-
-
+sql_insert("article", "dtCreaArt, dtMajArt, libTitrArt, libChapoArt, libAccrochArt, parag1Art, libSsTitr1Art, parag2Art, libSsTitr2Art, parag3Art, libConclArt, urlPhotArt, numThem", 
+"'$dtCreaArt', '$dtMajArt', '$libTitrArt', '$libChapoArt', '$libAccrochArt', '$parag1Art', '$libSsTitr1Art', '$parag2Art', '$libSsTitr2Art', '$parag3Art', '$libConclArt', '$urlPhotArt', '$numThem'");
 
 
 header('Location: ../../views/backend/articles/list.php');

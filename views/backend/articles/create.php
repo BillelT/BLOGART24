@@ -1,10 +1,5 @@
-
-
 <?php
 include '../../../footer.php';
-?>
-
-<?php
 include '../../../header.php';
 ?>
 <div class="container">
@@ -50,9 +45,10 @@ include '../../../header.php';
 
                     <!-- image !-->
                     <label for="imageInput">Choisir une image :</label>
-                    <input type="file" id="imageInput" name="urlPhotArt" accept=".jpg, .jpeg, .png, .gif" maxlength="80000" width="80000" height="80000" size="200000000000">
+                    <input type="file" id="urlPhotArt" name="urlPhotArt" accept=".jpg, .jpeg, .png, .gif" maxlength="80000" width="80000" height="80000" size="200000000000">
                     
                     <p>>> Extension des images acceptées : .jpg, .gif, .png, .jpeg (lageur, hauteur, taille max : 80000px, 80000px, 200 000 Go)</p>
+                    
                     <!-- choix de la thématique !-->
                     <p><br></p>
                     <label for="libThem">Thématique :<br></label>
@@ -65,39 +61,35 @@ include '../../../header.php';
                             }
                         ?>
                     </select>
-                   
-
+                    <!-- MOTS CLES -->
+                    <label for="MOTCLE">Choisissez des Mots-Clés:</label>
+                    <select name="MOTCLE" id="MOTCLE" size="5">
+                        <option value="">Choisir des mots clés</option>
+                        <?php 
+                        $result = sql_select('MOTCLE');
+                        foreach($result as $req){
+                        echo '<option value="' . $req['numMotCle'] . '">' . $req['libMotCle'] . '</option>';
+                        }
+                         ?>
+                    <button class="btn btn-secondary"  onclick="AddKeywords()>Ajouter Mots-Clés ?</button>
+                    </select>
 
                 </div>
                 <br>
                 <div class="form-group mt-2">
-
                     <button type="submit" class="btn btn-primary">Confirmer create ?</button>
                 </div>
-                <?php 
-                    $requiredFields = ['libTitrArt', 'dtCreaArt', 'libChapoArt', 'libAccrochArt', 'parag1Art', 'libSsTitr1Art', 'parag2Art', 'libSsTitr2Art', 'parag3Art', 'libConclArt',];
-
-                    foreach ($requiredFields as $field) {
-                        if (empty($_POST[$field])) {
-                            echo "Veuillez remplir tous les champs du formulaire.";
-                            exit();
-                        }
-                    }
-                    ?>
-                
-                
-
-
             </form>
         </div>
     </div>
 </div>
 
+<script> 
+AddKeyWords(){
+    function myFunction() {
+    document.getElementById("MOTCLE").value = document.getElementById("MOTCLE2").value;
+}
+}
 
+</script>
 
-
-<?php
-include '../../../header.php';
-
-
-?>
