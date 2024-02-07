@@ -8,4 +8,5 @@ $numArt = ctrlSaisies($_POST['numArt']);
 sql_delete('article', "numArt = $numArt");
 
 
+
 header('Location: ../../views/backend/members/list.php');

@@ -11,6 +11,13 @@ if ($pseudoMemb < 6 && $pseudoMemb > 70) {
     echo 'Le pseudo est bon<br>';
 }
 
+$verif = sql_select('membre', 'pseudoMemb', "pseudoMemb = '$pseudoMemb'");
+
+if ($verif != NULL){
+    echo 'Veuillez choisir un pseudo disponible.';
+    $pseudoMemb = null;
+}
+
 //PRENOM
 $prenomMemb = ctrlSaisies($_POST['prenomMemb']);
 //NOM

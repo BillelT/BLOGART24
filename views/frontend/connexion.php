@@ -21,49 +21,59 @@ require '../../header.php';
   <section class="connexion" style="background-color: #FEF5EA;">
 
     <div class="title-connexion">
-      <h3>En vous connectant, vous <br>
-        pourrez liker, partager ou <br>
+      <h3>En vous connectant, vous 
+        pourrez liker, partager ou 
         commenter notre contenu
         et intéragir avec les autres
-        utilisateurs</h3>
+        utilisateurs.</h3>
     </div>
-    <div class="email">
-      <label for="exampleFormControlInput1" class="col-form-label">Email :</label>
-      <br>
-      <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="nom@exemple.com">
-    </div>
-    <div class="motdepasse">
-      <div class="col-auto">
-        <label for="inputPassword6" class="col-form-label">Mot de passe :</label>
-      </div>
-      <div class="col-auto">
-        <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-      </div>
-      <div class="col-auto">
-        <span id="passwordHelpInline" class="form-text">
-          La longueur doit être comprise entre 8 et 20 caractères.
-        </span>
-      </div>
-    </div>
-    
-    <div class="valid">
-      <div class="form-check">
-        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-        <label class="form-check-label" for="flexCheckDefault">
-          Se souvenir de moi
-        </label>
-      </div>
 
-      <button type="button-important" class="connect border">Se connecter</button>
-      <button type="button-less-important" class="inscription no-border">Inscription</button>
-      <p><a class="link-opacity-100" href="#">Pas de compte ?</a></p>
-    </div>
+<!-- Bootstrap form to create a new statut -->
+
+            <!-- Form to create a new statut -->
+            <form action="<?php echo ROOT_URL . 'api/security/connexion.php' ?>" method="post">
+                <div class="form-group email">
+                    <label for="eMailMemb" class="col-form-label">Adresse mail :</label>
+                    <input id="eMailMemb" name="eMailMemb" class="form-control" type="email" autofocus="autofocus" />
+                </div>
+                <div class="form-group motdepasse col-auto">
+                    <label for="passMemb" class="col-form-label">Mot de passe :</label>
+                    <input id="passMemb" name="passMemb" class="form-control" type="password" autofocus="autofocus" aria-describedby="passwordHelp" />
+                    <button type="button" id="afficher"  class="btn btn-secondary">Afficher le mot de passe</button>
+                    <span id="passwordHelp" class="form-text">
+                    La longueur doit être comprise entre 8 et 20 caractères.
+                    </span>
+                </div>
+                <div class="valid form-check">
+                <input class="form-check-input" type="checkbox" value="" id="cookies">
+                <label class="form-check-label" for="cookies">
+                    Se souvenir de moi
+                </label>
+                </div>
+                <br />
+                <div class="form-group mt-2">
+                    <button type="submit" class="connect border">Se connecter</button>
+                    <p class="link-opacity-100">Pas de compte ?</p>
+                    <input type="button" onclick="location.href='#'" value="inscription" />
+                </div>
+            </form>
   </section>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-    integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL"
-    crossorigin="anonymous"></script>
 
-    <?php 
+<?php 
 require '../../footer.php';
 ?>
 </body>
+<script>
+  document.getElementById( 'afficher' ).addEventListener( "click", function() {
+   
+   attribut = document.getElementById( 'passMemb' ).getAttribute( 'type');
+   if(attribut == 'password'){
+       document.getElementById( 'passMemb' ).setAttribute( 'type', 'text');
+   } else {
+       document.getElementById( 'passMemb' ).setAttribute( 'type', 'password');
+   }
+   
+});
+</script>
+
+        
