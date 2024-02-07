@@ -21,11 +21,11 @@ require '../../header.php';
   <section class="connexion" style="background-color: #FEF5EA;">
 
     <div class="title-connexion">
-      <h3>En vous connectant, vous <br>
-        pourrez liker, partager ou <br>
+      <h3>En vous connectant, vous 
+        pourrez liker, partager ou 
         commenter notre contenu
         et intéragir avec les autres
-        utilisateurs</h3>
+        utilisateurs.</h3>
     </div>
     <div class="email">
       <label for="eMailMemb" class="col-form-label">Email :</label>
@@ -68,3 +68,15 @@ require '../../header.php';
 require '../../footer.php';
 ?>
 </body>
+<script>
+  document.getElementById( 'afficher' ).addEventListener( "click", function() {
+   
+   attribut = document.getElementById( 'passMemb' ).getAttribute( 'type');
+   if(attribut == 'password'){
+       document.getElementById( 'passMemb' ).setAttribute( 'type', 'text');
+   } else {
+       document.getElementById( 'passMemb' ).setAttribute( 'type', 'password');
+   }
+   
+});
+</script>
