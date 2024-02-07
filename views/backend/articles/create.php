@@ -61,19 +61,23 @@ include '../../../header.php';
                             }
                         ?>
                     </select>
+                    <p><br></p>
                     <!-- MOTS CLES -->
-                    <label for="MOTCLE">Choisissez des Mots-Clés:</label>
-                    <select name="MOTCLE" id="MOTCLE" size="5">
-                        <option value="">Choisir des mots clés</option>
+                    <label for="motCle">Choisissez des Mots-Clés:</label>
+                    <select name="motCle" id="motCle" size="5">
+                        <option value="">-- Choisir des mots clés --</option>
                         <?php 
-                        $result = sql_select('MOTCLE');
+                        $result = sql_select('motCle');
                         foreach($result as $req){
-                        echo '<option value="' . $req['numMotCle'] . '">' . $req['libMotCle'] . '</option>';
+                        echo '<option id="mot" value="' . $req['numMotCle'] . '">' . $req['libMotCle'] . '</option>';
                         }
                          ?>
-                    <button class="btn btn-secondary"  onclick="AddKeywords()>Ajouter Mots-Clés ?</button>
                     </select>
-
+                    <button>Ajouter Mots-Clés ?</button>
+                    <select id="numMotCle" name="numMotCle" size="5">
+                        <option value="">-- Mots-Clés choisis --</option>
+                        <option></option>
+                    </select>
                 </div>
                 <br>
                 <div class="form-group mt-2">
@@ -85,11 +89,12 @@ include '../../../header.php';
 </div>
 
 <script> 
-AddKeyWords(){
-    function myFunction() {
-    document.getElementById("MOTCLE").value = document.getElementById("MOTCLE2").value;
-}
-}
+document.addEventListener("click", (e) => {
+    if (e.target.id = "mot" ){
+        let motCle = e.target.innerText;
+    }
+    
+})
 
 </script>
 
