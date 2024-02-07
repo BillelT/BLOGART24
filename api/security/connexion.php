@@ -43,3 +43,4 @@ if ($search){
 
 echo '<br>';
 
+header('Location: ../../views/frontend/connexion.php');
