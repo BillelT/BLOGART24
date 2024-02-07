@@ -27,6 +27,7 @@ require '../../header.php';
         et intéragir avec les autres
         utilisateurs.</h3>
     </div>
+    <form action="<?php echo ROOT_URL . '/api/connexion.php' ?>" method="post">
     <div class="email">
       <label for="eMailMemb" class="col-form-label">Email :</label>
       <br>
@@ -58,6 +59,7 @@ require '../../header.php';
       <button type="button-important" class="connect border">Se connecter</button>
       <button type="button-less-important" class="inscription no-border">Inscription</button>
       <p><a class="link-opacity-100" href="#">Pas de compte ?</a></p>
+</form>
     </div>
   </section>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
