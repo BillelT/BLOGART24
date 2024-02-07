@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Blog'Art</title>
     <!-- Load CSS -->
-    <link rel="stylesheet" href="src/css/style.css" />
-    <!-- Bootstrap CSS only -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous" />
+    <link rel="stylesheet" href="src/css/style.css" />
+    <link rel="stylesheet" href="./src/css/header.css">
+    <!-- Bootstrap CSS only -->
     <link rel="shortcut icon" type="image/x-icon" href="src/images/article.png" />
     <!-- CAPTCHA GOOGLE --> 
     <script src="https://www.google.com/recaptcha/api.js"></script>
@@ -17,30 +18,48 @@
 require_once 'config.php';
 ?>
 <body>
-<nav class="navbar navbar-expand-lg bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">Blog'Art 24</a>
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <ul class="navbar-nav">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="/">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="/views/backend/dashboard.php">Admin</a>
-        </li>
-      </ul>
+<header>
+        <div class="navigation" id="headNav">
+            <img src="./src/images/logo bibble's header.png" alt="logo Bibbe'S" width="30" height="30">
+            <nav class="nav" id="nav">
+                <ul>
+                    <li>
+                        <a href="#" class="connected" id="connected">Mon profil <span>&#8594;</span></a>
+                    </li>
+                    <li>
+                        <a href="#">Articles <span>&#8594;</span></a>
+                    </li>
+                    <li>
+                        <a href="#">Témoignages <span>&#8594;</span></a>
+                    </li>
+                    <li class="no-border">
+                        <a href="#">
+                            <button class="inscription" id="inscription">
+                                S'inscrire <span>&#8594;</span>
+                            </button>
+                        </a>
+                    </li>
+                    <li class="no-border">
+                        <a href="#">
+                            <button class="connect" id="connect">
+                                Se connecter <span>&#8594;</span>
+                            </button>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <div class="search" id="search">
+                <p>Rechercher...</p>
+                <img src="./src/images/loupe header.svg" alt="loupe icon">
+            </div>
+            <span class="burger" id="burgerMenu">☰</span>
+        </div>
+        <h1>BORD'ANIMAUX</h1>
+        <h2>par l'équipe Bibble'S</h2>
+    </header>
+    <div class="ariane">
+        <p>Accueil</p>
     </div>
-    <!--right align-->
-    <div class="d-flex">
-      <form class="d-flex" role="search">
-          <input class="form-control me-2" type="search" placeholder="Rechercher sur le site…" aria-label="Search" >
-      </form>
-      <a class="btn btn-primary m-1" href="/views/backend/security/login.php" role="button">Login</a>
-      <a class="btn btn-dark m-1" href="/views/backend/security/signup.php" role="button">Sign up</a>
-    </div>
-  </div>
-</nav>
-
+    <script src="./src/js/header.js"></script>
+</body>
+</html>

@@ -1,0 +1,260 @@
+@import url('https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400&display=swap');
+
+
+*, ::after, ::before{
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    border: none;
+    font-family: "K2D", sans-serif;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #fef5ea;
+    overflow-x: hidden;
+}
+
+header a{
+    color: #fef5ea;
+    font-weight: 700;
+    font-size: 14px;
+    text-decoration: none;
+}
+header p {
+    margin: 0;
+    font-size: 10px;
+}
+button {
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 14px;
+}
+
+header{
+    background: url(../images/bg\ header.png) no-repeat center;
+    background-size: cover;
+    color: #fef5ea;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr;
+    text-align: center;
+}
+
+.navigation {
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 5%;
+    position: relative;
+    display: grid;
+    align-items: center;
+    grid-template-columns: 30px 1fr 9.4%;
+    grid-template-rows: 1fr;
+    transition: all .6s ease-in-out;
+}
+
+.search {
+    background-color: #fef5ea;
+    color: #051514;
+    border-radius: 8px;
+    display: flex;  
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 8px;
+    margin-right: 16px;
+    min-width: 80px;
+    max-width: 220px;
+    width: 50%;
+    justify-self: end;
+    height: 18px;
+    font-size: 10px;
+}
+
+.nav {
+    position: absolute;
+    top: 46px;
+    left: 100%;
+    display: grid;
+    justify-items: start;
+    background-color: #fef5ea;
+    transition: all .6s ease-in-out;
+    padding-top: 24px;
+}
+
+.nav.burger-menu{
+    left: 0;
+}
+
+
+header nav li {
+    text-align: left;
+    padding-left: 9.4%;
+    padding-top: 8px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #051514;
+    width: 100vw;
+}
+
+
+.inscription span{
+    color: #051514;
+}
+
+header nav a {
+    color: #051514;
+    width: 88%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav .no-border {
+    border: none;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.nav .no-border a {
+    width: unset;
+}
+
+.inscription {
+    background: #FFCE08;
+    height: 34px;
+    width: 30%;
+    min-width: 100px;
+    border-radius: 8px;
+    font-size: 12px;
+    margin-top: 24px;
+    transition: 0.4s ease-in-out;
+}
+
+.inscription:hover {
+    color: #FFCE08;
+    background: #051514;
+}
+.inscription:hover span{
+    color: #FFCE08;
+}
+
+.inscription.no-border:hover {
+    border: none;
+}
+
+.connect {
+    background: transparent;
+    border: 1px solid #5C7142;
+    color: #5C7142;
+    font-size: 12px;
+    height: 34px;
+    margin-top: 16px;
+    min-width: 110px;
+    width: 35%;
+    border-radius: 8px;
+    transition: 0.4s ease-in-out;
+}
+
+.connect:hover {
+    color: #fef5ea;
+    background: #5C7142;
+}
+
+.connect.border:hover {
+    border: 1px solid #5C7142;
+}
+
+
+h1 {
+    font-size: calc(22px + 2.3vw);
+    padding-top: 64px;
+    font-weight: 500;
+}
+
+header h2 {
+    font-size: calc(19px + 1.9vw);
+    padding-top: 32px;
+    padding-bottom: 32px;
+    margin-bottom: 0;
+}
+
+.ariane {
+    background: #5C7142;
+    color: #fef5ea;
+    text-decoration: underline;
+    text-underline-offset: 4px;
+    height: 28px;
+    padding-left: 9.4%;
+    text-align: left;
+}
+
+.ariane p {
+   font-size: 16px;
+}
+
+@media screen and (min-width:780px) {
+    .navigation {
+        padding-top: 32px;
+    }
+    .search {
+        width: 80%;
+        height: 24px;
+        border-radius: 12px;    
+        min-width: 104px;
+    }
+    .burger {
+        display: none;
+    }
+    .nav {
+        position: relative;
+        left: 0;
+        top: 0;
+        padding: 0;
+        background: transparent;
+        justify-items: center;
+    }
+    .nav ul {
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        align-items: center;
+        margin-bottom: 0;
+    }
+    .nav ul li {
+        width: unset;
+        border: none;
+        padding: 0;
+        width: 100%;
+    }
+    .nav ul li a {
+        color: #fef5ea;
+    }
+    .nav ul li span {
+        display: none;
+    }
+    
+    .inscription {
+        margin-top: 0;
+    }
+    .inscription:hover {
+        border: 2px solid #FFCE08;
+    }
+    .connect {
+        background: #5C7142;
+        border: none;
+        color: #fef5ea;
+        margin-top: 0;
+    }
+    .connect:hover {
+        background: #fef5ea;
+        color: #5C7142;
+    }
+    
+    header h2 {
+        font-size: calc(19px + 1.9vw);
+        padding-top: 32px;
+        padding-bottom: 64px;
+    }
+}
