@@ -21,9 +21,13 @@ if(isset($_GET['numMemb'])){
             <!-- Form to create a new member -->
             <form action="<?php echo ROOT_URL . '/api/members/update.php' ?>" method="post">
                 <div class="form-group">
+                    <!-- NUMERO -->
+                    <label for="numMemb">Numéro du membre</label>
+                    <input id="numMemb" name="numMemb" class="form-control" type="text" autofocus="autofocus" value="<?php echo($numMemb); ?>"  readonly="readonly" disabled/>
+                    <input id="idMemb" name="idMemb" class="form-control" style="display: none" type="text" value="<?php echo($numMemb); ?>" readonly="readonly" />
                     <!-- PSEUDO -->
                     <label for="pseudoMemb">Pseudo du membre (non modifiable)</label>
-                    <input id="pseudoMemb" name="pseudoMemb" class="form-control" type="text" autofocus="autofocus" value="<?php echo($pseudoMemb); ?>" readonly="readonly" />
+                    <input id="pseudoMemb" name="pseudoMemb" class="form-control" type="text" autofocus="autofocus" value="<?php echo($pseudoMemb); ?>" readonly="readonly" disabled />
                     <p>(entre 6 et 70 caractères)</p>
                     <!-- PRENOM -->
                     <label for="prenomMemb">Prénom du membre</label>
@@ -49,18 +53,18 @@ if(isset($_GET['numMemb'])){
                     <input id="eMailMemb2" name="eMailMemb2" class="form-control" type="text" autofocus="autofocus" />
                     <br><br>
                     <!-- STATUT -->
-                    <label for="statutMemb">Statut :</label>
-                    <select name="statutMemb" id="statutMemb">
+                    <label for="numStat">Statut :</label>
+                    <select name="numStat" id="numStat">
                     <option value="">---Choisir un statut---</option>
-                    <option value="'1'">Administrateur</option>
-                    <option value="'2'">Modérateur</option>
-                    <option value="'3'">Membre</option>
+                    <option value="1">Administrateur</option>
+                    <option value="2">Modérateur</option>
+                    <option value="3">Membre</option>
                     </select>
                     <!-- FIN -->
                 </div>
                 <br />
                 <div class="form-group mt-2">
-                    <button type="submit" class="btn btn-primary">Confirmer create ?</button>
+                    <button type="submit" class="btn btn-primary">Confirmer update ?</button>
                 </div>
             </form>
         </div>
