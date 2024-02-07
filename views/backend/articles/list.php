@@ -6,9 +6,8 @@ include '../../../header.php'; // contains the header and call to config.php
 
 
 $articles = sql_select("article INNER JOIN thematique ON thematique.numThem = article.numThem
-INNER JOIN motclearticle ON article.numArt = motclearticle.numArt
-INNER JOIN motcle ON motclearticle.numMotCle = motcle.numMotCle GROUP BY 
-article.numArt, dtCreaArt, libTitrArt, libChapoArt, libAccrochArt, libThem;", "article.numArt, dtCreaArt, libTitrArt, libChapoArt, libAccrochArt, libThem, GROUP_CONCAT(DISTINCT motcle.libMotCle SEPARATOR ', ') AS motscles
+GROUP BY 
+article.numArt, dtCreaArt, libTitrArt, libChapoArt, libAccrochArt, libThem;", "article.numArt, dtCreaArt, libTitrArt, libChapoArt, libAccrochArt, libThem
 ");
 
 
