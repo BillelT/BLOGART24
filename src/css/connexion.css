@@ -61,8 +61,7 @@ letter-spacing: 0.14px;
 
 .form-check-label {
 color: var(--FOREST-BLACK, #051514);
-font-family: Inter;
-font-size: 10px;
+font-size: 14px;
 font-style: normal;
 font-weight: 400;
 line-height: normal;
