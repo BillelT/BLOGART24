@@ -3,7 +3,6 @@ const navLinks = ["Mon profil\n→", "Articles\n→", "Témoignages\n→", "S'in
 
 
 document.addEventListener("click", (e) => {
-    console.log(e);
     if (e.target.innerText === "☰") {
         burgerMenu.innerText = "X";
         burgerMenu.style.color = "#051514"
