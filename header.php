@@ -68,7 +68,7 @@ require_once 'config.php';
                                 }
                                 // SI PAS DE STAT
                                 if ($session != 1 && $session != 2 && $session != 3){
-                                    echo '<li><a href="/views/frontend/connexion.php"<button class="connect" id="connect" type="submit">Se connecter<span>&#8594;</span></button></a></li>';
+                                    echo '<li><a href="/views/frontend/connexion.php"><button class="connect" id="connect" type="submit">Se connecter<span>&#8594;</span></button></a></li>';
                                 }
                             ?>
                 </ul>
