@@ -1,3 +1,6 @@
+        <?php 
+            require '../../header.php';
+        ?>
 <!doctype html>
 <html lang="en">
 
@@ -16,11 +19,6 @@
 
 <body class="body">
     <!-- header de la page -->
-    <header>
-        <?php 
-            require '../../header.php';
-        ?>
-    </header>
     <!-- avant le paragraphe -->
     <div class="before-para">
         <p>Catégorie : évenement<br>02/02/2024<br>(Bibble’s)</p>
