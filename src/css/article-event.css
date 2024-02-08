@@ -1,0 +1,404 @@
+*, ::after, ::before{
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+.body{
+    background-color: #FEF5EA;
+    overflow-x: hidden;
+}
+h1{
+    font-size: 35px;
+    font-weight: 500;
+    font-family: 'K2D', sans-serif;
+    letter-spacing: 140%;
+    color: #051514;
+}
+h2{
+    font-size: 28px;
+    font-weight: 500;
+    font-family: 'K2D', sans-serif;
+    letter-spacing: 140%;
+    color: #051514;
+}
+h3{
+    font-size: 22px;
+    font-weight: 400;
+    font-family: 'K2D', sans-serif;
+    letter-spacing: 140%;
+    color: #051514;
+}
+p{
+    font-size: 14px;
+    font-weight: 400;
+    font-family: 'K2D', sans-serif;
+    letter-spacing: 140%;
+    color: #051514;
+}
+a{
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'K2D', sans-serif;
+    letter-spacing: 140%;
+    color: #051514;
+}
+/* première partie avant le paragraphe */
+.before-para p{
+    text-align: center;
+    padding: 40px 30px;
+}
+.before-para h2{
+    font-size: 28px;
+    padding: 0 30px;
+}
+.before-para img{
+    width: 100%;
+    padding: 40px 0;
+}
+.para-article{
+    padding: 40px 30px;
+}
+.div1-para-article{
+    font-size: 22px;
+    font-weight: 400;
+}
+.div-guimet{
+    display: flex;
+    flex-direction: column;
+    padding: 40px 10px;
+}
+.div-guimet h3{
+    text-align: center;
+}
+.guimet-droite{
+    width: 31.02px;
+    height: 25px;
+    align-self: end;
+}
+.guimet-gauche{
+    width: 31.02px;
+    height: 25px;
+}
+.div-text-art p{
+    text-indent: 20px;
+    padding: 5px 0;
+}
+.div-text-art a{
+    color: #051514;
+    text-underline-offset: 4px;
+}
+.title-art h3{
+    font-size: 22px;
+    font-weight: 600;
+    padding: 40px 0;
+}
+.container-mot-clef{
+    padding: 40px 0;
+}
+.container-mot-clef h3{
+    padding-bottom: 16px;
+}
+.div-mot-clef{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+.links{
+    display: flex;
+    flex-direction: column;
+}
+.links a{
+    padding: 4px 0;
+    text-underline-offset: 4px;
+    color: #051514;
+}
+.buttons{
+    position: relative;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 5px;
+    padding: 16px 0;
+    flex-wrap: wrap;
+}
+.bouton-like{
+    border: none;
+    border-radius: 4px;
+    width: 80px;
+    height: 40px;
+    background: #FFCE09;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+    font-family: 'K2D', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+.bouton-partager{
+    border: 2px solid #5C7142;;
+    color: #051514;
+    border-radius: 4px;
+    background: transparent;
+    width: 110px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.bouton-commentaire{
+    border: 2px solid #5C7142;;
+    color: #051514;
+    border-radius: 4px;
+    background: transparent;
+    width: 150px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+/* partie autre article à choisir */
+.autre-article{
+    padding: 40px 30px;
+}
+.card1{
+    margin-bottom: 40px;
+}
+.card1 img{
+    border-radius: 8px 8px 0 0;
+}
+.h2-article{
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 500;
+    font-family: 'K2D', sans-serif;
+    letter-spacing: 140%;
+}
+.card-title{
+    font-size: 24px;
+    font-weight: 500;
+    font-family: 'K2D', sans-serif;
+    letter-spacing: 140%;
+}
+.card-under-title{
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'K2D', sans-serif;
+    letter-spacing: 140%;
+}
+.btn_btn-primary{
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'K2D', sans-serif;
+    letter-spacing: 140%;
+    text-decoration: none;
+    color: #825C41;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 16px;
+}
+.contact-faq{
+    padding: 40px 30px;
+}
+.contact-faq h3{
+    font-size: 22px;
+    font-weight: 400;
+    font-family: 'K2D', sans-serif;
+    letter-spacing: 140%;
+    color: #051514;
+}
+.ul-contact-faq{
+    margin: 15px 0;
+    padding: 0;
+}
+.input-group-text1{
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'K2D', sans-serif;
+    letter-spacing: 140%;
+   
+}
+.input-group1{
+    display: flex;
+    flex-direction: column;
+}
+.form-control2{
+    height: 100px;
+    border: 2px solid;
+    border-radius: 4px;
+    border-color: #825C41;
+    background: transparent;
+    font-family: "K2D", sans-serif;
+}
+.bouton-faq{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.btn_btn-primary1{
+    font-size: 14px;
+    color: #5C7142;
+    font-weight: 700;
+    font-family: 'K2D', sans-serif;
+    letter-spacing: 140%;
+    align-items: center;
+    border: #5C7142 2px solid;
+    border-radius: 4px;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    background: transparent;
+}
+/* section autre commentaire */
+.other-comment{
+    padding: 40px 30px;
+    justify-content: center;
+}
+.container-comment{
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    padding: 16px 0px;
+}
+.comment{
+    border: 2px solid #825C41;
+    border-radius: 8px;
+    margin: 8px 0px;
+}
+.text-comment{
+    padding: 10px;
+    display: flex;
+    justify-content: start;
+}
+.button-comment{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    gap: 5px;
+    padding: 10px 10px;
+}
+.btn_btn-primary2{
+    background: transparent;
+    border: 2px solid;
+    border-radius: 4px;
+    color: #5C7142;
+    width: 100px;
+    font-family: 'K2D', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+}
+/* Version ordinateur */
+@media (min-width: 780px){
+    h1{
+        font-size: 55px;
+    }
+    h2{
+        font-size: 48px;
+    }
+    h3{
+        font-size: 35px;
+    }
+    p{
+        font-size: 18px;
+    }
+    a{
+        font-size: 18px;
+    }
+    .before-para{
+        padding: 20px 9.4%;
+    }
+    .before-para p{
+        font-size: 18px;
+    }
+    .before-para h2{
+        padding: 128px 0;
+        font-size: 48px;
+    }
+    /* début du paragrpahe */
+    .para-article{
+        padding: 64px 9.4%;
+    }
+    .title-art{
+        width: 700px;
+    }
+    .div1-para-article{
+        margin-bottom: 32px;
+    }
+    .div1-para-article h3{
+        font-size: 35px;
+        margin-bottom: 32px;
+    }
+    .div1-para-article p{
+        font-size: 18px;
+    }
+    .container-paragraph{
+        display: flex;
+        flex-direction: row-reverse;
+    }
+    .div-guimet{
+        padding: 0 64px;
+    }
+    .div-guimet h3{
+        font-size: 35px;
+    }
+    .div-text-art{
+        padding-left: 64px;
+    }
+    .div-text-art a{
+        font-size: 18px;
+    }
+    .container-mot-clef{
+        padding: 128px 0;
+    }
+    .links a{
+        padding: 16px 0;
+    }
+    /* partie article */
+    .autre-article{
+        padding: 64px 9.4%;
+    }
+    .card-article{
+        width: 50%;
+        margin: 0 auto;
+    }
+    .card1{
+        margin-bottom: 64px;
+    }
+    .h2-article{
+        margin-bottom: 64px;
+        font-size: 48px;
+    }
+    .card-title{
+        font-size: 28px;
+    }
+    .card-under-title{
+        font-size: 24px;
+    }
+    .btn_btn-primary{
+        font-size: 18px;
+    }
+    /* partie faq */
+    .contact-faq{
+        width: 50%;
+        margin: 0 auto;
+    }
+    .other-comment{
+        width: 50%;
+        margin: 0 auto;
+        padding: 64px 0;
+    }
+    .bouton-faq{
+        display: flex;
+        justify-content: flex-end;
+    }
+}
