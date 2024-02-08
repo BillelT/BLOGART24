@@ -50,7 +50,7 @@ if ($passMemb != $passMemb2){
 } 
 
 $hash_password = password_hash($passMemb, PASSWORD_DEFAULT);
-var_dump($hash_password);
+
 echo '<br>';
 
 
@@ -80,10 +80,10 @@ if ($accordMemb !== 'OUI') {
 
 //STATUT
 $numStat = ctrlSaisies($_POST['numStat']);
-var_dump($numStat);
+
 echo '<br>';
 
-var_dump($role);
+
 echo '<br>';
 
 //DATE CREATION
@@ -93,7 +93,7 @@ $dtMajMemb = NULL;
 
 $max = 'MAX('. 'numMemb' . ')';
 $numMemb = sql_select('MEMBRE', $max);
-var_dump($numMemb[0]);
+
 echo '<br>';
 $numMemb = implode("", $numMemb[0]);
 echo $numMemb;
@@ -166,7 +166,7 @@ echo $numMemb . '<br>';
 
 */ 
 // FIN PARTIE CAPTCHA
-var_dump($pseudoMemb, $prenomMemb, $nomMemb, $passMemb, $eMailMemb, $accordMemb, $numStat);
+
 
 if (isset($pseudoMemb, $prenomMemb, $nomMemb, $passMemb, $eMailMemb, $accordMemb, $numStat)){
     if (!isset($_SESSION['numStat'])) {
