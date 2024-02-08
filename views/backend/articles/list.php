@@ -10,7 +10,7 @@ $articles = sql_select('
     LEFT JOIN motclearticle ON motclearticle.numArt = article.numArt
     LEFT JOIN motcle ON motcle.numMotCle = motclearticle.numMotCle
     GROUP BY article.numArt', 
-    'article.numArt, dtCreaArt, libTitrArt, libChapoArt, libAccrochArt, GROUP_CONCAT(DISTINCT motcle.libMotCle SEPARATOR \', \') AS libMotCle, libThem'
+    'article.numArt'
 );
 print_r($articles);
 ?>

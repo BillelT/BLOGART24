@@ -17,7 +17,6 @@ if(isset($_GET['numArt'])){
     $parag3Art = $article['parag3Art'];
     $libConclArt = $article['libConclArt'];
     $urlPhotArt = $article['urlPhotArt'];
-  //  $thematique = sql_select("article", "thematique", "numArt = $numArt")[0]['thematique'];
     $numThem = $article['numThem'];
 
     var_dump($parag2Art);
