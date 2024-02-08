@@ -281,6 +281,42 @@
         </div>
     </section>
     <!-- section autre commentaire -->
+    
+
+
+    <div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <h1>Commentaire</h1>
+        </div>
+        <div class="col-md-12">
+                
+        <form action="/api/comments/create.php" method="post">
+            <label for="pseudoMemb">Pseudo :</label>
+            <input type="text" id="pseudoMemb" name="pseudoMemb" required >
+
+            <label for="password">Mot de passe :</label>
+            <input type="password" id="passMemb" name="password" required>
+
+            <label for="article">Sélectionner l'article :</label>
+            <select id="article" name="article" required>
+                <option value="1">Article Evenement</option>
+                <option value="2">Article Portrait</option>
+            </select>
+
+            <label for="comment">Commentaire :</label>
+            <textarea name="comment" required></textarea>
+
+            <input type="submit" value="Poster le commentaire">
+        </form>
+
+
+</div>
+</div>    
+</div>
+        
+
+
     <section class="other-comment">
         <h3>Autre commentaire :</h3>
         <div class="container-comment">

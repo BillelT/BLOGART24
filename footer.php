@@ -15,22 +15,22 @@
                     <a href="#">Accueil</a>
                 </li>
                 <li>
-                    <a href="#">Articles évènement</a>
+                    <a href="views/frontend/article-event.php">Articles évènement</a>
                 </li>
                 <li>
-                    <a href="#">Articles portrait</a>
+                    <a href="views/frontend/article-interview.php">Articles portrait</a>
                 </li>
                 <li>
                     <a href="#">Témoignages</a>
                 </li>
                 <li>
-                    <a href="#">FAQ</a>
+                    <a href="views/frontend/faq.php">FAQ</a>
                 </li>
                 <li>
-                    <a href="#" class="no-connected" id="noConnected">Inscription</a>
+                    <a href="views/frontend/inscription.php" class="no-connected" id="noConnected">Inscription</a>
                 </li>
                 <li>
-                    <a href="#" class="no-connected" id="noConnected">Connexion</a>
+                    <a href="views/frontend/connexion.php" class="no-connected" id="noConnected">Connexion</a>
                 </li>
             </ul>
         </nav>
@@ -52,13 +52,13 @@
             <h3>Sécurité</h3>
             <ul>
                 <li>
-                    <a href="#">Politiques de confidentialité</a>
+                    <a href="views/frontend/politique.php">Politiques de confidentialité</a>
                 </li>
                 <li>
-                    <a href="#">CGU</a>
+                    <a href="views/frontend/cgu.php">CGU</a>
                 </li>
                 <li>
-                    <a href="#">Mentions légales</a>
+                    <a href="views/frontend/mention.php">Mentions légales</a>
                 </li>
             </ul>
         </nav>

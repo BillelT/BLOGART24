@@ -42,7 +42,9 @@ require_once 'config.php';
                         <?php
                         if (isset($_SESSION['numStat'])) {
                             $session = $_SESSION['numStat']; // STATUT DANS $SESSION
-                        
+                            
+                        } else {
+                            $session = 4;
                         }
                                 // SI STAT = ADMIN
                                 if ($session == 1){

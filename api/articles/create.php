@@ -25,6 +25,8 @@ var_dump(gettype($newMotCle));
 
 
 
+$urlPhotArt = ctrlSaisies($_FILES['urlPhotArt']);
+$numMotCle = $_POST['motCle'];
 
 
 // VERIFIER FIELDS
@@ -37,7 +39,6 @@ $requiredFields = ['libTitrArt', 'dtCreaArt', 'libChapoArt', 'libAccrochArt', 'p
   exit();
      }
   }
-
 
 // IMAGES TEST
 
@@ -72,9 +73,16 @@ if(isset($_FILES['urlPhotArt'])){
 
 $numThem = ctrlSaisies($_POST['thematique']);
 
+
 sql_insert("article", "dtCreaArt, dtMajArt, libTitrArt, libChapoArt, libAccrochArt, parag1Art, libSsTitr1Art, parag2Art, libSsTitr2Art, parag3Art, libConclArt, urlPhotArt, numThem", 
 "'$dtCreaArt', '$dtMajArt', '$libTitrArt', '$libChapoArt', '$libAccrochArt', '$parag1Art', '$libSsTitr1Art', '$parag2Art', '$libSsTitr2Art', '$parag3Art', '$libConclArt', '$urlPhotArt', '$numThem'");
 
+$lastArt = sql_select('article', 'numArt', null, 'numArt DESC')[0]['numArt'];
+var_dump($lastArt);
+
+foreach ($numMotCle as $mot){
+    sql_insert('motclearticle', 'numArt, numMotCle', "$lastArt, $mot");
+}
 
 header('Location: ../../views/backend/articles/list.php');
 
