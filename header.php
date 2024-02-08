@@ -40,15 +40,48 @@ require_once 'config.php';
                     </li>
                     <li class="no-border">
                         <a href="#">
+                            
+
                             <button class="inscription" id="inscription">
-                                S'inscrire <span>&#8594;</span>
+                                <?php
+                                if (!isset($_SESSION['numArt']) || ($_SESSION['numArt'] == 1 )){
+                                    //si l'utilisateur est admin
+                                    echo 'Dashboard <span>&#8594;</span>';
+                                    echo '<a href="/views/frontend/inscription.php"></a>';
+                                } 
+                                if (!isset($_SESSION['numArt']) || ($_SESSION['numArt'] == 3 && $_SESSION['numArt'] == 2 )) {
+                                     // Si l'utilisateur n'est pas membre
+                                     echo 'S\'inscrire <span>&#8594;</span>';
+                                     echo '<a href="/views/frontend/inscription.php"></a>';
+
+                                }
+                                ?>
                             </button>
+
                         </a>
                     </li>
                     <li class="no-border">
                         <a href="../../views/frontend/connexion.php">
+
                             <button class="connect" id="connect">
-                                Se connecter <span>&#8594;</span>
+                                <?php
+                                if (!isset($_SESSION['numArt']) || ($_SESSION['numArt'] == 3 && $_SESSION['numArt'] == 2 )) {
+                                    // Si l'utilisateur est membre
+                                    echo 'Mon profil <span>&#8594;</span>';
+                                    // Lien vers le profil des utilisateurs avec le statut membre ou modificateur
+                                    echo '<a href="/views/frontend/profil.php"></a>';
+
+                                } else if (!isset($_SESSION['numArt']) || ($_SESSION['numArt'] == 1 )){
+                                    //si l'utilisateur est admin
+                                    echo 'Dashboard <span>&#8594;</span>';
+                                    echo '<a href="/views/frontend/inscription.php"></a>';
+                                } else {
+                                     // Si l'utilisateur n'est pas membre
+                                     echo 'Se connecter <span>&#8594;</span>';
+                                     echo '<a href="/views/frontend/connexion.php"></a>';
+
+                                }
+                                ?>
                             </button>
                         </a>
                     </li>
