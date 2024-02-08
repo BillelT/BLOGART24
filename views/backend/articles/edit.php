@@ -39,6 +39,7 @@ if(isset($_GET['numArt'])){
             <!-- Form to create a new member -->
             <form action="<?php echo ROOT_URL . '/api/articles/update.php' ?>" method="post" id="form" type="post">
                 <div class="form-group">
+                <input id="idMemb" name="idMemb" class="form-control" style="display: none" type="text" value="<?php echo($numArt); ?>" readonly="readonly" />
                     <label for="libTitrArt">Titre</label>
                     <input id="libTitrArt" name="libTitrArt" class="form-control" type="text" autofocus="autofocus" value="<?php echo($libTitrArt); ?>">
                     <br>
@@ -149,8 +150,14 @@ if(isset($_GET['numArt'])){
                         </script>
                     </select>
                 </div>
-               
+                <div class="form-group mt-2" style="margin: 32px auto 128px;">
+                    <button type="submit" class="btn btn-primary ">Confirmer update ?</button>
+                </div>
             </form>
         </div>
     </div>
 </div>
+
+<?php
+include '../../../footer.php';
+?>
