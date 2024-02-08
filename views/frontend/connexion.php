@@ -57,8 +57,12 @@ require '../../header.php';
                         <div class="div-no-compte">
                         <button type="submit" class="button-connexion">Connexion</button>
                     </div>
-                    <button type="submit" style="margin-top: 32px;" class="button-inscription">Inscription</button>
-                    <p class="link-opacity-100">Pas de compte ?</p>
+                    <a href="/views/frontend/inscription.php" style="text-decoration: none;">
+                        <button type="button" class="button-inscription">Inscription</button>
+                    </a>
+                    <a href="/views/frontend/inscription.php">
+                        <p class="link-opacity-100">Pas de compte ?</p>
+                    </a>
                     </div>
                 </div>
             </form>
