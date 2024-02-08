@@ -150,7 +150,7 @@ if(isset($_GET['numArt'])){
         </div>
     </div>
 </div>
-
+<?php 
 if(isset($_GET['numArt'])){
     $numArt = $_GET['numArt'];
     $article = sql_select("article
