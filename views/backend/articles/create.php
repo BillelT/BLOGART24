@@ -18,7 +18,7 @@ if (!isset($_SESSION['numStat']) || $_SESSION['numStat'] !== 1 && $_SESSION['num
         </div>
         <div class="col-md-12">
             <!-- Form to create a new statut -->
-            <form action="<?php echo ROOT_URL . '/api/articles/create.php' ?>" method="post" id="form">
+            <form action="<?php echo ROOT_URL . '/api/articles/create.php' ?>" method="post" id="form" type="post">
                 <div class="form-group">
                     <label for="libStat">Titre</label>
                     <input id="titre" name="libTitrArt" class="form-control" type="text" autofocus="autofocus" placeholder="Sur 100 car.">
