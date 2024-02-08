@@ -19,9 +19,10 @@ $libConclArt = ctrlSaisies($_POST['libConclArt']);
 $urlPhotArt = ctrlSaisies($_POST['urlPhotArt']);
 
 
-$newMotCle = json_decode($_POST['tableau'], true);
+$newMotCle = $_POST['motCle'];
 var_dump($newMotCle);
-
+var_dump(gettype($newMotCle));
+die;
 
 
 
