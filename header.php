@@ -24,7 +24,7 @@ require_once 'config.php';
 <body>
 <header>
         <div class="navigation" id="headNav">
-            <a href="./index.php">
+            <a href="/index.php">
                 <img src="/src/images/logo bibble's header.png" alt="logo Bibbe'S" width="30" height="30">
             </a>
             <nav class="nav" id="nav">
