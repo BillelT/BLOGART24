@@ -11,6 +11,10 @@ if (!isset($_SESSION['numStat']) || $_SESSION['numStat'] !== 1 && $_SESSION['num
     exit();
 }
 
+$articles = sql_select('article INNER JOIN thematique ON article.numThem = thematique.numThem', '*');
+
+
+
 ?>
 <!-- Bootstrap default layout to display all statuts in foreach -->
 <div class="container">
