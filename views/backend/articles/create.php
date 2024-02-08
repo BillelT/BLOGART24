@@ -72,8 +72,8 @@ require_once '../../../header.php';
                         }
                         ?>
                     </select>
-                    <button type="submit" style="margin: 0 32px;" class="connect" id="addKeyWords">Ajouter Mots-Clés ?</button>
-                    <select id="newMotCle" name="newMotCle" size="5" style="margin-left: 32px;">
+                    <p style="margin: 0 32px; display : inline-block; text-align : center;" id="addKeyWords">Ajouter Mots-Clés ?</p>
+                    <select id="newMotCle" name="choix[]" multiple size="5" style="margin-left: 32px;">
                         <option value="">-- Mots-Clés choisis --</option>
 
                         <script>
@@ -109,7 +109,7 @@ require_once '../../../header.php';
                                             newOption.value = e.target.innerText;
                                             newOption.id = 'mot';
                                             newOption.innerText = e.target.innerText;
-                                            addMotCle.appendChild(newOption);
+                                            addMotCle.add(newOption);
                                             option.remove();
                                         }
                                     });

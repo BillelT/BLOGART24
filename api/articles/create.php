@@ -17,6 +17,10 @@ $parag3Art = ctrlSaisies($_POST['parag3Art']);
 $parag3Art = BBCode($parag3Art);
 $libConclArt = ctrlSaisies($_POST['libConclArt']);
 $urlPhotArt = ctrlSaisies($_POST['urlPhotArt']);
+// $newMotCle = ctrlSaisies($_POST['choix']);
+$newMotCle = $_POST['choix[]'];
+var_dump($newMotCle);
+echo $newMotCle;
 
 // VERIFIER FIELDS
 
