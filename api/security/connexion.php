@@ -4,24 +4,17 @@ require_once '../../functions/ctrlSaisies.php';
 
 session_start();
 
-$eMailMemb = ctrlSaisies($_POST['eMailMemb']);
+$pseudoMemb = ctrlSaisies($_POST['pseudoMemb']);
 $passMemb = ctrlSaisies($_POST['passMemb']);
 
-$search = sql_select('membre', '*', "eMailMemb = '$eMailMemb'");
+$search = sql_select('membre', '*', "pseudoMemb = '$pseudoMemb'");
 
 // TESTE SI LES CHAMPS SONT REMPLIS
 
-if (empty($eMailMemb) || empty($passMemb)) {
+if (empty($pseudoMemb) || empty($passMemb)) {
     echo "<p style='color: red;'>Veuillez remplir tous les champs.</p>";  // CEY PAS REMPLI
 } 
 
-// TEST EMAIL
-if (filter_var($eMailMemb, FILTER_VALIDATE_EMAIL)) {
-    echo $eMailMemb . "est une adresse mail valide.<br>";
-  } else {
-    echo $eMailMemb . "n'est pas une adresse mail valide. Veuillez saisir un mail réel.<br>";
-    $eMailMemb = null;
-  }
 
 // TEST MDP
 if ($passMemb < 8 && $passMemb > 15) {
@@ -41,21 +34,30 @@ if (!preg_match('/[0-9]/', $passMemb)){
 
 // TEST EMAIL MATCHE LE MDP 
 
-$search = sql_select('membre', '*', "eMailMemb = '$eMailMemb'")[0];
 
-if (count($search) != 0){
-    $passwordHash = $search['passMemb'];
-    var_dump($passMemb);
-    var_dump($passwordHash);
+$search = sql_select('membre', '*', "pseudoMemb = '$pseudoMemb'");
+
+if ($search !== null && count($search) > 0) {
+    $passwordHash = $search[0]['passMemb'];
+
     if (password_verify($passMemb, $passwordHash)) {
-        $_SESSION['numStat']=$search['numStat'];
-        echo 'Connexion réussie.';
+        $_SESSION['numStat'] = $search[0]['numStat'];
+        $_SESSION['pseudo'] = $search[0]['pseudoMemb']; // Ajoutez cette ligne pour stocker le pseudo dans la session
+        echo 'Connexion réussie. Bienvenue, ' . $_SESSION['pseudo'] . '!';
     } else {
         echo 'Mot de passe incorrect.';
     }
+} else {
+    echo 'Aucun utilisateur trouvé avec le pseudo spécifié.';
 }
 
-header('Location: ../../views/frontend/connexion.php');
+
+
+
+
+header('Location: /index.php');
+exit();
 
 echo("Form login");
+?>
 

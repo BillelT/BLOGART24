@@ -15,6 +15,12 @@
 
 <body>
     <main>
+    <?php if (isset($_SESSION["pseudo"])) {
+    // Affichez "Bonjour pseudo" avec une taille de police de 20 pixels
+    echo '<p style="font-size: 20px;">Bonjour ' . $_SESSION["pseudo"] . '</p>';
+} ?>
+
+
         <section class="container col-12 col-sm-8 hero">
             <p>La Belle Endormie, malgré son surnom, est une ville qui a du chien ! Il est pourtant parfois difficile de
                 connaître les actions et infrastructures mises en place pour le bien-être et la préservation des animaux
