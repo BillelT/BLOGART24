@@ -31,7 +31,7 @@ require '../../header.php';
 <!-- Bootstrap form to create a new statut -->
 
             <!-- Form to create a new statut -->
-            <form action="<?php echo ROOT_URL . 'api/security/connexion.php' ?>" method="post">
+            <form action="<?php echo ROOT_URL . '/api/security/connexion.php' ?>" method="post">
                 <div class="form-group email">
                     <label for="eMailMemb" class="col-form-label">Adresse mail :</label>
                     <input id="eMailMemb" name="eMailMemb" class="form-control" type="email" autofocus="autofocus" />

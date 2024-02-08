@@ -10,7 +10,7 @@ include '../../../header.php';
         </div>
         <div class="col-md-12">
             <!-- Form to create a new member -->
-            <form action="<?php echo ROOT_URL . '/api/members/create.php' ?>" method="post" id="formCreate">
+            <form action="<?php echo ROOT_URL . './api/members/create.php' ?>" method="post" id="formCreate">
                 <div class="form-group">
                     <!-- PSEUDO -->
                     <label for="pseudoMemb">Pseudo du membre (non modifiable)</label>
