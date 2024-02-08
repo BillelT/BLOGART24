@@ -4,8 +4,14 @@ include '../../../header.php'; // contains the header and call to config.php
 //Load all statuts
 
 
-$articles = sql_select('article
-INNER JOIN thematique ON article.numThem = thematique.numThem', '*')
+//seulement si tu es admi ou moderateur tu as accès à cette page
+if (!isset($_SESSION['numStat']) || $_SESSION['numStat'] !== 3) {
+    // Rediriger vers une page d'erreur ou une page d'accueil
+    header('index.php');
+    exit();
+}else {
+    //accès au bouton profil 
+}
 
 ?>
 <!-- Bootstrap default layout to display all statuts in foreach -->

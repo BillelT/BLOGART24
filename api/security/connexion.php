@@ -45,8 +45,9 @@ $search = sql_select('membre', '*', "eMailMemb = '$eMailMemb'")[0];
 
 if (count($search) != 0){
     $passwordHash = $search['passMemb'];
-    if ($passMemb == $passwordHash) {
-    // if (password_verify($password, $passwordHash)) {
+    var_dump($passMemb);
+    var_dump($passwordHash);
+    if (password_verify($passMemb, $passwordHash)) {
         $_SESSION['numStat']=$search['numStat'];
         echo 'Connexion réussie.';
     } else {

@@ -1,6 +1,15 @@
 <?php
 include '../../header.php';
 
+//seulement si tu es admi tu as accès à cette page
+if (!isset($_SESSION['numStat']) || $_SESSION['numStat'] !== 2 && $_SESSION['numStat'] !== 3) {
+    // Rediriger vers une page d'erreur ou une page d'accueil
+    header('index.php');
+    exit();
+}else {
+    //accès au bouton Dashboard
+}
+
 ?>
 
 <!-- Bootstrap admin dashboard template -->
