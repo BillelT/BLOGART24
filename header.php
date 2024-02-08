@@ -41,48 +41,71 @@ require_once 'config.php';
                     <li class="no-border">
                         <a href="#">
                             
-
-                            <button class="inscription" id="inscription">
-                                <?php
-                                if (!isset($_SESSION['numArt']) || ($_SESSION['numArt'] == 1 )){
-                                    //si l'utilisateur est admin
+                        <button class="inscription" id="inscription">
+                            <?php
+                            if (isset($_SESSION['numStat'])) {
+                                // Si l'utilisateur est admin
+                                if ($_SESSION['numStat'] == 1) {
                                     echo 'Dashboard <span>&#8594;</span>';
-                                    echo '<a href="/views/frontend/inscription.php"></a>';
+            
+                                    header('/views/backend/dashboard.php');
                                 } 
-                                if (!isset($_SESSION['numArt']) || ($_SESSION['numArt'] == 3 && $_SESSION['numArt'] == 2 )) {
-                                     // Si l'utilisateur n'est pas membre
-                                     echo 'S\'inscrire <span>&#8594;</span>';
-                                     echo '<a href="/views/frontend/inscription.php"></a>';
-
+                                // Si l'utilisateur est admin ou modificateur
+                                elseif ($_SESSION['numStat'] == 2 || $_SESSION['numStat'] == 3) {
+                                    echo 'Mon Profil <span>&#8594;</span>';
+                                    
+                                    header('/views/frontend/profil.php');
+                                } 
+                                // Si l'utilisateur a un autre statut
+                                else {
+                                    echo 'S\'inscrire <span>&#8594;</span>';
+                                    header('/views/frontend/inscription.php');
+                                    
                                 }
-                                ?>
-                            </button>
+                            } else {
+                                // Si la variable de session n'est pas définie
+                                echo 'S\'inscrire <span>&#8594;</span>';
+                              
+                                header('/views/frontend/inscription.php');
+                            }
+                            ?>
+                        </button>
 
                         </a>
                     </li>
                     <li class="no-border">
                         <a href="../../views/frontend/connexion.php">
 
-                            <button class="connect" id="connect">
-                                <?php
-                                if (!isset($_SESSION['numArt']) || ($_SESSION['numArt'] == 3 && $_SESSION['numArt'] == 2 )) {
-                                    // Si l'utilisateur est membre
+                        <button class="connect" id="connect">
+                            <?php
+                            if (isset($_SESSION['numStat'])) {
+                                // Si l'utilisateur est admin
+                                if ($_SESSION['numStat'] == 1) {
                                     echo 'Mon profil <span>&#8594;</span>';
-                                    // Lien vers le profil des utilisateurs avec le statut membre ou modificateur
-                                    echo '<a href="/views/frontend/profil.php"></a>';
-
-                                } else if (!isset($_SESSION['numArt']) || ($_SESSION['numArt'] == 1 )){
-                                    //si l'utilisateur est admin
-                                    echo 'Dashboard <span>&#8594;</span>';
-                                    echo '<a href="/views/frontend/inscription.php"></a>';
-                                } else {
-                                     // Si l'utilisateur n'est pas membre
-                                     echo 'Se connecter <span>&#8594;</span>';
-                                     echo '<a href="/views/frontend/connexion.php"></a>';
-
+                                    
+                                    header('/views/frontend/profil.php');
+                                } 
+                                // Si l'utilisateur est admin ou modificateur
+                                elseif ($_SESSION['numStat'] == 2 || $_SESSION['numStat'] == 3) {
+                                    echo 'Mon Profil <span>&#8594;</span>';
+                                    
+                                    header('/views/frontend/profil.php');
+                                } 
+                                // Si l'utilisateur a un autre statut
+                                else {
+                                    echo 'Se connecter <span>&#8594;</span>';
+                                   
+                                    header('/views/frontend/connexion.php');
                                 }
-                                ?>
-                            </button>
+                            } else {
+                                // Si la variable de session n'est pas définie
+                                echo 'Se connecter <span>&#8594;</span>';
+                               
+                                header('/views/frontend/connexion.php');
+                            }
+                            ?>
+                        </button>
+
                         </a>
                     </li>
                 </ul>
