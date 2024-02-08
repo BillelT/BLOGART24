@@ -1,5 +1,23 @@
 <?php 
    require '../../header.php';
+   if (isset($_GET['numArt'])){
+    $numArt = $_GET['numArt'];
+    $article = sql_select('article', '*', "numArt ='$numArt'")[0];
+    $dtCreaArt = $article['dtCreaArt'];
+    $libTitrArt = $article['libTitrArt'];
+    $libChapoArt = $article['libChapoArt'];
+    $libAccrochArt = $article['libAccrochArt'];
+    $parag1Art = $article['parag1Art'];
+    $libSsTitr1Art = $article['libSsTitr1Art'];
+    $parag2Art = $article['parag2Art'];
+    $libSsTitr2Art = $article['libSsTitr2Art'];
+    $parag3Art = $article['parag3Art'];
+    $libConclArt = $article['libConclArt'];
+    $urlPhotArt = $article['urlPhotArt'];
+    $numThem = $article['numThem'];
+   } else {
+    header('/index.php');
+   }
 ?>
 <!doctype html>
 <html lang="en">
@@ -21,23 +39,24 @@
     <!-- header de la page -->
     <!-- avant le paragraphe -->
     <div class="before-para">
-        <h2>La deuxième édition de la Marche aux Croquettes s'invite à Bordeaux.
-            Découvrez comment participer afin d'aider à remplir les gamelles au
-            sein des refuges animaliers !</h2>
-        <img src="../../src/images/imagine1.png" alt="chien qui se fait promener">
-        <p>Catégorie : évenement<br>02/02/2024</p>
+        <h1 class="text-center"><?php echo $libTitrArt; ?></h1>
+        <div class="text-center"><a href="#scroll"><button>En lire plus ?</button></a></div>
+        <h2 id="scroll"><?php echo $libAccrochArt; ?></h2>
+        <img src="../../src/images/<?php echo $urlPhotArt; ?>" alt="chien qui se fait promener">
+        <p>Catégorie : Evenement<br>
+        <?php echo $dtCreaArt; ?>
+        </p>
     </div>
     <!-- Section article -->
     <section class="para-article">
         <!-- div qui englobe le premier texte -->
         <div>
-            <!-- le "header" de la section -->
+            <!-- le header de la section -->
             <div class="div1-para-article">
                 <h3>Table des matières</h3>
-                <p>I/ Les difficultés à nourrir nos compagnons à poils et des refuges en quête de dons</p>
-                <p>II/ Une solution apportée par un événement : la Marche des Croquettes</p>
-                <p>III/ la Journée mondiale contre l'abandon</p>
-                <p>Conclusion</p>
+                <ol class="list-group list-group-numbered"><li class="list group-item">Pourquoi est-si difficile de nourrir les animaux actuellement ?</li>
+                <li class="list group-item">Une solution apportée par un événement : la Marche des Croquettes...</li>
+                <li class="list group-item">dans le cadre de la Journée mondiale contre l'abandon !</li></ol>
             </div>
             <!-- partie "body 1" de la section -->
             <div>
@@ -49,26 +68,9 @@
                         <img class="guimet-droite" src="../../src/images/guimet-droite.svg" alt="petit guimet">
                     </div>
                     <div class="div-text-art">
-                        <p><strong>L'inflation ne laisse personne indemne, pas même nos amis à quatre pattes :
-                                après 15% d'augmentation en 2023, le rayon des produits animaux est aujourd'hui
-                                l'un des plus inflationnistes de nos supermarchés.</strong>
+                        <p><strong><?php echo $libChapoArt; ?></strong>
                         </p>
-                        <p> Si les refuges rencontrent actuellement des difficultés pour assurer une bonne alimentation
-                            à leurs pensionnaires, c'est en grande partie à cause de l'augmentation des dépenses
-                            annuelles pour la nourriture de plus d'un milliard d'euros sur cinq ans.
-                            Ne pas dépasser le budget, vous vous en êtes rendu compte, est devenu de plus en plus
-                            compliqué!
-                        </p>
-                        <p> À cela s'ajoute la baisse des dons. Les refuges peinent à acheter ce dont ils ont besoin.
-                            Les particuliers ont eux aussi de plus en plus de mal à trouver l'argent en fin de mois pour
-                            participer à la vie associative. Cette difficulté se reflète par ailleurs dans
-                            l'augmentation des abandons pour cause monétaire, ce qui crée un cercle vicieux
-                            rendant nécessaire la recherche de solutions plus durables.
-                        </p>
-                        <p> Si ces solutions passent bien entendu par la nécessité de donner et par une
-                            sensibilisation à l'adoption responsable, nous vous proposons une alternative insolite :
-                            la Marche des Croquettes de 2024 !
-                        </p>
+                        <p> <?php echo $parag1Art; ?>
                     </div>
                 </div>
                 <!-- Petit texte avec les petites icones svg au dessus et en dessous -->
@@ -78,7 +80,7 @@
         <div >
             <!-- le "header" de la section -->
             <div class="title-art">
-                <h3>LA MARCHE AUX CROQUETTES : <br> SE DEPENSER SANS DEPENSER POUR LES ANIMAUX BORDELAIS</h3>
+                <h3><?php echo $libSsTitr1Art; ?></h3>
             </div>
             <!-- partie "body 1" de la section -->
             <div >
@@ -91,26 +93,7 @@
                         <img class="guimet-droite" src="../../src/images/guimet-droite.svg" alt="petit guimet">
                     </div>
                     <div class="div-text-art">
-                        <a href="#">Solidarite-Peuple-Animal</a>
-                        <p> L'association à l'origine de la Marche, Solidarité-Peuple-Animal,
-                            a été créée au printemps 2018 dans le but de permettre aux associations
-                            d'avoir un support en ligne, et unevisibilité auprès d'un public à plus grande échelle.
-                        </p>
-                        <p> Elle cherche à sensibiliser le public et à soutenir les acteurs éparpillés
-                            en France par le biais d'actions annuelles, telle que la Marche des Croquettes.
-                            Celle-ci s'invite à Bordeaux poursa deuxième édition durant le mois de juin 2024.
-                        </p>
-                        <p> Le principe est simple : vous parcourez des kilomètres sur un circuit balisé.
-                            Chaque kilomètre vaut son lot de croquettes. Vous aidez donc les refuges à
-                            nourrir les animaux hébergés ! Tout l'argent récolté lors de l'événement est
-                            entièrement reversé aux associations et aux refuges de la région.
-                        </p>
-                        <p> Pour y participer, vous n'avez qu'à vous rendre sur le site de la Marche des Croquettes
-                            et à cliquer sur inscription. Choisissez le nombre de kilomètres que vous souhaitez marcher,
-                            seul ou accompagné de votre compagnon à quatre pattes. Une donation vous est demandée
-                            pour finaliser l'inscription. Après ça, nous y sommes : vous êtes inscrit
-                            pour l'édition 2024 de la randonnée, rendez-vous en juin à la maison Ecocitoyenne
-                            de Bordeaux, située au Quai Richelieu.
+                        <p> <?php echo $parag2Art; ?>
                         </p>
                     </div>
                 </div>
@@ -120,7 +103,7 @@
         <div>
             <!-- le "header" de la section -->
             <div class="title-art">
-                <h3>UNE OPERATION POUR SENSIBILISER SUR LA JOURNEE CONTRE L'ABANDON DES ANIMAUX DE COMPAGNIE</h3>
+                <h3><?php echo $parag2Art; ?></h3>
             </div>
             <!-- partie "body 1" de la section -->
             <div>
@@ -132,25 +115,7 @@
                         <img class="guimet-droite" src="../../src/images/guimet-droite.svg" alt="petit guimet">
                     </div>
                     <div class="div-text-art">
-                        <p> Katia Renard est présidente de l'association Solidarité-Peuple-Animal.
-                            Elle considère que cet événement participe à la journée mondiale contre
-                            l'abandon des animaux de compagnie, dont elle est la fondatrice.
-                        </p>
-                        <p> Cette journée marquante, soutenue par de nombreuses autres associations
-                            animalières, se déroule le 24 juin 2024. Celle-ci symbolise le début des
-                            départs en vacances, une période d'augmentation notable en termes d'abandon,
-                            et permet de sensibiliser la population au délit d'abandon, existant depuis 1976.
-                        </p>
-                        <p> Aussi faut-il rappeler les chiffres : les associations, SPA et fourrières recensent
-                            près de 331 000 animaux abandonnés en 2022, et c'est sans compter
-                            le chiffre record de l'été 2023,qui s'élève à 16 564 animaux, marquant
-                            une augmentation de 2,4% par rapport à 2022.
-                        </p>
-                        <p> Ainsi, à l'échelle d'une année, si l'on additionne tous les chiffres recensés par
-                            les associations et les SPA, on peut dire qu'un animal est abandonné toutes les deux
-                            minutes.
-                            La France est par ailleurs championne européenne en termes d'abandon,
-                            ce qui fait que la Journée contre l'abandon a aussi pour but d'alarmer le gouvernement.
+                        <p> <?php echo $parag3Art; ?>
                         </p>
                     </div>
                 </div>
@@ -163,33 +128,8 @@
             <div class="container-paragraph">
                 <!--     paragraphe de la page article -->
                 <!-- Petit texte avec les petites icones svg au dessus et en dessous -->
-                <div class="div-guimet">
-                    <img class="guimet-gauche" src="../../src/images/guimet-gauche.svg" alt="petit guimet">
-                    <h3>Toutes les deux minutes, un animal est abandonné</h3>
-                    <img class="guimet-droite" src="../../src/images/guimet-droite.svg" alt="petit guimet">
-                </div>
                 <div class="div-text-art">
-                    <?php 
-                    echo "<p> $parag2Art</p>";
-                    ?>
-                    <p> Katia Renard est présidente de l'association Solidarité-Peuple-Animal.
-                        Elle considère que cet événement participe à la journée mondiale contre
-                        l'abandon des animaux de compagnie, dont elle est la fondatrice.
-                    </p>
-                    <p> Cette journée marquante, soutenue par de nombreuses autres associations
-                        animalières, se déroule le 24 juin 2024. Celle-ci symbolise le début des
-                        départs en vacances, une période d'augmentation notable en termes d'abandon,
-                        et permet de sensibiliser la population au délit d'abandon, existant depuis 1976.
-                    </p>
-                    <p> Aussi faut-il rappeler les chiffres : les associations, SPA et fourrières recensent
-                        près de 331 000 animaux abandonnés en 2022, et c'est sans compter
-                        le chiffre record de l'été 2023,qui s'élève à 16 564 animaux, marquant
-                        une augmentation de 2,4% par rapport à 2022.
-                    </p>
-                    <p> Ainsi, à l'échelle d'une année, si l'on additionne tous les chiffres recensés par
-                        les associations et les SPA, on peut dire qu'un animal est abandonné toutes les deux minutes.
-                        La France est par ailleurs championne européenne en termes d'abandon,
-                        ce qui fait que la Journée contre l'abandon a aussi pour but d'alarmer le gouvernement.
+                    <p> <?php echo $libConclArt; ?>
                     </p>
                 </div>
             </div>
@@ -198,32 +138,26 @@
         <div class="container-mot-clef">
             <h3>MOTS-CLÉS</h3>
             <div class="div-mot-clef">
-                <div>
-                    <p>INFLATION </p>
-                    <p>ÉVÉNEMENT </p>
-                    <p>REFUGES </p>
-                    <p>MARCHE </p>
-                    <p>BORDEAUX </p>
-                    <p> MARCHE DES CROQUETTES 2024</p>
-                </div>
-                <div>
-                    <p>INITIATIVE </p>
-                    <p>ABANDON </p>
-                    <p>ANIMAUX </p>
-                    <p>CROQUETTE </p>
-                    <p>INFLATION </p>
-                </div>
+            <ul class="list-group list-group-horizontal">
+            <?php 
+            $motcle = sql_select('motcle INNER JOIN motclearticle ON motcle.numMotCle = motclearticle.numMotCle
+                INNER JOIN article ON motclearticle.numArt = article.numArt', '*', "article.numArt ='$numArt'");
+                foreach ($motcle as $mot){
+                echo '<li class="list-group-item">' . $mot['libMotCle'] . '</li>';
+            }
+?>
+            </ul>
             </div>
         </div>
         <!-- les sources -->
         <div>
             <h3>SOURCES</h3>
             <div class="links">
-                <a href="https://marchedescroquettes.com/">Marche des croquettes</a>
-                <a href="https://www.solidarite-peuple-animal.com/">Solidarité Peuple animal</a>
+                <a href="https://marchedescroquettes.com/">Marche des croquettes, le site officiel</a>
+                <a href="https://www.solidarite-peuple-animal.com/">Solidarité Peuple animal, le site officiel</a>
                 <a href="https://www.francebleu.fr/infos/economie-social/la-marche-des-croquettes-a-bordeaux-pour-
-                     lutter-contre-la-flambee-des-prix-sur-l-alimentation-animale-4457357"> lutter contre la flamber
-                    des prix sur l'alimentation animale</a>
+                     lutter-contre-la-flambee-des-prix-sur-l-alimentation-animale-4457357">Lutter contre la flambée
+                    des prix sur l'alimentation animale, article de FranceBleu</a>
             </div>
         </div>
         <!-- Partie bouton -->

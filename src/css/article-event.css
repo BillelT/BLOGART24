@@ -297,6 +297,7 @@ a{
     font-size: 14px;
     font-weight: 700;
 }
+
 /* Version ordinateur */
 @media (min-width: 780px){
     h1{
@@ -343,6 +344,7 @@ a{
     }
     .container-paragraph{
         display: flex;
+        
         flex-direction: row-reverse;
     }
     .div-guimet{
