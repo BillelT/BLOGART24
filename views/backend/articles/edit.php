@@ -4,7 +4,7 @@ include '../../../header.php';
 //seulement si tu es admi ou moderateur tu as accès à cette page
 if (!isset($_SESSION['numStat']) || $_SESSION['numStat'] !== 1 && $_SESSION['numStat'] !== 2 ) {
     // Rediriger vers une page d'erreur ou une page d'accueil
-    header('Location: ../../index.php');
+    header('Location: /index.php');
     exit();
 }
 
@@ -106,47 +106,32 @@ if(isset($_GET['numArt'])){
                         <option value="">-- Mots-Clés choisis --</option>
 
                         <script>
-                            const addMotCle = document.getElementById('addMotCle');
-                            const newMotCle = document.getElementById('newMotCle');
-                            const options = addMotCle.options;
-                            const addOptions = newMotCle.options;
-                            var formulaire = document.getElementById("form");
-                            var champTableau = document.createElement("input");
-                            let bool = false;
-                            let motCle = [];
+                        const newOptions = newMotCle.options;
 
-
-                            document.addEventListener('click', (e) => {
-                                if (!e.target.innerText.includes(' ')) {
-                                    for (let i = 0; i < options.length; i++) {
-                                        if (e.target.innerText === options[i].innerText && !motCle.includes(e.target.innerText)) {
-                                            let newOption = document.createElement('option');
-                                            bool = true;
-                                            motCle.push(options[i].innerText);
-                                            newOption.value = e.target.innerText;
-                                            newOption.id = 'mot';
-                                            newOption.innerText = e.target.innerText;
-                                            newMotCle.appendChild(newOption);
-                                            options[i].remove();
-                                            break;
-                                        } else {
-                                            bool = false;
-                                        }
-                                    }
-                                    Object.entries(addOptions).forEach(([key, option]) => {
-                                        if (bool === false && option.innerText === e.target.innerText && motCle.includes(e.target.innerText)) {
-                                            motCle.splice(option, 1);
-                                            let newOption = document.createElement('option');
-                                            newOption.value = e.target.innerText;
-                                            newOption.id = 'mot';
-                                            newOption.innerText = e.target.innerText;
-                                            addMotCle.add(newOption);
-                                            option.remove();
-                                        }
-                                    });
-                                }
-                            })
-                        </script>
+                        addMotCle.addEventListener('click', (e) => {
+                            if (e.target.tagName !== "OPTION") {
+                                return;
+                            }
+                            e.target.setAttribute('selected', true);+
+                            +
+                            newMotCle.appendChild(e.target);
+                        })
+                        newMotCle.addEventListener('click', (e) => {
+                            console.log(newOptions);
+                            if (e.target.tagName !== "OPTION") {
+                                return;
+                            }
+                            e.stopPropagation();
+                            e.preventDefault();
+                            e.stopImmediatePropagation();
+                            e.target.setAttribute('selected', false);
+                            addMotCle.appendChild(e.target);
+                            for (let option of newMotCle.children){
+                                option.setAttribute('selected',true);
+                                console.log(option);
+                            }
+                        });
+                    </script>
                     </select>
                 </div>
                 <br>

@@ -94,7 +94,7 @@ if (!isset($_SESSION['numStat']) || $_SESSION['numStat'] !== 1 && $_SESSION['num
                                 return;
                             }
                             e.target.setAttribute('selected', true);+
-                            +
+                            
                             newMotCle.appendChild(e.target);
                         })
                         newMotCle.addEventListener('click', (e) => {
