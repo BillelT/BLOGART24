@@ -13,6 +13,8 @@ if (!isset($_SESSION['numStat']) || $_SESSION['numStat'] !== 3) {
     //accès au bouton profil 
 }
 
+
+
 ?>
 <!-- Bootstrap default layout to display all statuts in foreach -->
 <div class="container">

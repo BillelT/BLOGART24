@@ -38,76 +38,41 @@ require_once 'config.php';
                     <li>
                         <a href="#">Témoignages <span>&#8594;</span></a>
                     </li>
-                    <li class="no-border">
-                        <a href="#">
-                            
-                        <button class="inscription" id="inscription">
-                            <?php
-                            if (isset($_SESSION['numStat'])) {
-                                // Si l'utilisateur est admin
-                                if ($_SESSION['numStat'] == 1) {
-                                    echo 'Dashboard <span>&#8594;</span>';
-            
-                                    header('/views/backend/dashboard.php');
-                                } 
-                                // Si l'utilisateur est admin ou modificateur
-                                elseif ($_SESSION['numStat'] == 2 || $_SESSION['numStat'] == 3) {
-                                    echo 'Mon Profil <span>&#8594;</span>';
-                                    
-                                    header('/views/frontend/profil.php');
-                                } 
-                                // Si l'utilisateur a un autre statut
-                                else {
-                                    echo 'S\'inscrire <span>&#8594;</span>';
-                                    header('/views/frontend/inscription.php');
-                                    
+                    <li class="no-border">  
+                        <?php
+                        if (isset($_SESSION['numStat'])) {
+                            $session = $_SESSION['numStat']; // STATUT DANS $SESSION
+                        
+                        }
+                        // SI STAT = ADMIN
+                                if ($session == 1){
+                                    echo '<button class="inscription" id="dashboard" type="submit">Dashboard <span>&#8594;</span></button>';
                                 }
-                            } else {
-                                // Si la variable de session n'est pas définie
-                                echo 'S\'inscrire <span>&#8594;</span>';
-                              
-                                header('/views/frontend/inscription.php');
-                            }
-                            ?>
-                        </button>
-
-                        </a>
-                    </li>
-                    <li class="no-border">
-                        <a href="../../views/frontend/connexion.php">
-
-                        <button class="connect" id="connect">
-                            <?php
-                            if (isset($_SESSION['numStat'])) {
-                                // Si l'utilisateur est admin
-                                if ($_SESSION['numStat'] == 1) {
-                                    echo 'Mon profil <span>&#8594;</span>';
-                                    
-                                    header('/views/frontend/profil.php');
-                                } 
-                                // Si l'utilisateur est admin ou modificateur
-                                elseif ($_SESSION['numStat'] == 2 || $_SESSION['numStat'] == 3) {
-                                    echo 'Mon Profil <span>&#8594;</span>';
-                                    
-                                    header('/views/frontend/profil.php');
-                                } 
-                                // Si l'utilisateur a un autre statut
-                                else {
-                                    echo 'Se connecter <span>&#8594;</span>';
-                                   
-                                    header('/views/frontend/connexion.php');
+                                // SI STAT = MOD OU MEMBRE 
+                                if ($session == 2 || $session == 3){
+                                    echo '<button class="inscription" id="profil" type="submit">Mon Profil <span>&#8594;</span></button>';
                                 }
-                            } else {
-                                // Si la variable de session n'est pas définie
-                                echo 'Se connecter <span>&#8594;</span>';
-                               
-                                header('/views/frontend/connexion.php');
-                            }
+                                // SI PAS DE STAT
+                                if ($session != 1 && $session != 2 && $session != 3){
+                                    echo '<button class="inscription" id="register" type="submit">S\'inscrire<span>&#8594;</span></button>';
+                                }
                             ?>
-                        </button>
-
-                        </a>
                     </li>
+                    <?php
+                        if (isset($_SESSION['numStat'])) {
+                            $session = $_SESSION['numStat']; // STATUT DANS $SESSION
+                        
+                        }
+                        // SI STAT = ADMIN
+                                if ($session == 1){
+                                    echo '<li><button class="connect" id="profil" type="submit">Mon profil <span>&#8594;</span></button></li>';
+                                }
+                                // SI PAS DE STAT
+                                if ($session != 1 && $session != 2 && $session != 3){
+                                    echo '<li><button class="connect" id="register" type="submit">Inscription <span>&#8594;</span></button></li>';
+                                    echo '<li><button class="connect" id="connect" type="submit">Se connecter<span>&#8594;</span></button></li>';
+                                }
+                            ?>
                 </ul>
             </nav>
             <div class="search" id="search">
@@ -125,3 +90,19 @@ require_once 'config.php';
     <script src="/src/JS/header.js"></script>
 </body>
 </html>
+
+<script type="text/javascript">
+    // JS POUR BOUTONS 
+    document.getElementById("dashboard").onclick = function () {
+        location.href = "/views/backend/dashboard.php";
+    };
+    document.getElementById("profil").onclick = function () {
+        location.href = "/views/frontend/profil.php";
+    };
+    document.getElementById("register").onclick = function () {
+        location.href = "/views/frontend/inscription.php";
+    };
+    document.getElementById("connect").onclick = function () {
+        location.href = "/views/frontend/connexion.php";
+    };
+</script>

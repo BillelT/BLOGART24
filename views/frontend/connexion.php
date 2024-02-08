@@ -11,10 +11,6 @@ require '../../header.php';
         utilisateurs.</h3>
     </div>
 
-    <?php if(isset($_SESSION["numStat"])){
-        echo "Bonjour ".$_SESSION["numStat"];
-    } ?>
-
 <!-- Bootstrap form to create a new statut -->
 
             <!-- Form to create a new statut -->
