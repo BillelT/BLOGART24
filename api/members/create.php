@@ -2,6 +2,8 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
 require_once '../../functions/ctrlSaisies.php';
 
+session_start();
+
 // PSEUDO
 $pseudoMemb= ctrlSaisies($_POST['pseudoMemb']); // ENTRE 6-70 CARACS
 
@@ -79,6 +81,9 @@ if ($accordMemb !== 'OUI') {
 //STATUT
 $numStat = ctrlSaisies($_POST['numStat']);
 var_dump($numStat);
+echo '<br>';
+
+var_dump($role);
 echo '<br>';
 
 //DATE CREATION
@@ -164,12 +169,26 @@ echo $numMemb . '<br>';
 var_dump($pseudoMemb, $prenomMemb, $nomMemb, $passMemb, $eMailMemb, $accordMemb, $numStat);
 
 if (isset($pseudoMemb, $prenomMemb, $nomMemb, $passMemb, $eMailMemb, $accordMemb, $numStat)){
-    sql_insert('MEMBRE', 
-    'prenomMemb, nomMemb, pseudoMemb, passMemb, eMailMemb, dtCreaMemb, accordMemb, numMemb, dtMajMemb, numStat', 
-    "'$prenomMemb', '$nomMemb', '$pseudoMemb', '$hash_password', '$eMailMemb', '$dtCreaMemb', '$accordMemb', '$numMemb', '$dtMajMemb', '$numStat'");
-    
+    if (!isset($_SESSION['numStat'])) {
+        if ($_SESSION['numStat'] == 1){
+            //Vous pouvez le faire
+            sql_insert('MEMBRE', 
+            'prenomMemb, nomMemb, pseudoMemb, passMemb, eMailMemb, dtCreaMemb, accordMemb, numMemb, dtMajMemb, numStat', 
+            "'$prenomMemb', '$nomMemb', '$pseudoMemb', '$hash_password', '$eMailMemb', '$dtCreaMemb', '$accordMemb', '$numMemb', '$dtMajMemb', '$numStat'");
+            
+        }
+    } 
+   
+ 
+
     header('Location: ../../views/backend/members/list.php');
+
 } else {
     echo '<br><br><p style="color:red;">Veuillez remplir tout le formulaire.</p>';
 }
 
+
+
+
+
+?>

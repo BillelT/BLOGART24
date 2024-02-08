@@ -1,20 +1,3 @@
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>connexion</title>
-  <link rel="stylesheet" href="/src/css/connexion.css">
-  <link rel="shortcut icon"  href="/src/images/logo bibble's header.png" type="image/x-icon" />
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min">
-  <link
-    href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400&display=swap"
-    rel="stylesheet">
-</head>
-
-<body>
-
 <?php 
 require '../../header.php';
 ?>
@@ -27,6 +10,10 @@ require '../../header.php';
         et intéragir avec les autres
         utilisateurs.</h3>
     </div>
+
+    <?php if(isset($_SESSION["numStat"])){
+        echo "Bonjour ".$_SESSION["numStat"];
+    } ?>
 
 <!-- Bootstrap form to create a new statut -->
 
