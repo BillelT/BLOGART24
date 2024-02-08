@@ -2,7 +2,7 @@
 include '../../header.php';
 
 //seulement si tu es admi tu as accès à cette page
-if (!isset($_SESSION['numStat']) || ($_SESSION['numStat'] !== 2 && $_SESSION['numStat'] !== 3 && $_SESSION['numStat'] !== 1 )) {
+if (!isset($_SESSION['numStat']) || ($_SESSION['numStat'] == 2 && $_SESSION['numStat'] == 3 && $_SESSION['numStat'] !== 1 )) {
     // Rediriger vers une page d'erreur ou une page d'accueil
     header('index.php');
     exit();
