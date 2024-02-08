@@ -8,7 +8,22 @@
     margin: 0;
     font-family: "K2D";
 }
-
+h1{
+    font-size: 35px;
+}
+h2{
+    font-size: 28px;
+}
+h3{
+    font-size: 22px;
+}
+p{
+    font-size: 14px;
+}
+a{
+    font-size: 14px;
+    color: #051514;
+}
 .mention {
     padding-left: 9.6%;
     padding-right: 9.6%;
@@ -16,4 +31,21 @@
 
 .body {
     overflow-x: hidden;
+}
+@media (min-width: 780px){
+    h1{
+        font-size: 55px;
+    }
+    h2{
+        font-size: 48px;
+    }
+    h3{
+        font-size: 35px;
+    }
+    p{
+        font-size: 18px;
+    }
+    a{
+        font-size: 18px;
+    }
 }
