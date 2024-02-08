@@ -45,7 +45,7 @@
                             Allant des espaces verts pour votre chien, aux mesures prises en ville
                             vous pourrez adopter sereinement votre futur compagnon.</p>
                         <!-- Bouton du premier article -->
-                        <a href="#" class="btn_btn-primary">Lire la suite &#10140;</a>
+                        <a href="./views/frontend/article-event.php" class="btn_btn-primary">Lire la suite &#10140;</a>
                     </div>
                 </div>
                 <!-- Article 2 -->
