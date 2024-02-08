@@ -9,12 +9,8 @@ $articles = sql_select('motcle
 INNER JOIN motclearticle ON motclearticle.numMotCle = motcle.numMotCle
 INNER JOIN article ON article.numArt = motclearticle.numArt
 INNER JOIN thematique ON article.numThem = thematique.numThem
-<<<<<<< HEAD
 GROUP BY article.numArt',
 'libMotCle, dtCreaArt, article.numArt, dtCreaArt, libTitrArt, libChapoArt, libAccrochArt, libThem'
-=======
-GROUP BY article.numArt', 'libMotCle, dtCreaArt, article.numArt, dtCreaArt, libTitrArt, libChapoArt, libAccrochArt, libThem'
->>>>>>> db32f91efdca99e7c5c0faa06882d94ccb62d047
 );
 ?>
 
