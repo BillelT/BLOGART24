@@ -4,12 +4,6 @@ include '../../../header.php'; // contains the header and call to config.php
 //Load all statuts
 
 
-
-/*$articles = sql_select('motcle
-INNER JOIN motclearticle ON motclearticle.numMotCle = motcle.numMotCle
-INNER JOIN article ON article.numArt = motclearticle.numArt
-INNER JOIN thematique ON article.numThem = thematique.numThem', '*');*/ 
-
 $articles = sql_select('article
 INNER JOIN thematique ON article.numThem = thematique.numThem', '*')
 
