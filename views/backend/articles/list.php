@@ -5,13 +5,13 @@ include '../../../header.php'; // contains the header and call to config.php
 
 
 //seulement si tu es admi ou moderateur tu as accès à cette page
-if (!isset($_SESSION['numStat']) || $_SESSION['numStat'] !== 3) {
+if (!isset($_SESSION['numStat']) || $_SESSION['numStat'] !== 1 && $_SESSION['numStat'] !== 2 ) {
     // Rediriger vers une page d'erreur ou une page d'accueil
-    header('index.php');
+    header('Location: ../../index.php');
     exit();
-}else {
-    //accès au bouton profil 
 }
+
+$articles = sql_select('article INNER JOIN thematique ON article.numThem = thematique.numThem', '*');
 
 
 
