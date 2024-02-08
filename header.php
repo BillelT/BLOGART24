@@ -8,7 +8,6 @@ session_start();
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Blog'Art</title>
     <link rel="shortcut icon"  href="/src/images/logo bibble's header.png" type="image/x-icon" />
     <!-- Load CSS -->
     <link rel="stylesheet" href="/src/css/header.css">
@@ -33,7 +32,7 @@ require_once 'config.php';
                         <a href="#" class="connected" id="connected">Mon profil <span>&#8594;</span></a>
                     </li> -->
                     <li>
-                        <a href="#">Articles <span>&#8594;</span></a>
+                        <a href="/index.php#articles">Articles <span>&#8594;</span></a>
                     </li>
                     <li>
                         <a href="#">Témoignages <span>&#8594;</span></a>
@@ -48,7 +47,7 @@ require_once 'config.php';
                         }
                                 // SI STAT = ADMIN
                                 if ($session == 1){
-                                    echo '<a hreh="/views/backend/dashboard.php" id="dashboard"><button class="inscription" id="dashboard" type="submit">Dashboard <span>&#8594;</span></button> </a>';
+                                    echo '<a href="/views/backend/dashboard.php" id="dashboard"><button class="inscription" id="dashboard" type="submit">Dashboard <span>&#8594;</span></button> </a>';
                                 }
                                 // SI STAT = MOD OU MEMBRE 
                                 if ($session == 2 || $session == 3){

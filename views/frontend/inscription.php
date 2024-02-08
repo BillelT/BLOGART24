@@ -1,6 +1,17 @@
 <?php 
 require '../../header.php';
 ?>
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inscription</title>
+</head>
+<body>
+    
+</body>
+</html>
   <section class="form-inscription" style="background-color: #FEF5EA;">
   <link rel="stylesheet" href="../../src/css/inscription.css">
     <div class="title-inscription">
@@ -76,11 +87,13 @@ require '../../header.php';
                     </div>
                     <div class="box-button">
                     <div class="div-inscription">
-                        <button type="submit" class="button-inscription">Inscription</button>
+                        <button type="submit" class="inscription">Inscription</button>
                     </div>
                 <div class="div-connexion">
-                    <p class="link-opacity-100">Déjà inscrit ?</p>
-                    <button type="submit" class="button-connexion">Connexion</button>
+                    <a href="./connexion.php" class="link-opacity-100">Déjà inscrit ?</a>
+                    <a href="./connexion.php" style="text-decoration: none;">
+                        <button type="button" class="connect">Connexion</button>
+                    </a>
                 </div>
                 </div>
             </form>
