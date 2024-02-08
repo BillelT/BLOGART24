@@ -44,33 +44,31 @@ require_once 'config.php';
                             $session = $_SESSION['numStat']; // STATUT DANS $SESSION
                         
                         }
-                        // SI STAT = ADMIN
+                                // SI STAT = ADMIN
                                 if ($session == 1){
-                                    echo '<button class="inscription" id="dashboard" type="submit">Dashboard <span>&#8594;</span></button>';
+                                    echo '<a hreh="/views/backend/dashboard.php" id="dashboard"><button class="inscription" id="dashboard" type="submit">Dashboard <span>&#8594;</span></button> </a>';
                                 }
                                 // SI STAT = MOD OU MEMBRE 
                                 if ($session == 2 || $session == 3){
-                                    echo '<button class="inscription" id="profil" type="submit">Mon Profil <span>&#8594;</span></button>';
+                                    echo '<a href="/views/frontend/profil.php" id="profil"><button class="inscription" id="profil" type="submit">Mon Profil <span>&#8594;</span></button></a>';
                                 }
                                 // SI PAS DE STAT
                                 if ($session != 1 && $session != 2 && $session != 3){
-                                    echo '<button class="inscription" id="register" type="submit">S\'inscrire<span>&#8594;</span></button>';
+                                    echo '<a href="/views/frontend/inscription.php" id="register"><button class="inscription" type="submit">S\'inscrire<span>&#8594;</span></button></a>';
                                 }
                             ?>
                     </li>
                     <?php
                         if (isset($_SESSION['numStat'])) {
                             $session = $_SESSION['numStat']; // STATUT DANS $SESSION
-                        
                         }
-                        // SI STAT = ADMIN
+                                // SI STAT = ADMIN
                                 if ($session == 1){
-                                    echo '<li><button class="connect" id="profil" type="submit">Mon profil <span>&#8594;</span></button></li>';
+                                    echo '<li><a href="/views/frontend/profil.php"><button class="connect" type="submit">Mon profil <span>&#8594;</span></button></a></li>';
                                 }
                                 // SI PAS DE STAT
                                 if ($session != 1 && $session != 2 && $session != 3){
-                                    echo '<li><button class="connect" id="register" type="submit">Inscription <span>&#8594;</span></button></li>';
-                                    echo '<li><button class="connect" id="connect" type="submit">Se connecter<span>&#8594;</span></button></li>';
+                                    echo '<li><a href="/views/frontend/connexion.php"><button class="connect" id="connect" type="submit">Se connecter<span>&#8594;</span></button></a></li>';
                                 }
                             ?>
                 </ul>
@@ -90,19 +88,3 @@ require_once 'config.php';
     <script src="/src/JS/header.js"></script>
 </body>
 </html>
-
-<script type="text/javascript">
-    // JS POUR BOUTONS 
-    document.getElementById("dashboard").onclick = function () {
-        location.href = "/views/backend/dashboard.php";
-    };
-    document.getElementById("profil").onclick = function () {
-        location.href = "/views/frontend/profil.php";
-    };
-    document.getElementById("register").onclick = function () {
-        location.href = "/views/frontend/inscription.php";
-    };
-    document.getElementById("connect").onclick = function () {
-        location.href = "/views/frontend/connexion.php";
-    };
-</script>
