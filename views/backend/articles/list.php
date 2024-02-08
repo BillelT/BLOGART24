@@ -8,32 +8,7 @@ include '../../../header.php'; // contains the header and call to config.php
 $articles = sql_select('motcle
 INNER JOIN motclearticle ON motclearticle.numMotCle = motcle.numMotCle
 INNER JOIN article ON article.numArt = motclearticle.numArt
-INNER JOIN thematique ON article.numThem = thematique.numThem
-GROUP BY article.numArt',
-'libMotCle, dtCreaArt, article.numArt, dtCreaArt, libTitrArt, libChapoArt, libAccrochArt, libThem'
-);
-
-$motcle = sql_select('motclearticle
-INNER JOIN motcle ON motclearticle.numMotCle = motcle.numMotCle 
-GROUP BY motclearticle.numMotCle WITH ROLLUP', 'numArt, libMotCle');
-var_dump($motcle);
-echo '<br><br><br>';
-
-$listMotCle = $motcle['libMotCle'];
-echo $listMotCle . '<br><br>';
-$nuMotCle = $motcle['numArt'];
-
-
-
-/*
-
-foreach ($motcle as $num => $mot) {
-    echo "$num: $mot <br>";
-  }
-*/
-exit;
-
-
+INNER JOIN thematique ON article.numThem = thematique.numThem', '*');
 ?>
 <!-- Bootstrap default layout to display all statuts in foreach -->
 <div class="container">
@@ -54,14 +29,23 @@ exit;
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($articles as $article){ ?>
+                    <?php foreach($articles as $article){ 
+                        $numArt = $article['numArt']; // QUEL ARTICLE NUM EST-IL QUESTION?
+                        $listMot = sql_select('article
+                        INNER JOIN motclearticle ON article.numArt = motclearticle.numArt
+                        INNER JOIN motcle ON motclearticle.numMotCle = motcle.numMotCle', 'article.numArt, libMotCle', "article.numArt = '$numArt'");
+                        ?> 
                         <tr>
                             <td><?php echo($article['numArt']); ?></td>
                             <td><?php echo($article['dtCreaArt']); ?></td>
                             <td><?php echo($article['libTitrArt']); ?></td>
                             <td><?php echo($article['libChapoArt']); ?></td>
                             <td><?php echo($article['libAccrochArt']); ?></td>
-                            <td><?php echo ($article['libMotCle']); ?></td> 
+                            <td><?php 
+                            foreach ($listMot as $mot){
+                                echo($mot['libMotCle'] . ', ');
+                            }
+                            ?></td> 
                             <td><?php echo($article['libThem']); ?></td>
                             <td>
                                 <a href="edit.php?numArt=<?php echo($article['numArt']); ?>" class="btn btn-primary">Edit</a>
