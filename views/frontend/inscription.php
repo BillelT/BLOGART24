@@ -13,7 +13,7 @@ require '../../header.php';
             <form action="<?php echo ROOT_URL . '/api/security/signup.php' ?>" method="post" id="formCreate">
                 <div class="form-group">
                     <!-- PSEUDO -->
-                    <label for="pseudoMemb">Pseudo du membre (entre xx et xx caractères)</label>
+                    <label for="pseudoMemb">Pseudo du membre (non modifiable)</label>
                     <input id="pseudoMemb" name="pseudoMemb" class="form-control" type="text" autofocus="autofocus" />
                     <p>(entre 6 et 70 caractères)</p>
                     <!-- PRENOM -->
@@ -53,7 +53,7 @@ require '../../header.php';
                     <label for="accordMemb2">Non</label>
                     <br><br>
                     <!-- STATUT -->
-                    <input id="numStat" name="numStat" class="form-control" style="display: none" type="text" value="'3'" readonly="readonly" />
+                    <input id="numStat" name="numStat" class="form-control" style="display: none" type="text" value="3" readonly="readonly" />
                     <!-- COOKIES -->
                     <div class="valid form-check">
                         <input class="form-check-input" type="checkbox" value="" id="cookies">
@@ -83,6 +83,16 @@ require '../../footer.php';
        document.getElementById( 'passMemb' ).setAttribute( 'type', 'text');
    } else {
        document.getElementById( 'passMemb' ).setAttribute( 'type', 'password');
+   }
+   
+});
+document.getElementById( 'afficher2' ).addEventListener( "click", function() {
+   
+   attribut = document.getElementById( 'passMemb2' ).getAttribute( 'type');
+   if(attribut == 'password'){
+       document.getElementById( 'passMemb2' ).setAttribute( 'type', 'text');
+   } else {
+       document.getElementById( 'passMemb2' ).setAttribute( 'type', 'password');
    }
    
 });
