@@ -1,93 +1,91 @@
-<?php
+<?php 
 require '../../header.php';
 ?>
+  <section class="form-inscription" style="background-color: #FEF5EA;">
+    <div class="title-inscription">
+      <h3>En vous inscrivant, vous 
+        pourrez liker, partager ou 
+        commenter notre contenu
+        et intéragir avec les autres
+        utilisateurs.</h3>
+    </div>
+            <!-- Form to create a new statut -->
+            <form action="<?php echo ROOT_URL . '/api/security/signup.php' ?>" method="post" id="formCreate">
+                <div class="form-group">
+                    <!-- PSEUDO -->
+                    <label for="pseudoMemb">Pseudo du membre (entre xx et xx caractères)</label>
+                    <input id="pseudoMemb" name="pseudoMemb" class="form-control" type="text" autofocus="autofocus" />
+                    <p>(entre 6 et 70 caractères)</p>
+                    <!-- PRENOM -->
+                    <label for="prenomMemb">Prénom du membre</label>
+                    <input id="prenomMemb" name="prenomMemb" class="form-control" type="text" autofocus="autofocus" />
+                    <!-- NOM -->
+                    <label for="nomMemb">Nom du membre</label>
+                    <input id="nomMemb" name="nomMemb" class="form-control" type="text" autofocus="autofocus" />
+                    <!-- MDP -->
+                    <label for="passMemb">Mot de passe du membre</label>
+                    <input id="passMemb" name="passMemb" class="form-control" type="password" autofocus="autofocus" />
+                    <p>(Entre 8 et 15 car., au - une majuscule, une minuscule, un chiffre, car. spéciaux acceptés)</p>
+                    <button type="button" id="afficher"  class="btn btn-secondary">Afficher le mot de passe</button><br><br>
+                    <!-- MDP VERIFICATION -->
+                    <label for="passMemb2">Confirmez mot de passe du membre</label>
+                    <input id="passMemb2" name="passMemb2" class="form-control" type="password" autofocus="autofocus" />
+                    <p>(Entre 8 et 15 car., au - une majuscule, une minuscule, un chiffre, car. spéciaux acceptés)</p>
+                    <button type="button" id="afficher2" class="btn btn-secondary">Afficher le mot de passe</button><br><br>
+                    <!-- EMAIL -->
+                    <label for="eMailMemb">Email du membre</label>
+                    <input id="eMailMemb" name="eMailMemb" class="form-control" type="text" autofocus="autofocus" />
+                    <!-- EMAIL VERIFICATION -->
+                    <label for="eMailMemb2">Confirmez email du membre</label>
+                    <input id="eMailMemb2" name="eMailMemb2" class="form-control" type="text" autofocus="autofocus" />
+                    <!-- PARTAGE DES DONNEES -->
+                    <label for="accordMemb">J'accepte que mes données soient conservées :</label>
+                    <input type="radio" id="accordMemb" name="accordMemb" value="OUI" />
+                    <label for="accordMemb">Oui</label>
+                    <input type="radio" id="accordMemb" name="accordMemb" value="NON" checked />
+                    <label for="accordMemb">Non</label>
+                    <br><br>
+                    <!-- ACCEPTER -->
+                    <label for="accordMemb2">J'accepte  :</label>
+                    <input type="radio" id="accordMemb2" name="accordMemb2" value="OUI" />
+                    <label for="accordMemb2">Oui</label>
+                    <input type="radio" id="accordMemb2" name="accordMemb2" value="NON" checked />
+                    <label for="accordMemb2">Non</label>
+                    <br><br>
+                    <!-- STATUT -->
+                    <input id="numStat" name="numStat" class="form-control" style="display: none" type="text" value="'3'" readonly="readonly" />
+                    <!-- COOKIES -->
+                    <div class="valid form-check">
+                        <input class="form-check-input" type="checkbox" value="" id="cookies">
+                        <label class="form-check-label" for="cookies">
+                            Se souvenir de moi
+                        </label>
+                    </div>
+                    <p class="link-opacity-100">Déjà inscrit ?</p>
+                    <input type="button" onclick="location.href='#'" value="connexion" />
+                </div>
+                <br />
+                <div class="form-group mt-2">
+                    <button type="submit" class="btn btn-primary">Confirmer create ?</button>
+                </div>
+            </form>
+  </section>
 
-<!DOCTYPE html>
-<html lang="fr">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bord'Animaux - Inscription</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min">
-    <link rel="stylesheet" href="../../src/css/inscription.css">
-    <link rel="icon" href="../médias/logo bibble's header.png">
-</head>
-
-<body>
-    <section class="form-inscription" style="background-color: #FEF5EA;">
-
-        <div class="title-inscription">
-            <h3>En vous inscrivant, vous <br>
-                pourrez liker, partager ou <br>
-                commenter notre contenu
-                et intéragir avec les autres
-                utilisateurs</h3>
-        </div>
-        <div class="email">
-            <p for="exampleFormControlInput1" class="col-form-label">Email :</p>
-            <br>
-            <input type="email" class="form-control" id="exampleFormControlInput1" placeholder="email@exemple.com">
-        </div>
-        <div class="motdepasse">
-            <div class="col-auto">
-                <p for="inputPassword6" class="col-form-label">Mot de passe :</p>
-            </div>
-            <div class="col-auto">
-                <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-            </div>
-            <div class="col-auto">
-                <span id="passwordHelpInline" class="form-text">
-                    La longueur doit être comprise entre 8 et 20 caractères.
-                </span>
-            </div>
-        </div>
-        <div class="motdepasse">
-            <div class="col-auto">
-                <p for="inputPassword6" class="col-form-label">Confirmer votre mot de passe :</label>
-            </div>
-            <div class="col-auto">
-                <input type="password" id="inputPassword6" class="form-control" aria-describedby="passwordHelpInline">
-            </div>
-            <div class="col-auto">
-                <span id="passwordHelpInline" class="form-text">
-                    La longueur doit être comprise entre 8 et 20 caractères.
-                </span>
-            </div>
-        </div>
-        <div class="valid">
-
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <p class="form-check-label" for="flexCheckDefault">
-                    M'abonner à la Newsletter
-                    </label>
-            </div>
-
-
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <p class="form-check-label" for="flexCheckDefault">
-                    Accepter les CGU
-                    </label>
-            </div>
-
-            <div class="form-check">
-                <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
-                <p class="form-check-label" for="flexCheckDefault">
-                    Se souvenir de moi
-                    </label>
-            </div>
-
-            <button type="button-important" class="inscription no-border">S'inscrire</button>
-            <p><a class="link-opacity-100" href="#">Déjà un compte ?</a></p>
-            <button type="button-less-important" class="connect border">Se connecter</button>
-        </div>
-    </section>
-    <?php
-    require '../../footer.php';
-    ?>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+<?php 
+require '../../footer.php';
+?>
 </body>
+<script>
+  document.getElementById( 'afficher' ).addEventListener( "click", function() {
+   
+   attribut = document.getElementById( 'passMemb' ).getAttribute( 'type');
+   if(attribut == 'password'){
+       document.getElementById( 'passMemb' ).setAttribute( 'type', 'text');
+   } else {
+       document.getElementById( 'passMemb' ).setAttribute( 'type', 'password');
+   }
+   
+});
+</script>
 
-</html>
+        
