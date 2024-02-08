@@ -2,8 +2,12 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
 require_once '../../functions/ctrlSaisies.php';
 
+session_start();
+
 $eMailMemb = ctrlSaisies($_POST['eMailMemb']);
 $passMemb = ctrlSaisies($_POST['passMemb']);
+
+$search = sql_select('membre', '*', "eMailMemb = '$eMailMemb'");
 
 // TESTE SI LES CHAMPS SONT REMPLIS
 
@@ -37,29 +41,20 @@ if (!preg_match('/[0-9]/', $passMemb)){
 
 // TEST EMAIL MATCHE LE MDP 
 
-$search = sql_select('membre', '*', "eMailMemb = '$eMailMemb'");
+$search = sql_select('membre', '*', "eMailMemb = '$eMailMemb'")[0];
 
-if ($search){
-    $passwordHash = $search['password'];
-    if (password_verify($password, $passwordHash)) {
+if (count($search) != 0){
+    $passwordHash = $search['passMemb'];
+    if ($passMemb == $passwordHash) {
+    // if (password_verify($password, $passwordHash)) {
+        $_SESSION['numStat']=$search['numStat'];
         echo 'Connexion réussie.';
     } else {
         echo 'Mot de passe incorrect.';
     }
 }
 
-
-<<<<<<< HEAD:api/connexion.php
-
-	if(isset($_SESSION['pseudonyme'])){
-		echo "Bonjour ".$_SESSION['pseudonyme'];
-	}
-	else{
-		echo "Veuillez vous connecter en cliquant <a href='connexion.php'>ici</a>";
-	}
-
-	?>
-
-=======
 header('Location: ../../views/frontend/connexion.php');
->>>>>>> 51dfd121a7023a9a3c1e30d49f984f76f69b88aa:api/security/connexion.php
+
+echo("Form login");
+

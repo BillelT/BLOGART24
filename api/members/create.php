@@ -2,6 +2,8 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
 require_once '../../functions/ctrlSaisies.php';
 
+session_start();
+
 // PSEUDO
 $pseudoMemb= ctrlSaisies($_POST['pseudoMemb']); // ENTRE 6-70 CARACS
 
@@ -48,7 +50,7 @@ if ($passMemb != $passMemb2){
 } 
 
 $hash_password = password_hash($passMemb, PASSWORD_DEFAULT);
-var_dump($hash_password);
+
 echo '<br>';
 
 
@@ -78,7 +80,10 @@ if ($accordMemb !== 'OUI') {
 
 //STATUT
 $numStat = ctrlSaisies($_POST['numStat']);
-var_dump($numStat);
+
+echo '<br>';
+
+
 echo '<br>';
 
 //DATE CREATION
@@ -88,7 +93,7 @@ $dtMajMemb = NULL;
 
 $max = 'MAX('. 'numMemb' . ')';
 $numMemb = sql_select('MEMBRE', $max);
-var_dump($numMemb[0]);
+
 echo '<br>';
 $numMemb = implode("", $numMemb[0]);
 echo $numMemb;
@@ -98,15 +103,30 @@ echo '<br>';
 echo $numMemb . '<br>';
 
 // FIN PARTIE CAPTCHA
-var_dump($pseudoMemb, $prenomMemb, $nomMemb, $passMemb, $eMailMemb, $accordMemb, $numStat);
+
 
 if (isset($pseudoMemb, $prenomMemb, $nomMemb, $passMemb, $eMailMemb, $accordMemb, $numStat)){
-    sql_insert('MEMBRE', 
-    'prenomMemb, nomMemb, pseudoMemb, passMemb, eMailMemb, dtCreaMemb, accordMemb, numMemb, dtMajMemb, numStat', 
-    "'$prenomMemb', '$nomMemb', '$pseudoMemb', '$hash_password', '$eMailMemb', '$dtCreaMemb', '$accordMemb', '$numMemb', '$dtMajMemb', '$numStat'");
-    
+    if (!isset($_SESSION['numStat'])) {
+       
+            //Vous pouvez le faire
+            sql_insert('MEMBRE', 
+            'prenomMemb, nomMemb, pseudoMemb, passMemb, eMailMemb, dtCreaMemb, accordMemb, numMemb, dtMajMemb, numStat', 
+            "'$prenomMemb', '$nomMemb', '$pseudoMemb', '$hash_password', '$eMailMemb', '$dtCreaMemb', '$accordMemb', '$numMemb', '$dtMajMemb', '$numStat'");
+            
+        
+        
+    } 
+   
+ 
+
     header('Location: ../../views/backend/members/list.php');
+
 } else {
     echo '<br><br><p style="color:red;">Veuillez remplir tout le formulaire.</p>';
 }
 
+
+
+
+
+?>

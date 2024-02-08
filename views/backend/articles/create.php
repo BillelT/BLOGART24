@@ -75,54 +75,52 @@ require_once '../../../header.php';
                     <button type="submit" style="margin: 0 32px;" class="connect" id="addKeyWords">Ajouter Mots-Clés ?</button>
                     <select id="newMotCle" name="newMotCle" size="5" style="margin-left: 32px;">
                         <option value="">-- Mots-Clés choisis --</option>
+
                         <script>
-                            const addMotCle = document.getElementById("addMotCle");
-                            const newMotCle = document.getElementById("newMotCle");
+                            const addMotCle = document.getElementById('addMotCle');
+                            const newMotCle = document.getElementById('newMotCle');
                             const options = addMotCle.options;
                             const addOptions = newMotCle.options;
                             let bool = false;
                             let motCle = [];
-                            document.addEventListener("click", (e) => {
-                                console.log(typeof(motCle),typeof([...addOptions]));
-                                if(!e.target.innerText.includes(" ")) {
+
+
+                            document.addEventListener('click', (e) => {
+                                if (!e.target.innerText.includes(' ')) {
                                     for (let i = 0; i < options.length; i++) {
                                         if (e.target.innerText === options[i].innerText && !motCle.includes(e.target.innerText)) {
-                                            let newOption = document.createElement("option");
-                                            console.log(bool);
+                                            let newOption = document.createElement('option');
                                             bool = true;
-                                                motCle.push(options[i].innerText);
-                                                newOption.value = e.target.innerText;
-                                                newOption.id = "mot";
-                                                newOption.innerText = e.target.innerText;
-                                                newMotCle.appendChild(newOption);
-                                                options[i].style.display = "none";
-                                                console.log(bool);
-                                                break;
-                                            } else {
-                                                bool = false;
-                                            }
+                                            motCle.push(options[i].innerText);
+                                            newOption.value = e.target.innerText;
+                                            newOption.id = 'mot';
+                                            newOption.innerText = e.target.innerText;
+                                            newMotCle.appendChild(newOption);
+                                            options[i].remove();
+                                            break;
+                                        } else {
+                                            bool = false;
                                         }
-                                        Object.entries(addOptions).forEach(([key, option]) => {
-                                            if ( bool === false && option.innerText === e.target.innerText && motCle.includes(e.target.innerText)) {
-                                                console.log("test");
-                                                    motCle.splice(option,1);
-                                                    let newOption = document.createElement("option");
-                                                    newOption.value = e.target.innerText;
-                                                    newOption.id = "mot";
-                                                    newOption.innerText = e.target.innerText;
-                                                    addMotCle.appendChild(newOption);
-                                                    option.remove();
-                                                }
-                                        });
+                                    }
+                                    Object.entries(addOptions).forEach(([key, option]) => {
+                                        if (bool === false && option.innerText === e.target.innerText && motCle.includes(e.target.innerText)) {
+                                            motCle.splice(option, 1);
+                                            let newOption = document.createElement('option');
+                                            newOption.value = e.target.innerText;
+                                            newOption.id = 'mot';
+                                            newOption.innerText = e.target.innerText;
+                                            addMotCle.appendChild(newOption);
+                                            option.remove();
+                                        }
+                                    });
                                 }
-                                    
                             })
                         </script>
                     </select>
                 </div>
                 <br>
                 <div class="form-group mt-2" style="margin: 32px auto 128px;">
-                    <button type="submit" class="inscription btn btn-primary ">Confirmer create ?</button>
+                    <button type="submit" class="btn btn-primary ">Confirmer create ?</button>
                 </div>
             </form>
         </div>
@@ -133,3 +131,12 @@ require_once '../../../header.php';
 <?php
 include '../../../footer.php';
 ?>
+<!-- fetch('create.php', {
+    method: 'POST',
+    body: JSON.stringify({
+        motCle: motCle
+    }),
+    headers: {
+        'Content-Type': 'application/json'
+    }
+}); -->
