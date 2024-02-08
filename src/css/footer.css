@@ -18,6 +18,10 @@ footer a {
     color: #fef5ea;
 }
 
+a:hover {
+    color: #fef5ea ;
+}
+
 footer {
     font-size: 14px;
     padding: 8px 9.4% 32px;
