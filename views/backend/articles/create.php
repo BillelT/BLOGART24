@@ -62,8 +62,8 @@ require_once '../../../header.php';
                     </select>
                     <p><br></p>
                     <!-- MOTS CLES -->
-                    <label for="motCle">Choisissez des Mots-Clés:</label>
-                    <select name="motCle" id="motCle" size="5">
+                    <label for="addMotCle">Choisissez des Mots-Clés:</label>
+                    <select name="addMotCle" id="addMotCle" size="5">
                         <option value="">-- Choisir des mots clés --</option>
                         <?php
                         $result = sql_select('motCle');
@@ -72,33 +72,62 @@ require_once '../../../header.php';
                         }
                         ?>
                     </select>
-                    <button>Ajouter Mots-Clés ?</button>
-                    <select id="numMotCle" name="numMotCle" size="5">
+                    <button type="submit" style="margin: 0 32px;" class="connect" id="addKeyWords">Ajouter Mots-Clés ?</button>
+                    <select id="newMotCle" name="newMotCle" size="5" style="margin-left: 32px;">
                         <option value="">-- Mots-Clés choisis --</option>
-                        <option></option>
+                        <script>
+                            const addMotCle = document.getElementById("addMotCle");
+                            const newMotCle = document.getElementById("newMotCle");
+                            const options = addMotCle.options;
+                            const addOptions = newMotCle.options;
+                            let bool = false;
+                            let motCle = [];
+                            document.addEventListener("click", (e) => {
+                                console.log(typeof(motCle),typeof([...addOptions]));
+                                if(!e.target.innerText.includes(" ")) {
+                                    for (let i = 0; i < options.length; i++) {
+                                        if (e.target.innerText === options[i].innerText && !motCle.includes(e.target.innerText)) {
+                                            let newOption = document.createElement("option");
+                                            console.log(bool);
+                                            bool = true;
+                                                motCle.push(options[i].innerText);
+                                                newOption.value = e.target.innerText;
+                                                newOption.id = "mot";
+                                                newOption.innerText = e.target.innerText;
+                                                newMotCle.appendChild(newOption);
+                                                options[i].style.display = "none";
+                                                console.log(bool);
+                                                break;
+                                            } else {
+                                                bool = false;
+                                            }
+                                        }
+                                        Object.entries(addOptions).forEach(([key, option]) => {
+                                            if ( bool === false && option.innerText === e.target.innerText && motCle.includes(e.target.innerText)) {
+                                                console.log("test");
+                                                    motCle.splice(option,1);
+                                                    let newOption = document.createElement("option");
+                                                    newOption.value = e.target.innerText;
+                                                    newOption.id = "mot";
+                                                    newOption.innerText = e.target.innerText;
+                                                    addMotCle.appendChild(newOption);
+                                                    option.remove();
+                                                }
+                                        });
+                                }
+                                    
+                            })
+                        </script>
                     </select>
                 </div>
                 <br>
-                <div class="form-group mt-2">
-                    <button type="submit" class="btn btn-primary">Confirmer create ?</button>
+                <div class="form-group mt-2" style="margin: 32px auto 128px;">
+                    <button type="submit" class="inscription btn btn-primary ">Confirmer create ?</button>
                 </div>
             </form>
         </div>
     </div>
 </div>
-
-<script>
-    document.addEventListener("click", (e) => {
-        if (e.target.id = "mot") {
-            let motCle = e.target.innerText;
-            console.log(motCle);
-            
-        }
-
-    })
-
-
-</script>
 
 
 <?php
