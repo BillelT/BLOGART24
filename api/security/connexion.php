@@ -5,11 +5,18 @@ require_once '../../functions/ctrlSaisies.php';
 $eMailMemb = ctrlSaisies($_POST['eMailMemb']);
 $passMemb = ctrlSaisies($_POST['passMemb']);
 
+// TESTE SI LES CHAMPS SONT REMPLIS
+
+if (empty($eMailMemb) || empty($passMemb)) {
+    echo "<p style='color: red;'>Veuillez remplir tous les champs.</p>";  // CEY PAS REMPLI
+} 
+
 // TEST EMAIL
 if (filter_var($eMailMemb, FILTER_VALIDATE_EMAIL)) {
-    echo("$eMailMemb est une adresse mail valide.<br>");
+    echo $eMailMemb . "est une adresse mail valide.<br>";
   } else {
-    echo("$eMailMemb n'est pas une adresse mail valide. Veuillez saisir un mail réel.<br>");
+    echo $eMailMemb . "n'est pas une adresse mail valide. Veuillez saisir un mail réel.<br>";
+    $eMailMemb = null;
   }
 
 // TEST MDP
@@ -28,7 +35,7 @@ if (!preg_match('/[0-9]/', $passMemb)){
     $passMemb = null;
 }
 
-// TEST EMAIL + MDP 
+// TEST EMAIL MATCHE LE MDP 
 
 $search = sql_select('membre', '*', "eMailMemb = '$eMailMemb'");
 
@@ -41,6 +48,5 @@ if ($search){
     }
 }
 
-echo '<br>';
 
 header('Location: ../../views/frontend/connexion.php');
