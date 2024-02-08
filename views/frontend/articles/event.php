@@ -7,7 +7,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bord'animaux</title>
+    <title>Bootstrap demo</title>
     <link rel="stylesheet" href="/src/css/article-event.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -21,11 +21,11 @@
     <!-- header de la page -->
     <!-- avant le paragraphe -->
     <div class="before-para">
+        <p>Catégorie : évenement<br>02/02/2024<br>(Bibble's)</p>
         <h2>La deuxième édition de la Marche aux Croquettes s'invite à Bordeaux.
             Découvrez comment participer afin d'aider à remplir les gamelles au
             sein des refuges animaliers !</h2>
         <img src="../../src/images/imagine1.png" alt="chien qui se fait promener">
-        <p>Catégorie : évenement<br>02/02/2024</p>
     </div>
     <!-- Section article -->
     <section class="para-article">
@@ -49,7 +49,7 @@
                         <img class="guimet-droite" src="../../src/images/guimet-droite.svg" alt="petit guimet">
                     </div>
                     <div class="div-text-art">
-                        <p><strong>L'inflation ne laisse personne indemne, pas même nos amis à quatre pattes :
+                        <p> <strong>L'inflation ne laisse personne indemne, pas même nos amis à quatre pattes :
                                 après 15% d'augmentation en 2023, le rayon des produits animaux est aujourd'hui
                                 l'un des plus inflationnistes de nos supermarchés.</strong>
                         </p>
