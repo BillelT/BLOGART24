@@ -170,9 +170,27 @@
                 </div>
                 <div class="div-text-art">
                     <?php 
-                    echo "<p>$parag2Art</p>";
+                    echo "<p> $parag2Art</p>";
                     ?>
-
+                    <p> Katia Renard est présidente de l'association Solidarité-Peuple-Animal.
+                        Elle considère que cet événement participe à la journée mondiale contre
+                        l'abandon des animaux de compagnie, dont elle est la fondatrice.
+                    </p>
+                    <p> Cette journée marquante, soutenue par de nombreuses autres associations
+                        animalières, se déroule le 24 juin 2024. Celle-ci symbolise le début des
+                        départs en vacances, une période d'augmentation notable en termes d'abandon,
+                        et permet de sensibiliser la population au délit d'abandon, existant depuis 1976.
+                    </p>
+                    <p> Aussi faut-il rappeler les chiffres : les associations, SPA et fourrières recensent
+                        près de 331 000 animaux abandonnés en 2022, et c'est sans compter
+                        le chiffre record de l'été 2023,qui s'élève à 16 564 animaux, marquant
+                        une augmentation de 2,4% par rapport à 2022.
+                    </p>
+                    <p> Ainsi, à l'échelle d'une année, si l'on additionne tous les chiffres recensés par
+                        les associations et les SPA, on peut dire qu'un animal est abandonné toutes les deux minutes.
+                        La France est par ailleurs championne européenne en termes d'abandon,
+                        ce qui fait que la Journée contre l'abandon a aussi pour but d'alarmer le gouvernement.
+                    </p>
                 </div>
             </div>
         </div>

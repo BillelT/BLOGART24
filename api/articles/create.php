@@ -17,7 +17,11 @@ $parag3Art = ctrlSaisies($_POST['parag3Art']);
 $parag3Art = BBCode($parag3Art);
 $libConclArt = ctrlSaisies($_POST['libConclArt']);
 $urlPhotArt = ctrlSaisies($_POST['urlPhotArt']);
+
+
 $newMotCle = $_POST['motCle'];
+var_dump($newMotCle);
+var_dump(gettype($newMotCle));
 
 
 
