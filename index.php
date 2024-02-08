@@ -71,8 +71,8 @@
 
         <section class="container association">
             <div class="row">
-                <div class="container col-12 col-sm-10">
-                    <article>
+                <div class="container col-12 col-sm-10 asso-container">
+                    <article class="article">
                         <h2>Avoir un animal sur Bordeaux,
                             c'est possible grâce aux différents aménagements ! </h2>
                             <a href="#">
@@ -84,7 +84,7 @@
                             </button>
                         </a>
                     </article>
-                    <article>
+                    <article class="article">
                         <h2>Les différentes associations et refuges bordelais </h2>
                         <a href="#">
                             <img src="./src/images/associations et refuges.png" alt="association spa">
@@ -120,11 +120,11 @@
                 répondre à vos besoins et vous permettre de profiter du mieux que vous pouvez des dispositifs bordelais.
             </p>
             <div class="portrait">
-                <img src="./médias/" alt="Eve Tissot">
-                <img src="./médias/" alt="Billel Tighidet">
-                <img src="./médias/" alt="Antoine Corberand">
-                <img src="./médias/" alt="Camille Surget">
-                <img src="./médias/" alt="Antoine Courcaud">
+                <img src="./src/images/eve.png" width="60" height="60" alt="Eve Tissot">
+                <img src="./src/images/moi linkedin 1.png" width="60" height="60" alt="Billel Tighidet">
+                <img src="./src/images/antoine corberand.png" width="60" height="60" alt="Antoine Corberand">
+                <img src="./src/images/camille.png" width="60" height="60" alt="Camille Surget">
+                <img src="./src/images/antoine courcaud.png" width="60" height="60" alt="Antoine Courcaud">
             </div>
         </section>
         <section class="contact-faq">
