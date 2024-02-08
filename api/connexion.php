@@ -43,3 +43,13 @@ if ($search){
 
 echo '<br>';
 
+
+	if(isset($_SESSION['pseudonyme'])){
+		echo "Bonjour ".$_SESSION['pseudonyme'];
+	}
+	else{
+		echo "Veuillez vous connecter en cliquant <a href='connexion.php'>ici</a>";
+	}
+
+	?>
+
