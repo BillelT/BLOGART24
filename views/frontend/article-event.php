@@ -169,6 +169,9 @@
                     <img class="guimet-droite" src="../../src/images/guimet-droite.svg" alt="petit guimet">
                 </div>
                 <div class="div-text-art">
+                    <?php 
+                    echo "<p> $parag2Art</p>";
+                    ?>
                     <p> Katia Renard est présidente de l'association Solidarité-Peuple-Animal.
                         Elle considère que cet événement participe à la journée mondiale contre
                         l'abandon des animaux de compagnie, dont elle est la fondatrice.
