@@ -19,9 +19,10 @@ $libConclArt = ctrlSaisies($_POST['libConclArt']);
 $urlPhotArt = ctrlSaisies($_POST['urlPhotArt']);
 
 
-$newMotCle = json_decode($_POST['newMotCle'], true);
+$newMotCle = $_POST['motCle'];
 var_dump($newMotCle);
-var_dump(ctrlSaisies($_POST['addMotCle']));
+var_dump(gettype($newMotCle));
+die;
 
 
 
