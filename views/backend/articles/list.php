@@ -13,16 +13,7 @@ if (!isset($_SESSION['numStat']) || $_SESSION['numStat'] !== 3) {
     //accès au bouton profil 
 }
 
-$articles = sql_select('motcle
-INNER JOIN motclearticle ON motclearticle.numMotCle = motcle.numMotCle
-INNER JOIN article ON article.numArt = motclearticle.numArt
-INNER JOIN thematique ON article.numThem = thematique.numThem
-GROUP BY article.numArt',
-'libMotCle, dtCreaArt, article.numArt, dtCreaArt, libTitrArt, libChapoArt, libAccrochArt, libThem'
-);
 ?>
-
-
 <!-- Bootstrap default layout to display all statuts in foreach -->
 <div class="container">
     <div class="row">
@@ -42,19 +33,23 @@ GROUP BY article.numArt',
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach($articles as $article){ ?>
+                    <?php foreach($articles as $article){ 
+                        $numArt = $article['numArt']; // QUEL ARTICLE NUM EST-IL QUESTION?
+                        $listMot = sql_select('article
+                        INNER JOIN motclearticle ON article.numArt = motclearticle.numArt
+                        INNER JOIN motcle ON motclearticle.numMotCle = motcle.numMotCle', 'article.numArt, libMotCle', "article.numArt = '$numArt'");
+                        ?> 
                         <tr>
                             <td><?php echo($article['numArt']); ?></td>
                             <td><?php echo($article['dtCreaArt']); ?></td>
                             <td><?php echo($article['libTitrArt']); ?></td>
                             <td><?php echo($article['libChapoArt']); ?></td>
                             <td><?php echo($article['libAccrochArt']); ?></td>
-                            <?php 
-                            //select sur les motcleart where num art = $article['numArt'] JOIN motcle pour recuperer le lib 
-                            //foreach motscles
-                            //echo
-                             ?>
-                            <td><?php echo ($article['libMotCle']); ?></td> 
+                            <td><?php 
+                            foreach ($listMot as $mot){
+                                echo($mot['libMotCle'] . ', ');
+                            }
+                            ?></td> 
                             <td><?php echo($article['libThem']); ?></td>
                             <td>
                                 <a href="edit.php?numArt=<?php echo($article['numArt']); ?>" class="btn btn-primary">Edit</a>

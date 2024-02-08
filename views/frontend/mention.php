@@ -1,3 +1,6 @@
+<?php 
+require '../../header.php';
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -11,9 +14,6 @@
 
 <body class="body">
     
-<?php 
-require '../../header.php';
-?>
 
 <section class="mention" style="background-color: #FEF5EA;">
 

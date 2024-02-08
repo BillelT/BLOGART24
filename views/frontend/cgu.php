@@ -1,3 +1,6 @@
+<?php 
+require '../../header.php';
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -10,9 +13,6 @@
 </head>
 
 <body>
-<?php 
-require '../../header.php';
-?>
 
 
 <section class="CGU" style="background-color: #FEF5EA;">

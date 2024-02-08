@@ -1,0 +1,218 @@
+*, ::after, ::before{
+    box-sizing: border-box;
+    text-decoration: none;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-family: 'K2D', sans-serif;
+}
+.body{
+    background-color: #FEF5EA;
+}
+h2{
+    font-size: 28px;
+    font-weight: 500;
+}
+h3{
+    font-size: 22px;
+    font-weight: 400;
+}
+p{
+    font-size: 14px;
+    font-weight: 400;
+}
+a{
+    font-size: 14px;
+    font-weight: 700;
+}
+/* partie du titre avec le petit texte juste en dessous du header */
+.titre-header-faq{
+    padding: 40px 30px;
+}
+.reductible-menu{
+    padding: 40px 30px;
+}
+.h3-reductible{
+    padding-top: 70px;
+    font-size: 22px;
+    font-weight: 400;
+    font-family: 'K2D', sans-serif;
+}
+.accordion-item{
+    border-top: 1px solid !important;
+    border-bottom: 1px solid !important;
+    border-left: none !important;
+    border-right: none !important;
+    border-radius: 0px !important;
+    
+}
+.accordion-button{
+    background: #FEF5EA !important;
+}
+/* partie des deux articles */
+.section-article{
+    padding: 40px 30px;
+}
+.card1{
+    margin-bottom: 40px;
+}
+.card1 img{
+    border-radius: 8px 8px 0 0;
+}
+.h2-article{
+    margin-bottom: 40px;
+    text-align: center;
+    font-size: 28px;
+    font-weight: 500;
+    font-family: 'K2D', sans-serif;
+}
+.card-title{
+    font-size: 24px;
+    font-weight: 500;
+    font-family: 'K2D', sans-serif;
+}
+.card-under-title{
+    font-size: 20px;
+    font-weight: 400;
+    font-family: 'K2D', sans-serif;
+}
+.btn_btn-primary{
+    font-size: 14px;
+    font-weight: 700;
+    font-family: 'K2D', sans-serif;
+    text-decoration: none;
+    color: #825C41;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+/* partie contact */
+.contact-faq{
+    padding: 40px 30px;
+}
+.h3-contact-faq{
+    padding: 40px 0;
+}
+.ul-contact-faq{
+    margin: 15px 0;
+    padding: 0;
+}
+.input-group-text1{
+    font-size: 18px;
+    font-weight: 400;
+    font-family: 'K2D', sans-serif;
+   
+}
+.input-group1{
+    display: flex;
+    flex-direction: column;
+}
+.form-control1{
+    border: 2px solid;
+    border-radius: 4px;
+    border-color: #825C41;
+    background: transparent;
+}
+.form-control2{
+    height: 100px;
+    border: 2px solid;
+    border-radius: 4px;
+    border-color: #825C41;
+    background: transparent;
+    resize: none;
+}
+.form-label1{
+    display: flex;
+    flex-direction: column;
+}
+/* bouton */
+.bouton-faq{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+.btn_btn-primary1{
+    font-size: 14px;
+    color: #825C41;
+    font-weight: 700;
+    font-family: 'K2D', sans-serif;
+    align-items: center;
+    border: #825C41 2px solid;
+    border-radius: 8px;
+    width: 100px;
+    height: 40px;
+    text-align: center;
+    background: transparent;
+}
+@media (min-width: 780px){
+    .title-faq{
+        font-size: 55px;
+        margin-bottom: 16px;
+    }
+    h2{
+        font-size: 48px;
+    }
+    h3{
+        font-size: 35px;
+    }
+    p{
+        font-size: 18px;
+    }
+    a{
+        font-size: 18px;
+    }
+    .titre-header-faq{
+        padding: 50px 10%;
+    }
+    .reductible-menu{
+        padding: 50px 9.4%;
+    }
+    .card-article{
+        display: flex;
+        flex-direction: row;
+        padding: 50px 10%;
+        justify-content: space-between;
+        gap: 50px;
+    }
+    .h3-reductible{
+        font-size: 35px;
+    }
+    .card1{
+        margin-bottom: 64px;
+    }
+    .h2-article{
+        margin-bottom: 64px;
+        font-size: 48px;
+    }
+    .card-title{
+        font-size: 28px;
+    }
+    .card-under-title{
+        font-size: 24px;
+    }
+    .btn_btn-primary{
+        font-size: 18px;
+    }
+    .h3-contact-faq{
+        font-size: 35px;
+    }
+    .contact-faq{
+        padding: 0px 9.4% 128px;
+    }
+    .form-control1{
+        height: 50px;
+    }
+    .form-control2{
+        height: 150px;
+        border: 2px solid;
+        border-radius: 4px;
+        border-color: #825C41;
+        background: transparent;
+    }
+    .btn_btn-primary1{
+        font-size: 18px;
+        width: 150px;
+        height: 50px;
+    }
+}

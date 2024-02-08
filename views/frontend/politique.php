@@ -1,3 +1,6 @@
+<?php 
+require '../../header.php';
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -11,9 +14,6 @@
 
 <body>
 
-<?php 
-require '../../header.php';
-?>
 
 <section class="politique" style="background-color: #FEF5EA;">
 

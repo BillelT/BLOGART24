@@ -16,7 +16,7 @@ if (!isset($_SESSION['numStat']) || $_SESSION['numStat'] !== 3) {
         </div>
         <div class="col-md-12">
             <!-- Form to create a new statut -->
-            <form action="<?php echo ROOT_URL . '/api/articles/create.php' ?>" method="post">
+            <form action="<?php echo ROOT_URL . '/api/articles/create.php' ?>" method="post" id="form">
                 <div class="form-group">
                     <label for="libStat">Titre</label>
                     <input id="titre" name="libTitrArt" class="form-control" type="text" autofocus="autofocus" placeholder="Sur 100 car.">
@@ -80,8 +80,8 @@ if (!isset($_SESSION['numStat']) || $_SESSION['numStat'] !== 3) {
                         }
                         ?>
                     </select>
-                    <button type="submit" style="margin: 0 32px;" class="connect" id="addKeyWords">Ajouter Mots-Clés ?</button>
-                    <select id="newMotCle" name="newMotCle" size="5" style="margin-left: 32px;">
+                    <p style="margin: 0 32px; display : inline-block; text-align : center;" id="addKeyWords">Ajouter Mots-Clés ?</p>
+                    <select id="newMotCle" name="choix[]" multiple size="5" style="margin-left: 32px;">
                         <option value="">-- Mots-Clés choisis --</option>
 
                         <script>
@@ -89,6 +89,8 @@ if (!isset($_SESSION['numStat']) || $_SESSION['numStat'] !== 3) {
                             const newMotCle = document.getElementById('newMotCle');
                             const options = addMotCle.options;
                             const addOptions = newMotCle.options;
+                            var formulaire = document.getElementById("form");
+                            var champTableau = document.createElement("input");
                             let bool = false;
                             let motCle = [];
 
@@ -117,7 +119,7 @@ if (!isset($_SESSION['numStat']) || $_SESSION['numStat'] !== 3) {
                                             newOption.value = e.target.innerText;
                                             newOption.id = 'mot';
                                             newOption.innerText = e.target.innerText;
-                                            addMotCle.appendChild(newOption);
+                                            addMotCle.add(newOption);
                                             option.remove();
                                         }
                                     });

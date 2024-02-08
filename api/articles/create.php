@@ -18,6 +18,21 @@ $parag3Art = BBCode($parag3Art);
 $libConclArt = ctrlSaisies($_POST['libConclArt']);
 $urlPhotArt = ctrlSaisies($_POST['urlPhotArt']);
 
+
+$newMotCle = json_decode($_POST['tableau'], true);
+var_dump($newMotCle);
+
+
+
+
+
+
+
+
+
+
+
+
 // VERIFIER FIELDS
 
 $requiredFields = ['libTitrArt', 'dtCreaArt', 'libChapoArt', 'libAccrochArt', 'parag1Art', 'libSsTitr1Art', 'parag2Art', 'libSsTitr2Art', 'parag3Art', 'libConclArt',];
