@@ -11,9 +11,29 @@ INNER JOIN article ON article.numArt = motclearticle.numArt
 INNER JOIN thematique ON article.numThem = thematique.numThem
 GROUP BY article.numArt', 'libMotCle, dtCreaArt, article.numArt, dtCreaArt, libTitrArt, libChapoArt, libAccrochArt, libThem'
 );
+
+$motcle = sql_select('motclearticle
+INNER JOIN motcle ON motclearticle.numMotCle = motcle.numMotCle 
+GROUP BY motclearticle.numMotCle WITH ROLLUP', 'numArt, libMotCle');
+var_dump($motcle);
+echo '<br><br><br>';
+
+$listMotCle = $motcle['libMotCle'];
+echo $listMotCle . '<br><br>';
+$nuMotCle = $motcle['numArt'];
+
+
+
+/*
+
+foreach ($motcle as $num => $mot) {
+    echo "$num: $mot <br>";
+  }
+*/
+exit;
+
+
 ?>
-
-
 <!-- Bootstrap default layout to display all statuts in foreach -->
 <div class="container">
     <div class="row">
@@ -40,11 +60,6 @@ GROUP BY article.numArt', 'libMotCle, dtCreaArt, article.numArt, dtCreaArt, libT
                             <td><?php echo($article['libTitrArt']); ?></td>
                             <td><?php echo($article['libChapoArt']); ?></td>
                             <td><?php echo($article['libAccrochArt']); ?></td>
-                            <?php 
-                            //select sur les motcleart where num art = $article['numArt'] JOIN motcle pour recuperer le lib 
-                            //foreach motscles
-                            //echo
-                             ?>
                             <td><?php echo ($article['libMotCle']); ?></td> 
                             <td><?php echo($article['libThem']); ?></td>
                             <td>
