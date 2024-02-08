@@ -1,6 +1,12 @@
 <?php
 include '../../../header.php';
 
+//seulement si tu es admi ou moderateur tu as accès à cette page
+if (!isset($_SESSION['numStat']) || $_SESSION['numStat'] !== 1 && $_SESSION['numStat'] !== 2 ) {
+    // Rediriger vers une page d'erreur ou une page d'accueil
+    header('Location: ../../index.php');
+    exit();
+}
 if(isset($_GET['numMemb'])){
     $numMemb = $_GET['numMemb'];
     $pseudoMemb = sql_select("MEMBRE", "pseudoMemb", "numMemb = $numMemb")[0]['pseudoMemb'];

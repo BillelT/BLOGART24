@@ -4,11 +4,17 @@ include '../../../header.php'; // contains the header and call to config.php
 //Load all statuts
 
 
+//seulement si tu es admi ou moderateur tu as accès à cette page
+if (!isset($_SESSION['numStat']) || $_SESSION['numStat'] !== 1 && $_SESSION['numStat'] !== 2 ) {
+    // Rediriger vers une page d'erreur ou une page d'accueil
+    header('Location: ../../index.php');
+    exit();
+}
 
-$articles = sql_select('motcle
-INNER JOIN motclearticle ON motclearticle.numMotCle = motcle.numMotCle
-INNER JOIN article ON article.numArt = motclearticle.numArt
-INNER JOIN thematique ON article.numThem = thematique.numThem', '*');
+$articles = sql_select('article INNER JOIN thematique ON article.numThem = thematique.numThem', '*');
+
+
+
 ?>
 <!-- Bootstrap default layout to display all statuts in foreach -->
 <div class="container">
