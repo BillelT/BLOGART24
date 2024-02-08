@@ -3,6 +3,7 @@
 require_once $_SERVER['DOCUMENT_ROOT'] . '/config.php';
 require_once '../../functions/ctrlSaisies.php';
 
+
 $dtCreaArt = ctrlSaisies($_POST['dtCreaArt']);
 $dtMajArt = date("dtMajArt");
 $libTitrArt = ctrlSaisies($_POST['libTitrArt']);
@@ -18,6 +19,8 @@ $parag3Art = ctrlSaisies($_POST['parag3Art']);
 $parag3Art = BBCode($parag3Art);
 $libConclArt = ctrlSaisies($_POST['libConclArt']);
 $urlPhotArt = ctrlSaisies($_FILES['urlPhotArt']);
+$numMotCle = $_POST['motCle'];
+$numArt = ctrlSaisies($_POST['numArt']);
 
 
 // VARIABLES POUR FONCTION UPDATE
@@ -39,7 +42,7 @@ $table_art = "article";
 $requiredFields = ['libTitrArt', 'dtCreaArt', 'libChapoArt', 'libAccrochArt', 'parag1Art', 'libSsTitr1Art', 'parag2Art', 'libSsTitr2Art', 'parag3Art', 'libConclArt'];
 
   foreach ($requiredFields as $field) {
-   if (empty($_POST[$field])) {vv
+   if (empty($_POST[$field])) {
    echo "Veuillez remplir tous les champs du formulaire.";
   exit();
      }
@@ -50,7 +53,6 @@ $requiredFields = ['libTitrArt', 'dtCreaArt', 'libChapoArt', 'libAccrochArt', 'p
 if(isset($_FILES['urlPhotArt'])){
     var_dump($_FILES);
     $files = $_FILES['urlPhotArt'];
-
     $tmpName = $files['tmp_name'];
     $name = $files['name'];
     $size = $files['size'];
@@ -78,7 +80,12 @@ if(isset($_FILES['urlPhotArt'])){
 
 // UPDATE INFOS GENERALES
 sql_update($table_art, $set_art, $where_num);
+sql_delete('motclearticle', $where_num);
 
-header('Location: ../../views/backend/members/list.php');
+foreach ($numMotCle as $mot){
+    sql_insert('motclearticle', 'numArt, numMotCle', "$lastArt, $mot");
+}
+
+header('Location: ../../views/backend/articles/list.php');
 
 ?>

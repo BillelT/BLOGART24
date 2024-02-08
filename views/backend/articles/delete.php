@@ -1,4 +1,3 @@
-
 <?php
 include '../../../header.php';
 
@@ -35,81 +34,57 @@ if(isset($_GET['numArt'])){
         </div>
         <div class="col-md-12">
             <!-- Form to create a new statut -->
-            <form action="<?php echo ROOT_URL . '/api/articles/delete.php' ?>" method="post">
+            <form action="<?php echo ROOT_URL . '/api/articles/delete.php' ?>" method="post" id="form" type="post">
                 <div class="form-group">
-                    <label for="libStat">Titre</label>
-                    <input id="titre" name="libTitrArt" class="form-control" type="text" autofocus="autofocus" placeholder="Sur 100 car." value="<?php echo($libTitrArt); ?>" readonly="readonly" disabled>
+                <input id="numArt" name="numArt" class="form-control" style="display: none" type="text" value="<?php echo($numArt); ?>" readonly="readonly" />
+                    <label for="libTitrArt">Titre</label>
+                    <input id="libTitrArt" name="libTitrArt" class="form-control" type="text" autofocus="autofocus" value="<?php echo($libTitrArt); ?>" readonly="readonly" />
                     <br>
-                    <label for="libStat">Date création</label>
-                    <input id="Datecreation" name="dtCreaArt" class="form-control" type="datetime-local" autofocus="autofocus" placeholder="jj/mm/aaaa" value="<?php echo($dtCreaArt); ?>" readonly="readonly" disabled>
+                    <label for="dtCreaArt">Date création</label>
+                    <input id="dtCreaArt" name="dtCreaArt" class="form-control" type="datetime-local" autofocus="autofocus" value="<?php echo($dtCreaArt); ?>" readonly="readonly" />
                     <br>
-                    <label for="libStat">Chapeau</label>
-                    <input id="Chapeau" name="libChapoArt" class="form-control"  type="text" autofocus="autofocus" placeholder="Décrivez le chapeau. Sur 500 caractères." maxlength="500" value="<?php echo($libChapoArt); ?>" readonly="readonly" disabled></textarea>
+                    <label for="libChapoArt">Chapeau</label>
+                    <textarea id="libChapoArt" name="libChapoArt" class="form-control" placeholder="Décrivez le chapeau. Sur 500 caractères." maxlength="500" style="height: 200px;" readonly="readonly"><?php echo($libChapoArt); ?></textarea>
                     <br>
-                    <label for="libStat">Accroche paragraphe 1</label>
-                    <input id="Accroche1" name="libAccrochArt" class="form-control" type="text" autofocus="autofocus" maxlength="100" placeholder="" value="<?php echo($libAccrochArt); ?>" readonly="readonly" disabled>
+                    <label for="libAccrochArt">Accroche paragraphe 1</label>
+                    <input id="libAccrochArt" name="libAccrochArt" class="form-control" type="text" autofocus="autofocus" maxlength="100" placeholder="" value="<?php echo($libAccrochArt); ?>" readonly="readonly" />
                     <br>sur 100 car.
-                    <label for="libStat">Paragraphe 1</label>
-                    <input id="Paragraphe1" name="parag1Art" class="form-control"  type="text" autofocus="autofocus" placeholder="Décrivez le premier paragraphe. Sur 1200 car." maxlength="1200" value="<?php echo($parag1Art); ?>" readonly="readonly" disabled></textarea>
+                    <label for="parag1Art">Paragraphe 1</label>
+                    <textarea id="parag1Art" name="parag1Art" class="form-control" placeholder="Décrivez le premier paragraphe. Sur 1200 car." maxlength="1200" style="height: 200px;" readonly="readonly"><?php echo($parag1Art); ?></textarea>
                     <br>
-                    <label for="libStat">Sous-titre 1</label>
-                    <input id="Soustitre1" name="libSsTitr1Art" class="form-control" type="text" autofocus="autofocus" maxlength="100" placeholder="Sur 100 car." value="<?php echo($libSsTitr1Art); ?>" readonly="readonly" disabled>
+                    <label for="libSsTitr1Art">Sous-titre 1</label>
+                    <input id="libSsTitr1Art" name="libSsTitr1Art" class="form-control" type="text" autofocus="autofocus" maxlength="100" placeholder="Sur 100 car." value="<?php echo($libSsTitr1Art); ?>" readonly="readonly" />
                     <br>
-                    <label for="libStat">Paragraphe 2</label>
-                    <input id="Paragraphe2" name="parag2Art" class="form-control"  type="text" autofocus="autofocus" placeholder="Décrivez le deuxième paragraphe. Sur 1200 car." maxlength="1200" value="<?php echo($parag2Art); ?>" readonly="readonly" disabled></textarea>
+                    <label for="parag2Art">Paragraphe 2</label>
+                    <textarea id="parag2Art" name="parag2Art" class="form-control" placeholder="Décrivez le deuxième paragraphe. Sur 1200 car." maxlength="1200" style="height: 200px;" readonly="readonly"><?php echo($parag2Art); ?></textarea>
                     <br>
-                    <label for="libStat">Sous-titre 2</label>
-                    <input id="Soustitre2" name="libSsTitr2Art" class="form-control" type="text" autofocus="autofocus" maxlength="100" placeholder="Sur 100 car." value="<?php echo($libSsTitr2Art); ?>" readonly="readonly" disabled>
+                    <label for="libSsTitr2Art">Sous-titre 2</label>
+                    <input id="libSsTitr2Art" name="libSsTitr2Art" class="form-control" type="text" autofocus="autofocus" maxlength="100" placeholder="Sur 100 car." value="<?php echo($libSsTitr2Art); ?>" readonly="readonly" />
                     <br>
-                    <label for="libStat">Paragraphe 3</label>
-                    <input id="Paragraphe3" name="parag3Art" class="form-control"  type="text" autofocus="autofocus" placeholder="Décrivez le troisième paragraphe. Sur 1200 car." maxlength="1200" value="<?php echo($parag3Art); ?>" readonly="readonly" disabled></textarea>
+                    <label for="parag3Art">Paragraphe 3</label>
+                    <textarea id="parag3Art" name="parag3Art" class="form-control" placeholder="Décrivez le troisième paragraphe. Sur 1200 car." maxlength="1200" style="height: 200px;" readonly="readonly"><?php echo($parag3Art); ?></textarea>
                     <br>
-                    <label for="libStat">Conclusion</label>
-                    <input id="Conclusion" name="libConclArt" class="form-control"  type="text" autofocus="autofocus" placeholder="Décrivez la conclusion. Sur 800 car." maxlength="500" value="<?php echo($libConclArt); ?>" readonly="readonly" disabled></textarea>
+                    <label for="libClonclArt">Conclusion</label>
+                    <textarea id="libConclArt" name="libConclArt" class="form-control" placeholder="Décrivez la conclusion. Sur 800 car." maxlength="500" style="height: 200px;" readonly="readonly"><?php echo($libConclArt); ?></textarea>
                     <br>
-                    <input id="numArt" name="numArt" class="form-control" style="display: none" type="text" value="<?php echo($numArt); ?>" readonly="readonly" />
-                   
+
 
                     <!-- image !-->
-                    <label for="imageInput">Choisir une image :</label>
-                    <input type="file" id="imageInput" name="urlPhotArt" accept=".jpg, .jpeg, .png, .gif" maxlength="80000" width="80000" height="80000" size="200000000000" value="<?php echo($urlPhotArt); ?>" readonly="readonly" disabled>
-                    
-                    <p>>> Extension des images acceptées : .jpg, .gif, .png, .jpeg (lageur, hauteur, taille max : 80000px, 80000px, 200 000 Go)</p>
+                    <img src="" />
                     <!-- choix de la thématique !-->
-                    <p><br></p>
-                    <label for="libThem">Thématique :</label>
-                    <select name="thematique" id="libThem">
-                        <option value="<?php echo($numThem); ?>"><?php echo($libThem); ?></option>
-                    </select>
-                   
-
-
+                    <label for="libThem">Thématique</label>
+                    <input id="libThem" name="libThem" class="form-control" type="text" autofocus="autofocus" value="<?php echo($libThem); ?>" readonly="readonly" />
                 </div>
-                <br>
-                <div class="form-group mt-2">
-                    <button type="submit" class="btn btn-danger" onclick="return confirm('Est-ce que tu es sûr(e)?')">Confirmer delete ?</button>
+                <div class="form-group mt-2" style="margin: 32px auto 128px;">
+                    <button type="submit" class="btn btn-primary ">Confirmer delete ?</button>
                 </div>
-                <?php 
-                    $requiredFields = ['libTitrArt', 'dtCreaArt', 'libChapoArt', 'libAccrochArt', 'parag1Art', 'libSsTitr1Art', 'parag2Art', 'libSsTitr2Art', 'parag3Art', 'libConclArt',];
-
-                    foreach ($requiredFields as $field) {
-                        if (empty($_POST[$field])) {
-                            echo "Veuillez remplir tous les champs du formulaire.";
-                            exit();
-                        }
-                    }
-                    ?>
-                
-                
-
-
             </form>
         </div>
     </div>
 </div>
 
 <?php
-include '../../../header.php';
+include '../../../footer.php';
 
 
 ?>
