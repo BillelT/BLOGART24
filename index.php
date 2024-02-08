@@ -17,10 +17,7 @@
         ?>
     </header>
     <main>
-        <a href="./views/backend/articles/create.php">
-            LAAA
-        </a>
-        <section class="container hero">
+        <section class="container col-12 col-sm-8 hero">
             <p>La Belle Endormie, malgré son surnom, est une ville qui a du chien ! Il est pourtant parfois difficile de
                 connaître les actions et infrastructures mises en place pour le bien-être et la préservation des animaux
                 dans Bordeaux.
@@ -72,34 +69,38 @@
             <!-- insérer le boostrap et faire les boutons -->
         </section>
 
-        <section class="association">
-            <article>
-                <h2>Avoir un animal sur Bordeaux,
-                    c'est possible grâce aux différents aménagements ! </h2>
-                <a href="#">
-                    <img src="./src/images/aménagements animal.png" alt="chien guide">
-                </a>
-                <a href="#">
-                    <button>
-                        En savoir plus <span> &#8594;</span>
-                    </button>
-                </a>
-            </article>
-            <article>
-                <h2>Les différentes associations et refuges bordelais </h2>
-                <a href="#">
-                    <img src="./src/images/associations et refuges.png" alt="association spa">
-                </a>
-                <a href="#">
-                    <button>
-                        En savoir plus <span> &#8594;</span>
-                    </button>
-                </a>
-            </article>
-        </section>
-
-        <section class="who">
-            <h2>Qui sommes nous ?</h2>
+        <section class="container association">
+            <div class="row">
+                <div class="container col-12 col-sm-10">
+                    <article>
+                        <h2>Avoir un animal sur Bordeaux,
+                            c'est possible grâce aux différents aménagements ! </h2>
+                            <a href="#">
+                                <img src="./src/images/aménagements animal.png" alt="chien guide">
+                            </a>
+                        <a href="#">
+                            <button>
+                                En savoir plus <span> &#8594;</span>
+                            </button>
+                        </a>
+                    </article>
+                    <article>
+                        <h2>Les différentes associations et refuges bordelais </h2>
+                        <a href="#">
+                            <img src="./src/images/associations et refuges.png" alt="association spa">
+                        </a>
+                        <a href="#">
+                            <button>
+                                En savoir plus <span> &#8594;</span>
+                            </button>
+                        </a>
+                    </article>
+                </div>
+                </div>
+                </section>
+                
+                <section class="container col-12 col-sm-8 who">
+                    <h2>Qui sommes nous ?</h2>
             <p>Nous sommes une équipe de choc qui se tient à l'affut des actualités et événements sur Bordeaux pour
                 répondre aux mieux à toutes vos questions. Nous sommes des étudiants en première année d'études
                 supérieures dans les métiers du Multimédia et d'Internet.
