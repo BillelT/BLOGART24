@@ -1,3 +1,6 @@
+<?php
+    require_once 'header.php';
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -11,11 +14,6 @@
 </head>
 
 <body>
-    <header>
-        <?php
-        require_once 'header.php';
-        ?>
-    </header>
     <main>
         <section class="container col-12 col-sm-8 hero">
             <p>La Belle Endormie, malgré son surnom, est une ville qui a du chien ! Il est pourtant parfois difficile de

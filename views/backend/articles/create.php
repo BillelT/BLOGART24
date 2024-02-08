@@ -8,7 +8,7 @@ require_once '../../../header.php';
         </div>
         <div class="col-md-12">
             <!-- Form to create a new statut -->
-            <form action="<?php echo ROOT_URL . '/api/articles/create.php' ?>" method="post">
+            <form action="<?php echo ROOT_URL . '/api/articles/create.php' ?>" method="post" id="form">
                 <div class="form-group">
                     <label for="libStat">Titre</label>
                     <input id="titre" name="libTitrArt" class="form-control" type="text" autofocus="autofocus" placeholder="Sur 100 car.">
@@ -81,6 +81,8 @@ require_once '../../../header.php';
                             const newMotCle = document.getElementById('newMotCle');
                             const options = addMotCle.options;
                             const addOptions = newMotCle.options;
+                            var formulaire = document.getElementById("form");
+                            var champTableau = document.createElement("input");
                             let bool = false;
                             let motCle = [];
 

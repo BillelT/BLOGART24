@@ -29,9 +29,9 @@ require_once 'config.php';
             </a>
             <nav class="nav" id="nav">
                 <ul>
-                    <li>
+                    <!-- <li>
                         <a href="#" class="connected" id="connected">Mon profil <span>&#8594;</span></a>
-                    </li>
+                    </li> -->
                     <li>
                         <a href="#">Articles <span>&#8594;</span></a>
                     </li>
