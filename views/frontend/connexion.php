@@ -12,9 +12,7 @@ require '../../header.php';
         utilisateurs.</h3>
     </div>
 
-    <?php if(isset($_SESSION["numStat"])){
-        echo "Bonjour ".$_SESSION["numStat"];
-    } ?>
+    
 
 <!-- Bootstrap form to create a new statut -->
 
@@ -22,8 +20,8 @@ require '../../header.php';
             <form action="<?php echo ROOT_URL . '/api/security/connexion.php' ?>" method="post">
             <div class="div-formulaire">
                 <div class="form-group email">
-                    <label for="eMailMemb" class="col-form-label">Adresse mail :</label>
-                    <input id="eMailMemb" name="eMailMemb" class="form-control" type="email" autofocus="autofocus" />
+                    <label for="pseudoMemb" class="col-form-label">Pseudo:</label>
+                    <input id="pseudoMemb" name="pseudoMemb" class="form-control" type="text" autofocus="autofocus" />
                 </div>
                 <div class="form-group motdepasse col-auto">
                     <label for="passMemb" class="col-form-label">Mot de passe :</label>
