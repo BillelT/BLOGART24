@@ -310,7 +310,7 @@ require '../../../header.php';
             <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
             <label class="form-check-label" for="flexCheckDefault">
                 Je consens à ce que mes données fournies dans ce formulaire de contact soient collectées et
-                utilisées conformément à la Politique de Confidentialité de Bibble’S.
+                utilisées conformément à la  <a href="/views/frontend/rgpd/Politiques.php" target="_blank">Politique de Confidentialité de Bibble'S</a>
             </label>
         </div>
         <!-- Bouton envoyer -->

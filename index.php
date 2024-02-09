@@ -41,7 +41,7 @@
             <div class="card-article">
                 <!-- Article 1 -->
                 <div class="card1">
-                    <img src="./src/images/francis-feytout.webp" class="card-img-top" alt="Francis Feytou">
+                    <img src="./src/images/francis.webp" class="card-img-top" alt="Francis Feytou">
                     <!-- Partie texte du premier article -->
                     <div class="card-body">
                         <h2 class="card-title">FRANCIS FEYTOUT : </h2>

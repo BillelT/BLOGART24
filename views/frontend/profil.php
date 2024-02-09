@@ -4,7 +4,7 @@ require '../../header.php';
 if (isset($_POST['deconnexion'])) {
     // Détruire la session
     echo 'Vous allez être déconnecté';
-    
+    session_start();
     session_unset();
     session_destroy();
 
@@ -60,7 +60,7 @@ if (isset($_POST['deconnexion'])) {
     </div>
     <div method="post" action="" type="button-less-important" class="button-less-important">
       <br>
-        <button class="submit" name="deconnexion">Changer de session</button>
+        <button name="deconnexion" type="submit" class="btn btn-danger" onclick="return confirm('Est-ce que tu es sûr(e)?')">Changer de session</button>
         <p><br></p>
   </div>
     <div>
