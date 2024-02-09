@@ -2,12 +2,12 @@
 require '../../header.php';
 ?>
 <!doctype html>
-<html lang="fr">
+<html lang="fr-FR">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>FAQ Bibble'S</title>
+    <title>FAQ</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="../../src/css/faq.css">
     <link rel="icon" href="/src/images/logo bibble's header.png">
@@ -372,7 +372,7 @@ require '../../header.php';
         <!-- Article 1 -->
         <div class="card-article">
             <div class="card1">
-                <img src="img/francis.png" class="card-img-top" alt="tête de Francis">
+                <img src="/src/images/francis feytout.png" class="card-img-top" alt="tête de Francis">
                 <!-- Partie texte du premier article -->
                 <div class="card-body">
                     <h2 class="card-title">FRANCIS FEYTOUT : </h2>
@@ -382,12 +382,12 @@ require '../../header.php';
                         Allant des espaces verts pour votre chien, aux mesures prises en ville
                         vous pourrez adopter sereinement votre futur compagnon.</p>
                     <!-- Bouton du premier article -->
-                    <a href="#" class="btn_btn-primary">Lire la suite &#10140;</a>
+                    <a href="/views/frontend/article-interview.php" class="btn_btn-primary">Lire la suite &#10140;</a>
                 </div>
             </div>
             <!-- Article 2 -->
             <div class="card1">
-                <img src="img/marche.png" class="card-img-top" alt="La marche ">
+                <img src="/src/images/croquettes.png" class="card-img-top" alt="La marche ">
                 <!-- Partie texte du deuxième article -->
                 <div class="card-body">
                     <h4 class="card-title">DES KM ET DES CROQUETTES : </h4>
@@ -397,7 +397,7 @@ require '../../header.php';
                         contexte d’inflation. Découvrez comment participer afin d’aider à remplir
                         les gamelles de nos amis à quatre pattes actuellement en refuges animaliers.</p>
                     <!-- Bouton du deuxième article -->
-                    <a href="#" class="btn_btn-primary">Lire la suite &#10140;</a>
+                    <a href="/views/frontend/article-event.php" class="btn_btn-primary">Lire la suite &#10140;</a>
                 </div>
             </div>
         </div>

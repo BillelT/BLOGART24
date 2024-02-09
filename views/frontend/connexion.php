@@ -1,6 +1,17 @@
 <?php 
 require '../../header.php';
 ?>
+<!DOCTYPE html>
+<html lang="fr-FR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Connexion</title>
+</head>
+<body>
+    
+</body>
+</html>
   <link rel="stylesheet" href="../../src/css/connexion.css">
   <section class="connexion" style="background-color: #FEF5EA;">
 
@@ -45,9 +56,13 @@ require '../../header.php';
                     <div class="div-connexion">
                         <div class="div-no-compte">
                         <button type="submit" class="button-connexion">Connexion</button>
+                    </div>
+                    <a href="/views/frontend/inscription.php" style="text-decoration: none;">
+                        <button type="button" class="button-inscription">Inscription</button>
+                    </a>
+                    <a href="/views/frontend/inscription.php">
                         <p class="link-opacity-100">Pas de compte ?</p>
-                        </div>
-                        <button type="submit" class="button-inscription">Inscription</button>
+                    </a>
                     </div>
                 </div>
             </form>

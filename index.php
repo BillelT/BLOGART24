@@ -30,7 +30,7 @@
                 recensement d'associations, tous nos articles sont là pour vous rappeler qu'à Bordeaux, nos animaux
                 peuvent prospérer !</p>
 
-            <a href="FAQ/faq.html" class="faq">
+            <a href="/views/frontend/faq.php" class="faq">
                 <button>
                     Voir la FAQ <span> &#8594;</span>
                 </button>
@@ -51,7 +51,7 @@
                             Allant des espaces verts pour votre chien, aux mesures prises en ville
                             vous pourrez adopter sereinement votre futur compagnon.</p>
                         <!-- Bouton du premier article -->
-                        <a href="./views/frontend/article-event.php" class="btn_btn-primary">Lire la suite &#10140;</a>
+                        <a href="/views/frontend/article-interview.php" class="btn_btn-primary">Lire la suite &#10140;</a>
                     </div>
                 </div>
                 <!-- Article 2 -->
@@ -66,7 +66,7 @@
                             contexte d'inflation. Découvrez comment participer afin d'aider à remplir
                             les gamelles de nos amis à quatre pattes actuellement en refuges animaliers.</p>
                         <!-- Bouton du deuxième article -->
-                        <a href="#" class="btn_btn-primary">Lire la suite &#10140;</a>
+                        <a href="/views/frontend/article-event.php" class="btn_btn-primary">Lire la suite &#10140;</a>
                     </div>
                 </div>
             </div>
@@ -131,7 +131,7 @@
                 <img src="./src/images/antoine courcaud.png" width="60" height="60" alt="Antoine Courcaud">
             </div>
         </section>
-        <section class="contact-faq">
+        <section class="container contact-faq">
             <h3 class="h3-contact-faq">Contactez nous</h3>
             <!-- partie formulaire -->
             <!-- Nom -->

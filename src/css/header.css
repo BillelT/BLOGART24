@@ -1,7 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400&display=swap');
 
 
-*, ::after, ::before{
+*,
+::after,
+::before {
     box-sizing: border-box;
     text-decoration: none;
     list-style-type: none;
@@ -12,7 +14,7 @@
 }
 
 html {
-    scroll-behavior: smooth;
+    scroll-behavior: smooth !important;
 }
 
 body {
@@ -20,27 +22,30 @@ body {
     overflow-x: hidden;
 }
 
-header a{
+header a {
     color: #fef5ea;
     font-weight: 700;
     font-size: 14px;
     text-decoration: none;
 }
+
 header ul {
     padding: 0;
     margin: 0;
 }
+
 header p {
     margin: 0;
     font-size: 10px;
 }
+
 button {
     cursor: pointer;
     font-weight: 700;
     font-size: 14px;
 }
 
-header{
+header {
     background: url(../images/bg\ header.png) no-repeat center;
     background-size: cover;
     color: #fef5ea;
@@ -65,7 +70,7 @@ header{
     background-color: #fef5ea;
     color: #051514;
     border-radius: 8px;
-    display: flex;  
+    display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 8px;
@@ -89,7 +94,7 @@ header{
     padding-top: 24px;
 }
 
-.nav.burger-menu{
+.nav.burger-menu {
     left: 0;
 }
 
@@ -104,7 +109,7 @@ header nav li {
 }
 
 
-.inscription span{
+.inscription span {
     color: #051514;
 }
 
@@ -141,7 +146,8 @@ header nav a {
     color: #FFCE08;
     background: #051514;
 }
-.inscription:hover span{
+
+.inscription:hover span {
     color: #FFCE08;
 }
 
@@ -185,8 +191,6 @@ header h2 {
 
 .ariane {
     background: #5C7142;
-    color: #fef5ea;
-    text-decoration: underline;
     text-underline-offset: 4px;
     height: 28px;
     padding-left: 9.4%;
@@ -194,22 +198,27 @@ header h2 {
 }
 
 .ariane p {
-   font-size: 16px;
+    color: #fef5ea;
+    font-size: 16px;
+    text-decoration: underline;
 }
 
 @media screen and (min-width:780px) {
     .navigation {
         padding-top: 32px;
     }
+
     .search {
         width: 80%;
         height: 24px;
-        border-radius: 12px;    
+        border-radius: 12px;
         min-width: 104px;
     }
+
     .burger {
         display: none;
     }
+
     .nav {
         position: relative;
         left: 0;
@@ -219,6 +228,7 @@ header h2 {
         justify-items: center;
         justify-content: end;
     }
+
     .nav ul {
         display: flex;
         justify-content: space-between;
@@ -226,36 +236,42 @@ header h2 {
         align-items: center;
         margin-bottom: 0;
     }
+
     .nav ul li {
         width: unset;
         border: none;
         padding: 0;
         width: 100%;
     }
+
     .nav ul li a {
         color: #fef5ea;
     }
+
     .nav ul li span {
         display: none;
     }
-    
+
     .inscription {
         margin-top: 0;
     }
+
     .inscription:hover {
         border: 2px solid #FFCE08;
     }
+
     .connect {
         background: #5C7142;
         border: none;
         color: #fef5ea;
         margin-top: 0;
     }
+
     .connect:hover {
         background: #fef5ea;
         color: #5C7142;
     }
-    
+
     header h2 {
         font-size: calc(19px + 1.9vw);
         padding-top: 32px;
