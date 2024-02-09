@@ -83,39 +83,11 @@ line-height: normal;
 }
 .div-connexion{
     display: flex;
-    flex-direction: column;
-    gap: 4px;
+    flex-direction: column-reverse;
+    gap: 16px;
     justify-content: center;
     align-items: center;
     padding-bottom: 64px;
-}
-.button-connexion {
-border-radius: 8px;
-background: var(--CTA-YELLOW, #FFCE08);
-display: flex;
-width: 149px;
-height: 36px;
-padding: 11.041px 16.561px;
-justify-content: center;
-align-items: center;
-gap: 5.52px;
-flex-shrink: 0;
-border: none;
-}
-
-.button-inscription {
-border-radius: 8px;
-background: var(--GREEN-SECONDARY, #5C7142);
-color: #fff;
-display: flex;
-width: 149px;
-height: 36px;
-padding: 11.041px 16.561px;
-justify-content: center;
-align-items: center;
-gap: 5.52px;
-flex-shrink: 0;
-border: none;
 }
 
 .col-form-label {
@@ -151,6 +123,48 @@ text-decoration-line: underline;
 .valid button {
     margin-top: 16px;
 }
+/* bouton changement de mdp et champs mdp */
+.div-formulaire .lab-mdp {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    font-family: 'K2D', sans-serif;
+    font-size: 14px;
+  }
+  
+  .div-formulaire .lab-mdp input {
+    border-radius: 4px;
+    background-color: transparent !important;
+    border: 2px solid var(--BROWN-3RD, #885B3A);
+    font-family: 'K2D', sans-serif;
+    transition: all 0.2s;
+  }
+  
+  .div-formulaire .lab-mdp input:focus {
+    border-color: #5C7142;
+
+  }
+  
+  .div-formulaire .lab-mdp .password-icon {
+    position: absolute;
+    display: flex;
+    right: 16px;
+    top: 20px;
+    align-self: flex-end;
+    transform: translateY(-50%);
+    width: 20px;
+    color: #000000;
+    transition: all 0.2s;
+  }
+  
+  .div-formulaire .lab-mdp .password-icon:hover {
+    cursor: pointer;
+    color: #5C7142;
+  }
+  
+  .div-formulaire .lab-mdp .feather-eye-off {
+    display: none;
+  } 
 @media (min-width:780px){
     h1{
         font-size: 55px;
@@ -184,7 +198,7 @@ text-decoration-line: underline;
     }
     .div-connexion{
         display: flex;
-        flex-direction: row-reverse;
+        flex-direction: row;
         align-items: flex-start;
         gap: 16px;
     }
