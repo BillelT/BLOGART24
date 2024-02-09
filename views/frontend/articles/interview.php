@@ -1,5 +1,5 @@
 <?php 
-   require '../../header.php';
+   require '../../../header.php';
    if (isset($_GET['numArt'])){
     $numArt = $_GET['numArt'];
     $article = sql_select('ARTICLE', '*', "numArt ='$numArt'")[0];
@@ -292,7 +292,7 @@
         </div>
     </section>
     <?php 
-        require '../../footer.php';
+        require '../../../footer.php';
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
