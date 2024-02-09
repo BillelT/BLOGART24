@@ -6,6 +6,7 @@ $numArt = ctrlSaisies($_POST['numArt']);
 
 var_dump($numArt);
 
-sql_delete('ARTICLE', "numArt = $numArt");
+sql_delete('MOTCLEARTICLE', "numArt = '$numArt'");
+sql_delete('ARTICLE', "numArt = '$numArt'");
 
 header('Location: ../../views/backend/articles/list.php');
