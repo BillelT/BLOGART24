@@ -91,34 +91,12 @@ $dtCreaMemb = date_create()->format('Y-m-d H:i:s');
 echo $dtCreaMemb . '<br>'; // donne la date & heure d'inscription
 $dtMajMemb = NULL;
 
-$max = 'MAX('. 'numMemb' . ')';
-$numMemb = sql_select('MEMBRE', $max);
-
-echo '<br>';
-$numMemb = implode("", $numMemb[0]);
-echo $numMemb;
-echo '<br>';
-// GENERE NBR DE MEMBRE (PREND +GRANDE VALEUR ET Y AJOUTE 1)
-++$numMemb;
-echo $numMemb . '<br>';
-
-// FIN PARTIE CAPTCHA
-
 
 if (isset($pseudoMemb, $prenomMemb, $nomMemb, $passMemb, $eMailMemb, $accordMemb, $numStat)){
-    if (!isset($_SESSION['numStat'])) {
-       
             //Vous pouvez le faire
             sql_insert('MEMBRE', 
-            'prenomMemb, nomMemb, pseudoMemb, passMemb, eMailMemb, dtCreaMemb, accordMemb, numMemb, dtMajMemb, numStat', 
-            "'$prenomMemb', '$nomMemb', '$pseudoMemb', '$hash_password', '$eMailMemb', '$dtCreaMemb', '$accordMemb', '$numMemb', '$dtMajMemb', '$numStat'");
-            
-        
-        
-    } 
-   
- 
-
+            'prenomMemb, nomMemb, pseudoMemb, passMemb, eMailMemb, dtCreaMemb, accordMemb, dtMajMemb, numStat', 
+            "'$prenomMemb', '$nomMemb', '$pseudoMemb', '$hash_password', '$eMailMemb', '$dtCreaMemb', '$accordMemb', '$dtMajMemb', '$numStat'");
     header('Location: ../../views/backend/members/list.php');
 
 } else {
