@@ -79,12 +79,13 @@
                     <article class="article">
                         <h2>Avoir un animal sur Bordeaux,
                             c'est possible grâce aux différents aménagements ! </h2>
-                            <a href="#">
+            
+                            <a href="/views/frontend/articles/interview.php?numArt=2">
                                 <img src="./src/images/aménagements animal.png" alt="chien guide">
                             </a>
-                        <a href="#">
+                        <a href="/views/frontend/articles/interview.php?numArt=2">
                             <button>
-                                En savoir plus <span> &#8594;</span>
+                                En savoir plus <span> &#10140;</span>
                             </button>
                         </a>
                     </article>
@@ -95,7 +96,7 @@
                         </a>
                         <a href="#">
                             <button>
-                                En savoir plus <span> &#8594;</span>
+                                En savoir plus <span> &#10140;</span>
                             </button>
                         </a>
                     </article>
@@ -169,9 +170,10 @@
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                 <label class="form-check-label" for="flexCheckDefault">
-                    Je consens à ce que mes données fournies dans ce formulaire de contact soient collectées et
-                    utilisées conformément à la Politique de Confidentialité de Bibble'S.
+                    Je consens à ce que mes données fournies dans ce formulaire de contact soient collectées et utilisées conformément à la
+                    <a href="/views/frontend/rgpd/politique.php" target="_blank">Politique de Confidentialité de Bibble'S</a>.
                 </label>
+
             </div>
             <!-- Bouton envoyer -->
             <div class="bouton-faq">

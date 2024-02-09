@@ -1,5 +1,5 @@
 <?php 
-   require '../../header.php';
+   require '../../../header.php';
    if (isset($_GET['numArt'])){
     $numArt = $_GET['numArt'];
     $article = sql_select('article', '*', "numArt ='$numArt'")[0];
@@ -44,7 +44,7 @@
     <!-- avant le paragraphe -->
     <div class="before-para">
         <h1 class="text-center"><?php echo $libTitrArt; ?></h1>
-        <div class="text-center"><a href="#scroll"><button>En lire plus ?</button></a></div>
+        <div class="text-center"><a class="button-lire" href="#scroll"><button>En lire plus ?</button></a></div>
         <h2 id="scroll"><?php echo $libAccrochArt; ?></h2>
         <img src="../../../src/images/<?php echo $urlPhotArt; ?>" alt="chien qui se fait promener">
         <p>Catégorie : Evenement<br>
@@ -296,7 +296,7 @@
         </div>
     </section>
     <?php 
-        require '../../footer.php';
+        require '../../../footer.php';
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">
