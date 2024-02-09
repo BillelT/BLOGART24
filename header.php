@@ -89,22 +89,17 @@ require_once 'config.php';
     $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
 
     $uri = $_SERVER['REQUEST_URI'];
-    $ariane = explode("/", $uri);
-    $motAriane = end($ariane);
-    $test = explode(".",$motAriane); 
-    $mot = $test[0];
-    $url = "$protocol:/$domain";
-    $url1 = $url . $uri;
-    $url = "$protocol://$domain";
-    if (($protocol === "https" && $port != "443") || ($protocol === "http" && $port != "80")) {
-        $url .= ":$port";
-    }
-    $url .= $uri;
-    if ($mot !== "index") {
-        echo "<div class='ariane'> <a href='/index.php'> Accueil </a> <p> > <p> <a href='$url'> $mot <a> </div>";
+    $page = explode("/", $uri);
+    $fileName = end($page);
+    $fileNameExplode = explode(".",$fileName); 
+    $ariane = $fileNameExplode[0];
+    if ($ariane === "index") {
+        echo "<div class='ariane'> <a href='/index.php'> Accueil </a> <p> > <p> </div>";
+    } else if ($ariane === "") {
+        echo "<div class='ariane'> <a href='/index.php'> Accueil </a> <p> > <p> </div>";
     } else {
-        echo "<div class='ariane'> <a href='/index.php'> Accueil </a> <p> > <p>";
-    }
+        echo "<div class='ariane'> <a href='/index.php'> Accueil </a> <p> > <p> <a href='$uri'> $ariane <a> </div>";
+    };
 
 
     ?>
