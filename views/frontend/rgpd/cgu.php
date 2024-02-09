@@ -1,5 +1,5 @@
 <?php 
-require '../../header.php';
+require '../../../header.php';
 ?>
 <!DOCTYPE html>
 <html lang="fr-FR">
@@ -216,7 +216,7 @@ require '../../header.php';
 </section>
 
 <?php 
-require '../../footer.php';
+require '../../../footer.php';
 ?>
 
 </body>

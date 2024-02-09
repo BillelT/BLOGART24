@@ -34,17 +34,26 @@ require '../../header.php';
                     <label for="pseudoMemb" class="col-form-label">Pseudo:</label>
                     <input id="pseudoMemb" name="pseudoMemb" class="form-control" type="text" autofocus="autofocus" />
                 </div>
+
                 <div class="form-group motdepasse col-auto">
-                    <label for="passMemb" class="col-form-label">Mot de passe :</label>
-                    <input id="passMemb" name="passMemb" class="form-control" type="password" autofocus="autofocus" aria-describedby="passwordHelp" />
+                <label>Mot de passe :</label>
+                <label class="lab-mdp">
+                    <input id="passMemb" name="passMemb" class="form-control" type="password" placeholder="Mot de passe">
+    
+                    <div class="password-icon">
+                        <i data-feather="eye"></i>
+                        <i data-feather="eye-off"></i>
+                    </div>
+                </label>
+
                     <div class="condition-mdp">
-                        <button type="button" id="afficher"  class="afficher-mdp">Afficher le mot de passe</button>
                         <span id="passwordHelp" class="form-text">
                         La longueur doit être comprise entre 8 et 20 caractères.
                         </span>
                     </div>
                 </div>
             </div>
+
                 <div class="valid form-check">
                 <input class="form-check-input" type="checkbox" value="" id="cookies">
                 <label class="form-check-label" for="cookies">
@@ -54,15 +63,15 @@ require '../../header.php';
                 <br />
                 <div class="div-button">
                     <div class="div-connexion">
-                        <div class="div-no-compte">
-                        <button type="submit" class="button-connexion">Connexion</button>
+                    <div class="div-no-compte">
+                        <a href="/views/frontend/inscription.php" style="text-decoration: none;">
+                            <button type="button" class="connect">Inscription</button>
+                        </a>
+                        <a href="/views/frontend/inscription.php">
+                            <p class="link-opacity-100">Pas de compte ?</p>
+                        </a>
                     </div>
-                    <a href="/views/frontend/inscription.php" style="text-decoration: none;">
-                        <button type="button" class="button-inscription">Inscription</button>
-                    </a>
-                    <a href="/views/frontend/inscription.php">
-                        <p class="link-opacity-100">Pas de compte ?</p>
-                    </a>
+                        <button type="submit" class="inscription">Connexion</button>
                     </div>
                 </div>
             </form>
@@ -71,18 +80,34 @@ require '../../header.php';
 <?php 
 require '../../footer.php';
 ?>
+
+    <!-- ICON SCRIPT -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        feather.replace();
+    </script>
+    <script>
+        const eye = document.querySelector(".feather-eye");
+        const eyeoff = document.querySelector(".feather-eye-off");
+        const passwordField = document.querySelector("input[type=password]");
+
+        eye.addEventListener("click", () => {
+            eye.style.display = "none";
+            eyeoff.style.display = "block";
+
+            passwordField.type = "text";
+        });
+
+        eyeoff.addEventListener("click", () => {
+            eyeoff.style.display = "none";
+            eye.style.display = "block";
+
+            passwordField.type = "password";
+        });
+    </script>
+
 </body>
-<script>
-  document.getElementById( 'afficher' ).addEventListener( "click", function() {
-   
-   attribut = document.getElementById( 'passMemb' ).getAttribute( 'type');
-   if(attribut == 'password'){
-       document.getElementById( 'passMemb' ).setAttribute( 'type', 'text');
-   } else {
-       document.getElementById( 'passMemb' ).setAttribute( 'type', 'password');
-   }
-   
-});
-</script>
+
+</html>
 
         

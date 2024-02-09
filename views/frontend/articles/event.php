@@ -46,7 +46,7 @@
         <h1 class="text-center"><?php echo $libTitrArt; ?></h1>
         <div class="text-center"><a href="#scroll"><button>En lire plus ?</button></a></div>
         <h2 id="scroll"><?php echo $libAccrochArt; ?></h2>
-        <img src="../../src/images/<?php echo $urlPhotArt; ?>" alt="chien qui se fait promener">
+        <img src="../../../src/images/<?php echo $urlPhotArt; ?>" alt="chien qui se fait promener">
         <p>Catégorie : Evenement<br>
         <?php echo $dtCreaArt; ?>
         </p>
@@ -69,7 +69,7 @@
                     <div class="div-guimet">
                         <img class="guimet-gauche" src="../../../src/images/guimet-gauche.svg" alt="petit guimet">
                         <h3>Les gens donnent de moins en moins [...] en raison de l'inflation</h3>
-                        <img class="guimet-droite" src="../../src/images/guimet-droite.svg" alt="petit guimet">
+                        <img class="guimet-droite" src="../../../src/images/guimet-droite.svg" alt="petit guimet">
                     </div>
                     <div class="div-text-art">
                         <p><strong><?php echo $libChapoArt; ?></strong>
@@ -92,9 +92,9 @@
                 <div class="container-paragraph">
                     <!-- Petit texte avec les petites icones svg au dessus et en dessous -->
                     <div class="div-guimet">
-                        <img class="guimet-gauche" src="../../src/images/guimet-gauche.svg" alt="petit guimet">
+                        <img class="guimet-gauche" src="../../../src/images/guimet-gauche.svg" alt="petit guimet">
                         <h3>Chaque kilomètre parcouru est un repas offert aux animaux des refuges.</h3>
-                        <img class="guimet-droite" src="../../src/images/guimet-droite.svg" alt="petit guimet">
+                        <img class="guimet-droite" src="../../../src/images/guimet-droite.svg" alt="petit guimet">
                     </div>
                     <div class="div-text-art">
                         <p> <?php echo $parag2Art; ?>
@@ -114,9 +114,9 @@
                 <!--     paragraphe de la page article -->
                 <div class="container-paragraph">
                     <div class="div-guimet">
-                        <img class="guimet-gauche" src="../../src/images/guimet-gauche.svg" alt="petit guimet">
+                        <img class="guimet-gauche" src="../../../src/images/guimet-gauche.svg" alt="petit guimet">
                         <h3>Toutes les deux minutes, un animal est abandonné</h3>
-                        <img class="guimet-droite" src="../../src/images/guimet-droite.svg" alt="petit guimet">
+                        <img class="guimet-droite" src="../../../src/images/guimet-droite.svg" alt="petit guimet">
                     </div>
                     <div class="div-text-art">
                         <p> <?php echo $parag3Art; ?>
@@ -167,13 +167,13 @@
         <!-- Partie bouton -->
         <div class="buttons">
             <a href="#"></a>
-            <button type="button" class="bouton-like"><img src="../../src/images/like.svg">Like</button>
+            <button type="button" class="bouton-like"><img src="../../../src/images/like.svg">Like</button>
             </a>
             <a href="#"></a>
-            <button type="button" class="bouton-partager"><img src="../../src/images/partager.svg">partager</button>
+            <button type="button" class="bouton-partager"><img src="../../../src/images/partager.svg">partager</button>
             </a>
             <a href="#"></a>
-            <button type="button" class="bouton-commentaire"><img src="../../src/images/commenter.svg">Commentaire</button>
+            <button type="button" class="bouton-commentaire"><img src="../../../src/images/commenter.svg">Commentaire</button>
             </a>
         </div>
 
@@ -184,7 +184,7 @@
         <!-- Article 1 -->
         <div class="card-article">
             <div class="card1">
-                <img src="../../src/images/francis_feytout.png" class="card-img-top" alt="tête de Francis">
+                <img src="../../../src/images/francis_feytout.png" class="card-img-top" alt="tête de Francis">
                 <!-- Partie texte du premier article -->
                 <div class="card-body">
                     <h2 class="card-title"><?php $article2 = sql_select('article', '*', "numArt = '2'")[0];

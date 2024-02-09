@@ -30,9 +30,9 @@
                 recensement d'associations, tous nos articles sont là pour vous rappeler qu'à Bordeaux, nos animaux
                 peuvent prospérer !</p>
 
-            <a href="/views/frontend/faq.php" class="faq">
+            <a href="/views/frontend/articles/faq.php" class="faq">
                 <button>
-                    Voir la FAQ <span> &#8594;</span>
+                    Voir la FAQ <span> &#10140;</span>
                 </button>
             </a>
         </section>

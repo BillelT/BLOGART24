@@ -86,18 +86,17 @@ require_once 'config.php';
         <h2>par l'équipe Bibble's</h2>
     </header>
     <?php
-    // $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
+    $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
 
-    // $domain = $_SERVER['HTTP_HOST'];
-    // $port = $_SERVER['SERVER_PORT'];
-    // $uri = $_SERVER['REQUEST_URI'];
-    // $url = "$protocol://$domain";
-    // $ariane = explode(".php",$url);
-    // $motAriane = explode("/", $ariane);
-    // echo "<div class='ariane'> <a href='/index.php'> Accueil </a> <p> > <p> </div>";
-    // var_dump($uri);
-    // var_dump($url);
-    // var_dump($ariane);
+    $domain = $_SERVER['HTTP_HOST'];
+    $port = $_SERVER['SERVER_PORT'];
+    $uri = $_SERVER['REQUEST_URI'];
+    $url = "$protocol://$domain";
+    $ariane = explode("/",$test);
+    $motAriane = end($ariane);
+    echo "<div class='ariane'> <a href='/index.php'> Accueil </a> <p> > <p> </div>";
+    var_dump($ariane);
+    var_dump($motAriane);
     ?>
     <script src="/src/JS/header.js"></script>
 </body>
