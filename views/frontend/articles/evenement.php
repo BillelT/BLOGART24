@@ -253,9 +253,6 @@
     </div>
 </div>
 
-
-
-
     <section class="other-comment">
         <h3>Autre commentaire :</h3>
         <div class="container-comment">
@@ -269,7 +266,7 @@
                         Répondre &#10140;
                     </button>
                     <button type="button" class="bouton-like">
-                        <img src="../../src/images/like.svg"> Like &#10140;
+                        <img src="../../../src/images/like.svg"> Like &#10140;
                     </button>
                 </div>
             </div>
@@ -284,7 +281,7 @@
                         Répondre &#10140;
                     </button>
                     <button type="button" class="bouton-like">
-                        <img src="../../src/images/like.svg"> Like &#10140;
+                        <img src="../../../src/images/like.svg"> Like &#10140;
                     </button>
                 </div>
             </div>
