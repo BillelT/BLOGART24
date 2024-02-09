@@ -80,12 +80,15 @@ require '../../header.php';
                     <div class="condition-valid">
                     <div>
                     <input class="form-check-input" type="checkbox" id="accordMemb" name="accordMemb" value="OUI" />
-                    <label for="accordMemb">J'accepte que mes données soient conservées :</label>
+                    <label class="form-check-label" for="flexCheckDefault">
+                    Je consens à ce que mes données fournies dans ce formulaire de contact soient collectées et utilisées conformément à la
+                    <a href="/views/frontend/rgpd/politique.php" target="_blank">Politique de Confidentialité de Bibble'S</a>.
+                </label>
                     </div>
                     <!-- ACCEPTER -->
                     <div class="box-input-accepte">
                     <input class="form-check-input" type="checkbox" id="accordMemb2" name="accordMemb2" value="OUI" />
-                    <label for="accordMemb2">J'accepte les conditions générales d'utilisation</label>
+                    <label for="accordMemb2">J'accepte les <a href="/views/frontend/rgpd/cgu.php" target="_blank">conditions générales d'utilisation</a></label>
                     </div>
                     <div>
                     <!-- STATUT -->

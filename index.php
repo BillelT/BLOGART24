@@ -9,7 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bord'Animaux</title>
     <link rel="shortcut icon"  href="/src/images/logo bibble's header.png" type="image/x-icon" />
-    <link rel="stylesheet" href="./src/css/index.css">
+    <link rel="stylesheet" href="/src/css/index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
@@ -32,7 +32,7 @@
 
             <a href="/views/frontend/articles/faq.php" class="faq">
                 <button>
-                    Voir la FAQ <span> &#8594;</span>
+                    Voir la FAQ <span> &#10140;</span>
                 </button>
             </a>
         </section>
@@ -79,12 +79,13 @@
                     <article class="article">
                         <h2>Avoir un animal sur Bordeaux,
                             c'est possible grâce aux différents aménagements ! </h2>
-                            <a href="#">
+            
+                            <a href="/views/frontend/articles/interview.php?numArt=2">
                                 <img src="./src/images/aménagements animal.png" alt="chien guide">
                             </a>
-                        <a href="#">
+                        <a href="/views/frontend/articles/interview.php?numArt=2">
                             <button>
-                                En savoir plus <span> &#8594;</span>
+                                En savoir plus <span> &#10140;</span>
                             </button>
                         </a>
                     </article>
@@ -95,7 +96,7 @@
                         </a>
                         <a href="#">
                             <button>
-                                En savoir plus <span> &#8594;</span>
+                                En savoir plus <span> &#10140;</span>
                             </button>
                         </a>
                     </article>
@@ -169,9 +170,10 @@
             <div class="form-check">
                 <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
                 <label class="form-check-label" for="flexCheckDefault">
-                    Je consens à ce que mes données fournies dans ce formulaire de contact soient collectées et
-                    utilisées conformément à la Politique de Confidentialité de Bibble'S.
+                    Je consens à ce que mes données fournies dans ce formulaire de contact soient collectées et utilisées conformément à la
+                    <a href="/views/frontend/rgpd/politique.php" target="_blank">Politique de Confidentialité de Bibble'S</a>.
                 </label>
+
             </div>
             <!-- Bouton envoyer -->
             <div class="bouton-faq">

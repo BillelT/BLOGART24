@@ -201,6 +201,10 @@ header h2 {
     column-gap: 4px;
 }
 
+.ariane p {
+    color: #fef5ea !important;
+}
+
 .ariane a {
     color: #fef5ea;
     font-size: 16px;

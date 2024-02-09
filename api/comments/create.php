@@ -5,33 +5,39 @@ require_once '../../functions/ctrlSaisies.php';
 var_dump($_POST);
 
 // Assurez-vous que les données POST existent avant de les utiliser
-if (isset($_POST['pseudoMemb'], $_POST['comment'])) {
-    // Utilisez la fonction ctrlSaisies pour nettoyer les entrées utilisateur
-    $pseudoMemb = ctrlSaisies($_POST['pseudoMemb']);
-    $passMemb = ctrlSaisies($_POST['password']);
-    $numArt = ctrlSaisies($_POST['article']);
-    $libCom = ctrlSaisies($_POST['comment']);
-    $libCom = BBCode($libCom);
-    $dtCreaCom = date("Y-m-d H:i:s");
 
-    // Sélectionnez un article (à des fins de démonstration)
-    $article = sql_select('ARTICLE', '*')[0];
+     if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+                if (isset($_POST['pseudoMemb'], $_POST['article'], $_POST['comment'])) {
+                    $pseudoMemb = $_POST['pseudoMemb'];
+                    $article = $_POST['article']; 
+                    $comment = $_POST['comment'];
 
-    // Insérez dans la table comment avec les colonnes appropriées
-    if (!isset($_SESSION['numStat']) || ($_SESSION['numStat'] !== 1 && $_SESSION['numStat'] !== 2)) {
-        $insert_comment = sql_insert(
-            'COMMENT',
-            'dtCreaCom, pseudoMemb, libCom, numArt',
-            [$dtCreaCom, $pseudoMemb, $libCom, $article['numArt']]
-        );
-    }
+                    // Assurez-vous de traiter correctement le résultat de sql_select
+                    $article = sql_select('ARTICLE', '*', "numArt = '$article'")[0];
 
-    if ($insert_comment) {
-        echo "Commentaire ajouté avec succès!";
-    } else {
-        echo "Erreur lors de l'ajout du commentaire.";
-    }
-} else {
-    echo "Tous les champs doivent être complétés.";
-}
-?>
+                    // Vérifiez si l'utilisateur est connecté et s'il a les autorisations nécessaires
+                    if (!empty($article) && (!isset($_SESSION['numStat']) || ($_SESSION['numStat'] == 3 || $_SESSION['numStat'] == 2 || $_SESSION['numStat'] == 1))) {
+                        $dtCreaCom = date('Y-m-d H:i:s');
+
+                        // Échappez les valeurs pour éviter les injections SQL
+                        $pseudoMemb = sql_escape($pseudoMemb);
+                        $comment = sql_escape($comment);
+
+                        // Assurez-vous d'avoir la colonne libCom dans la table COMMENT
+                        $insert_comment = sql_insert(
+                            'COMMENT',
+                            'dtCreaCom, pseudoMemb, libCom, numArt',
+                            "'$dtCreaCom', '$pseudoMemb', '$comment', '$article'"
+                        );
+
+                        if ($insert_comment) {
+                            echo "Commentaire ajouté avec succès!";
+                        } else {
+                            echo "Erreur lors de l'ajout du commentaire.";
+                        }
+                    } else {
+                        echo "Tous les champs doivent être complétés ou vous n'avez pas les autorisations nécessaires.";
+                    }
+                }
+            }
+            ?>

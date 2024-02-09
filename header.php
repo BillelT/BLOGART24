@@ -88,15 +88,20 @@ require_once 'config.php';
     <?php
     $protocol = isset($_SERVER['HTTPS']) && $_SERVER['HTTPS'] === 'on' ? "https" : "http";
 
-    $domain = $_SERVER['HTTP_HOST'];
-    $port = $_SERVER['SERVER_PORT'];
     $uri = $_SERVER['REQUEST_URI'];
-    $url = "$protocol://$domain";
-    $ariane = explode("/",$test);
-    $motAriane = end($ariane);
-    echo "<div class='ariane'> <a href='/index.php'> Accueil </a> <p> > <p> </div>";
-    var_dump($ariane);
-    var_dump($motAriane);
+    $page = explode("/", $uri);
+    $fileName = end($page);
+    $fileNameExplode = explode(".",$fileName); 
+    $ariane = $fileNameExplode[0];
+    if ($ariane === "index") {
+        echo "<div class='ariane'> <a href='/index.php'> Accueil </a> <p> > <p> </div>";
+    } else if ($ariane === "") {
+        echo "<div class='ariane'> <a href='/index.php'> Accueil </a> <p> > <p> </div>";
+    } else {
+        echo "<div class='ariane'> <a href='/index.php'> Accueil </a> <p> > <p> <a href='$uri'> $ariane <a> </div>";
+    };
+
+
     ?>
     <script src="/src/JS/header.js"></script>
 </body>
