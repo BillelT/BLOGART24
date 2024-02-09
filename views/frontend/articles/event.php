@@ -172,8 +172,8 @@
             <a href="#"></a>
             <button type="button" class="bouton-partager"><img src="../../../src/images/partager.svg">partager</button>
             </a>
-            <a href="#"></a>
-            <button type="button" class="bouton-commentaire"><img src="../../../src/images/commenter.svg">Commentaire</button>
+            <a href="#commentaire">
+            <button type="button" class="bouton-commentaire"><img src="../../../src/images/commenter.svg" >Commentaire</button>
             </a>
         </div>
 
@@ -226,7 +226,7 @@
     <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Commentaire</h1>
+            <h1 id="commentaire">Commentaire</h1>
         </div>
         <div class="col-md-12">
             <form action="<?php echo ROOT_URL . '/api/comments/create.php' ?>" method="post">
