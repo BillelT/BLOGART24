@@ -229,6 +229,7 @@
         <form action="<?php echo ROOT_URL . '/api/comments/create.php' ?>" method="post">
             <label for="pseudoMemb">Pseudo :</label>
             <input type="text" name="pseudoMemb" id="pseudoMemb" required>
+            <br>
 
 
             <label for="article">Sélectionner l'article :</label>
@@ -236,9 +237,10 @@
                 <option value="1">Article Evenement</option>
                 <option value="2">Article Portrait</option>
             </select>
+            <br>
 
             <label for="comment">Commentaire :</label>
-            <textarea name="comment" id="libCom" required></textarea>
+            <textarea name="comment" id="libCom" maxlength="500" style="height: 200px" required></textarea>
 
             <button type="submit" class="btn btn-primary ">Poster mon commentaire</button>
         </form>

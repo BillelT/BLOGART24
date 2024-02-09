@@ -65,10 +65,6 @@ if (isset($_GET['numCom'])){
                     <option value="2">Modérateur</option>
                     <option value="3">Membre</option>
                     </select>
-                    <!-- CAPTCHA ROBOT -->
-                   <!-- <button class="g-recaptcha" data-sitekey="[6LcsWWkpAAAAAHnMUZ7lc2m15AYDMHjyNFGgiY4t]"
-                    data-callback='onSubmit' data-action='submit'>Submit</button> -->
-                    <!-- FIN -->
                 </div>
                 <br />
                 <div class="form-group mt-2">

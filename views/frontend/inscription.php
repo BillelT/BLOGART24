@@ -41,17 +41,29 @@ require '../../header.php';
                     <input id="nomMemb" name="nomMemb" class="form-control" type="text" autofocus="autofocus" />
                     </div>
                     <!-- MDP -->
-                    <div class="box-input">
-                    <label for="passMemb" class="p-before-input">Mot de passe du membre</label>
-                    <input id="passMemb" name="passMemb" class="form-control" type="password" autofocus="autofocus" />
-                    <button type="button" id="afficher"  class="button-afficher">Afficher le mot de passe</button>
+                    <div class="box-input-mdp">
+                        <label for="passMemb">Mot de passe</label>
+                        <label class="lab-mdp">
+                        <input id="passMemb" name="passMemb" class="form-control" type="password" placeholder="Mot de passe">
+    
+                        <div class="password-icon">
+                            <i data-feather="eye"></i>
+                            <i data-feather="eye-off"></i>
+                        </div>
+                    </label>
                     <p>(Entre 8 et 15 car., au - une majuscule, une minuscule, un chiffre, car. spéciaux acceptés)</p>
                     </div>
                     <!-- MDP VERIFICATION -->
-                    <div class="box-input">
-                    <label for="passMemb2" class="p-before-input">Confirmez mot de passe du membre</label>
-                    <input id="passMemb2" name="passMemb2" class="form-control" type="password" autofocus="autofocus" />
-                    <button type="button" id="afficher2" class="button-afficher">Afficher le mot de passe</button>
+                    <div class="box-input-mdp">
+                    <label for="passMemb2">Confirmez le mot de passe du membre</label>
+                    <label class="lab-mdp">
+                    <input id="passMemb2" name="passMemb2" class="form-control" type="password" autofocus="autofocus" placeholder="Confirmez le mot de passe" />
+                    
+                    <div class="password-icon">
+                            <i data-feather="eye"></i>
+                            <i data-feather="eye-off"></i>
+                        </div>
+                    </label>
                     <p>(Entre 8 et 15 car., au - une majuscule, une minuscule, un chiffre, car. spéciaux acceptés)</p>
                     </div>
                     <!-- EMAIL -->
@@ -71,7 +83,7 @@ require '../../header.php';
                     <label for="accordMemb">J'accepte que mes données soient conservées :</label>
                     </div>
                     <!-- ACCEPTER -->
-                    <div class="box-input">
+                    <div class="box-input-accepte">
                     <input class="form-check-input" type="checkbox" id="accordMemb2" name="accordMemb2" value="OUI" />
                     <label for="accordMemb2">J'accepte les conditions générales d'utilisation</label>
                     </div>
@@ -102,28 +114,31 @@ require '../../header.php';
 <?php 
 require '../../footer.php';
 ?>
+
+    <!-- ICON SCRIPT -->
+    <script src="https://unpkg.com/feather-icons"></script>
+    <script>
+        feather.replace();
+    </script>
+    <script>
+        const eye = document.querySelector(".feather-eye");
+        const eyeoff = document.querySelector(".feather-eye-off");
+        const passwordField = document.querySelector("input[type=password]");
+
+        eye.addEventListener("click", () => {
+            eye.style.display = "none";
+            eyeoff.style.display = "block";
+
+            passwordField.type = "text";
+        });
+
+        eyeoff.addEventListener("click", () => {
+            eyeoff.style.display = "none";
+            eye.style.display = "block";
+
+            passwordField.type = "password";
+        });
+    </script>
 </body>
-<script>
-  document.getElementById( 'afficher' ).addEventListener( "click", function() {
-   
-   attribut = document.getElementById( 'passMemb' ).getAttribute( 'type');
-   if(attribut == 'password'){
-       document.getElementById( 'passMemb' ).setAttribute( 'type', 'text');
-   } else {
-       document.getElementById( 'passMemb' ).setAttribute( 'type', 'password');
-   }
-   
-});
-document.getElementById( 'afficher2' ).addEventListener( "click", function() {
-   
-   attribut = document.getElementById( 'passMemb2' ).getAttribute( 'type');
-   if(attribut == 'password'){
-       document.getElementById( 'passMemb2' ).setAttribute( 'type', 'text');
-   } else {
-       document.getElementById( 'passMemb2' ).setAttribute( 'type', 'password');
-   }
-   
-});
-</script>
 
         
