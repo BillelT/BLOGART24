@@ -10,7 +10,7 @@ if (!isset($_SESSION['numStat']) || $_SESSION['numStat'] !== 1 && $_SESSION['num
 
 if(isset($_GET['numArt'])){
     $numArt = $_GET['numArt'];
-    $article = sql_select('article INNER JOIN thematique ON article.numThem = thematique.numThem', '*', "numArt = '$numArt'")[0];
+    $article = sql_select('ARTICLE INNER JOIN THEMATIQUE ON article.numThem = thematique.numThem', '*', "numArt = '$numArt'")[0];
     $libTitrArt = $article['libTitrArt'];
     $dtCreaArt = $article['dtCreaArt'];
     $libChapoArt = $article['libChapoArt'];

@@ -35,7 +35,7 @@ libConclArt = '$libConclArt',
 urlPhotArt = '$urlPhotArt', 
 numThem = '$numThem'";
 $where_num = "numArt = '$numArt'";
-$table_art = "article";
+$table_art = "ARTICLE";
 
 // VERIFIER FIELDS
 
@@ -80,10 +80,10 @@ if(isset($_FILES['urlPhotArt'])){
 
 // UPDATE INFOS GENERALES
 sql_update($table_art, $set_art, $where_num);
-sql_delete('motclearticle', $where_num);
+sql_delete('MOTCLEARTICLE', $where_num);
 
 foreach ($numMotCle as $mot){
-    sql_insert('motclearticle', 'numArt, numMotCle', "$lastArt, $mot");
+    sql_insert('MOTCLEARTICLE', 'numArt, numMotCle', "$lastArt, $mot");
 }
 
 header('Location: ../../views/backend/articles/list.php');

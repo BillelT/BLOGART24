@@ -2,7 +2,7 @@
    require '../../header.php';
    if (isset($_GET['numArt'])){
     $numArt = $_GET['numArt'];
-    $article = sql_select('article', '*', "numArt ='$numArt'")[0];
+    $article = sql_select('ARTICLE', '*', "numArt ='$numArt'")[0];
     $dtCreaArt = $article['dtCreaArt'];
     $libTitrArt = $article['libTitrArt'];
     $libChapoArt = $article['libChapoArt'];
@@ -140,8 +140,8 @@
             <div class="div-mot-clef">
             <ul class="list-group list-group-horizontal">
             <?php 
-            $motcle = sql_select('motcle INNER JOIN motclearticle ON motcle.numMotCle = motclearticle.numMotCle
-                INNER JOIN article ON motclearticle.numArt = article.numArt', '*', "article.numArt ='$numArt'");
+            $motcle = sql_select('MOTCLE INNER JOIN MOTCLEARTICLE ON motcle.numMotCle = motclearticle.numMotCle
+                INNER JOIN ARTICLE ON motclearticle.numArt = article.numArt', '*', "article.numArt ='$numArt'");
                 foreach ($motcle as $mot){
                 echo '<li class="list-group-item">' . $mot['libMotCle'] . '</li>';
             }
@@ -183,7 +183,7 @@
                 <img src="../../src/images/francis_feytout.png" class="card-img-top" alt="tête de Francis">
                 <!-- Partie texte du premier article -->
                 <div class="card-body">
-                    <h2 class="card-title"><?php $article2 = sql_select('article', '*', "numArt = '1'")[0];
+                    <h2 class="card-title"><?php $article2 = sql_select('ARTICLE', '*', "numArt = '1'")[0];
                     $libTitrArt2 = $article2['libTitrArt'];
                     $libChapoArt2 = $article2['libChapoArt'];
                     $libAccrochArt2 = $article2['libAccrochArt'];

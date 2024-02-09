@@ -9,11 +9,12 @@ if (!isset($_SESSION['numStat']) || $_SESSION['numStat'] !== 1 && $_SESSION['num
 }
 if(isset($_GET['numMemb'])){
     $numMemb = $_GET['numMemb'];
-    $pseudoMemb = sql_select("MEMBRE", "pseudoMemb", "numMemb = $numMemb")[0]['pseudoMemb'];
-    $prenomMemb = sql_select("MEMBRE", "prenomMemb", "numMemb = $numMemb")[0]['prenomMemb'];
-    $nomMemb = sql_select("MEMBRE", "nomMemb", "numMemb = $numMemb")[0]['nomMemb'];
-    $passMemb = sql_select("MEMBRE", "passMemb", "numMemb = $numMemb")[0]['passMemb'];
-    $eMailMemb = sql_select("MEMBRE", "eMailMemb", "numMemb = $numMemb")[0]['eMailMemb'];
+    $membre = sql_select("MEMBRE", "pseudoMemb", "numMemb = $numMemb")[0];
+    $pseudoMemb = $membre['pseudoMemb'];
+    $prenomMemb = $membre['prenomMemb'];
+    $nomMemb = $membre['nomMemb'];
+    $passMemb = $membre['passMemb'];
+    $eMailMemb = $membre['eMailMemb'];
 }
 ?>
 

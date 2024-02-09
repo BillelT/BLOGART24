@@ -19,7 +19,7 @@ var_dump($_POST);
 // VARIABLES POUR FONCTION UPDATE
 $set_memb = "prenomMemb = '$prenomMemb', nomMemb = '$nomMemb', dtMajMemb = '$dtMajMemb', numStat = '$numStat' ";
 $where_num = "numMemb = $idMemb";
-$table_memb = "membre";
+$table_memb = "MEMBRE";
 
 // PASSWORD 
 

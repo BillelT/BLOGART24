@@ -10,8 +10,8 @@ if (!isset($_SESSION['numStat']) || $_SESSION['numStat'] !== 1 && $_SESSION['num
 
 if(isset($_GET['numArt'])){
     $numArt = $_GET['numArt'];
-    $article = sql_select("article
-    INNER JOIN thematique ON article.numThem = thematique.numThem", "*", "numArt = '$numArt'")[0];
+    $article = sql_select("ARTICLE
+    INNER JOIN THEMATIQUE ON article.numThem = thematique.numThem", "*", "numArt = '$numArt'")[0];
     $dtCreaArt = $article['dtCreaArt'];
     $libTitrArt = $article['libTitrArt'];
     $libChapoArt = $article['libChapoArt'];
@@ -84,7 +84,7 @@ if(isset($_GET['numArt'])){
                     <select name="thematique" id="libThem">
                         <option value="<?php $numThem ?>"><?php $libThem ?></option>
                         <?php
-                        $result = sql_select('thematique');
+                        $result = sql_select('THEMATIQUE');
                         foreach ($result as $req) {
                             echo '<option value="' . $req['numThem'] . '">' . $req['libThem'] . '</option>';
                         }
@@ -96,7 +96,7 @@ if(isset($_GET['numArt'])){
                     <select name="addMotCle" id="addMotCle" size="5">
                         <option value="">-- Choisir des mots clés --</option>
                         <?php
-                        $result = sql_select('motCle');
+                        $result = sql_select('MOTCLE');
                         foreach ($result as $req) {
                             echo '<option id="mot" value="' . $req['numMotCle'] . '">' . $req['libMotCle'] . '</option>';
                         }

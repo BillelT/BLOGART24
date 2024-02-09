@@ -62,7 +62,7 @@ if (!isset($_SESSION['numStat']) || $_SESSION['numStat'] !== 1 && $_SESSION['num
                     <select name="thematique" id="libThem">
                         <option value="">Cliquez et selectionnez une thématique</option>
                         <?php
-                        $result = sql_select('thematique');
+                        $result = sql_select('THEMATIQUE');
                         foreach ($result as $req) {
                             echo '<option value="' . $req['numThem'] . '">' . $req['libThem'] . '</option>';
                         }
@@ -73,7 +73,7 @@ if (!isset($_SESSION['numStat']) || $_SESSION['numStat'] !== 1 && $_SESSION['num
                     <label for="addMotCle">Choisissez des Mots-Clés:</label>
                     <select name="addMotCle" id="addMotCle" size="5">
                         <?php
-                        $result = sql_select('motCle');
+                        $result = sql_select('MOTCLE');
                         foreach ($result as $req) {
                             echo '<option id="mot" value="' . $req['numMotCle'] . '">' . $req['libMotCle'] . '</option>';
                         }
