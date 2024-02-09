@@ -58,7 +58,7 @@
             <!-- le header de la section -->
             <div class="div1-para-article">
                 <h3>Table des matières</h3>
-                <ol class="list-group list-group-numbered"><li class="list group-item">Pourquoi est-si difficile de nourrir les animaux actuellement ?</li>
+                <ol class="list-group list-group-numbered" ><li class="list group-item">Pourquoi est-si difficile de nourrir les animaux actuellement ?</li>
                 <li class="list group-item">Une solution apportée par un événement : la Marche des Croquettes...</li>
                 <li class="list group-item">dans le cadre de la Journée mondiale contre l'abandon !</li></ol>
             </div>
