@@ -66,7 +66,7 @@
                             contexte d'inflation. Découvrez comment participer afin d'aider à remplir
                             les gamelles de nos amis à quatre pattes actuellement en refuges animaliers.</p>
                         <!-- Bouton du deuxième article -->
-                        <a href="/views/frontend/articles/event.php?numArt=1" class="btn_btn-primary">Lire la suite &#10140;</a>
+                        <a href="/views/frontend/articles/evenement.php?numArt=1" class="btn_btn-primary">Lire la suite &#10140;</a>
                     </div>
                 </div>
             </div>
