@@ -228,7 +228,7 @@
         <div class="col-md-12">
             <h1>Commentaire</h1>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12 add-comment">
             <form action="<?php echo ROOT_URL . '/api/comments/create.php' ?>" method="post">
                 <label for="pseudoMemb">Pseudo :</label>
                 <input type="text" name="pseudoMemb" id="pseudoMemb" required>
