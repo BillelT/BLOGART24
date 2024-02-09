@@ -14,10 +14,10 @@
                     <a href="/index.php">Accueil</a>
                 </li>
                 <li>
-                    <a href="/views/frontend/rgpd/article-event.php">Articles évènement</a>
+                    <a href="/views/frontend/articles/event.php?numArt=2">Articles évènement</a>
                 </li>
                 <li>
-                    <a href="/views/frontend/rgpd/article-interview.php">Articles portrait</a>
+                    <a href="/views/frontend/articles/event.php?numArt=1">Articles portrait</a>
                 </li>
                 <li>
                     <a href="#">Témoignages</a>
