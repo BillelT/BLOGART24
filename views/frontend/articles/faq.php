@@ -249,7 +249,7 @@ require '../../../header.php';
         <!-- Article 1 -->
         <div class="card-article">
             <div class="card1">
-                <img src="/src/images/francis feytout.png" class="card-img-top" alt="tête de Francis">
+                <img src="/src/images/francis-feytout.webp" class="card-img-top" alt="tête de Francis">
                 <!-- Partie texte du premier article -->
                 <div class="card-body">
                     <h2 class="card-title">FRANCIS FEYTOUT : </h2>
@@ -264,7 +264,7 @@ require '../../../header.php';
             </div>
             <!-- Article 2 -->
             <div class="card1">
-                <img src="/src/images/croquettes.png" class="card-img-top" alt="La marche ">
+                <img src="/src/images/croquettes.webp" class="card-img-top" alt="La marche ">
                 <!-- Partie texte du deuxième article -->
                 <div class="card-body">
                     <h4 class="card-title">DES KM ET DES CROQUETTES : </h4>
