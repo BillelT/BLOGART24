@@ -39,7 +39,8 @@ if(isset($_GET['numArt'])){
             <!-- Form to create a new member -->
             <form action="<?php echo ROOT_URL . '/api/articles/update.php' ?>" method="post" id="form" type="post">
                 <div class="form-group">
-                <input id="idMemb" name="idMemb" class="form-control" style="display: none" type="text" value="<?php echo($numArt); ?>" readonly="readonly" />
+                    <label for="numArt">Numéro d'article</label>
+                    <input id="numArt" name="numArt" class="form-control" type="text" autofocus="autofocus" value="<?php echo($numArt); ?>">
                     <label for="libTitrArt">Titre</label>
                     <input id="libTitrArt" name="libTitrArt" class="form-control" type="text" autofocus="autofocus" value="<?php echo($libTitrArt); ?>">
                     <br>
@@ -80,16 +81,9 @@ if(isset($_GET['numArt'])){
 
                     <!-- choix de la thématique !-->
                     <p><br></p>
-                    <label for="libThem">Thématique :<br></label>
-                    <select name="thematique" id="libThem">
-                        <option value="<?php $numThem ?>"><?php $libThem ?></option>
-                        <?php
-                        $result = sql_select('THEMATIQUE');
-                        foreach ($result as $req) {
-                            echo '<option value="' . $req['numThem'] . '">' . $req['libThem'] . '</option>';
-                        }
-                        ?>
-                    </select>
+                    <label for="numThem">Thématique :<br></label>
+                    <input id="libThem" name="libThem" class="form-control" type="text" autofocus="autofocus" maxlength="100" value="<?php echo $libThem; ?>" disabled>
+                    <input id="numThem" name="numThem" class="form-control" style="display: none" type="text" value="<?php echo($numThem); ?>" readonly="readonly" />
                     <p><br></p>
                     <!-- MOTS CLES -->
                     <label for="addMotCle">Choisissez des Mots-Clés:</label>
@@ -103,52 +97,39 @@ if(isset($_GET['numArt'])){
                         ?>
                     </select>
                     <p style="margin: 0 32px; display : inline-block; text-align : center;" id="addKeyWords">Ajouter Mots-Clés ?</p>
-                    <select id="newMotCle" name="choix[]" multiple size="5" style="margin-left: 32px;">
-                        <option value="">-- Mots-Clés choisis --</option>
+                    <select id="newMotCle" name="motCle[]" multiple size="5" style="margin-left: 32px;">
 
-                        <script>
-                            const addMotCle = document.getElementById('addMotCle');
-                            const newMotCle = document.getElementById('newMotCle');
-                            const options = addMotCle.options;
-                            const addOptions = newMotCle.options;
-                            var formulaire = document.getElementById("form");
-                            var champTableau = document.createElement("input");
-                            let bool = false;
-                            let motCle = [];
-
-
-                            document.addEventListener('click', (e) => {
-                                if (!e.target.innerText.includes(' ')) {
-                                    for (let i = 0; i < options.length; i++) {
-                                        if (e.target.innerText === options[i].innerText && !motCle.includes(e.target.innerText)) {
-                                            let newOption = document.createElement('option');
-                                            bool = true;
-                                            motCle.push(options[i].innerText);
-                                            newOption.value = e.target.innerText;
-                                            newOption.id = 'mot';
-                                            newOption.innerText = e.target.innerText;
-                                            newMotCle.appendChild(newOption);
-                                            options[i].remove();
-                                            break;
-                                        } else {
-                                            bool = false;
-                                        }
-                                    }
-                                    Object.entries(addOptions).forEach(([key, option]) => {
-                                        if (bool === false && option.innerText === e.target.innerText && motCle.includes(e.target.innerText)) {
-                                            motCle.splice(option, 1);
-                                            let newOption = document.createElement('option');
-                                            newOption.value = e.target.innerText;
-                                            newOption.id = 'mot';
-                                            newOption.innerText = e.target.innerText;
-                                            addMotCle.add(newOption);
-                                            option.remove();
-                                        }
-                                    });
-                                }
-                            })
-                        </script>
                     </select>
+                    <script>
+                        const addMotCle = document.getElementById('addMotCle');
+                        const newMotCle = document.getElementById('newMotCle');
+                        const options = addMotCle.options;
+                        const newOptions = newMotCle.options;
+
+                        addMotCle.addEventListener('click', (e) => {
+                            if (e.target.tagName !== "OPTION") {
+                                return;
+                            }
+                            e.target.setAttribute('selected', true);+
+                            
+                            newMotCle.appendChild(e.target);
+                        })
+                        newMotCle.addEventListener('click', (e) => {
+                            console.log(newOptions);
+                            if (e.target.tagName !== "OPTION") {
+                                return;
+                            }
+                            e.stopPropagation();
+                            e.preventDefault();
+                            e.stopImmediatePropagation();
+                            e.target.setAttribute('selected', false);
+                            addMotCle.appendChild(e.target);
+                            for (let option of newMotCle.children){
+                                option.setAttribute('selected',true);
+                                console.log(option);
+                            }
+                        });
+                    </script>
                 </div>
                 <div class="form-group mt-2" style="margin: 32px auto 128px;">
                     <button type="submit" class="btn btn-primary ">Confirmer update ?</button>

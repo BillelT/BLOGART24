@@ -2,7 +2,7 @@
 include '../../../header.php';
 
 //seulement si tu es admi ou moderateur tu as accès à cette page
-if (!isset($_SESSION['numStat']) || $_SESSION['numStat'] !== 3) {
+if (!isset($_SESSION['numStat']) || $_SESSION['numStat'] !== 1) {
     // Rediriger vers une page d'erreur ou une page d'accueil
     header('index.php');
     exit();
@@ -27,6 +27,7 @@ if(isset($_GET['numThem'])){
                     <label for="libThem">Nom du statut</label>
                     <input id="numThem" name="numThem" class="form-control" style="display: none" type="text" value="<?php echo($numThem); ?>" readonly="readonly" />
                     <input id="libThem" name="libThem" class="form-control" type="text" value="<?php echo($libThem); ?>" readonly="readonly" disabled />
+                    <p>Attention, la thématique à supprimer ne doit pas être utilisée dans un article du blog.</p>
                 </div>
                 <br />
                 <div class="form-group mt-2">
@@ -66,6 +67,7 @@ if(isset($_GET['numThem'])){
             </form>
         </div>
     </div>
-</div>';
+</div>
 <?php 
 }
+include '../../../footer.php'; // contains the footer

@@ -40,7 +40,7 @@
     <!-- avant le paragraphe -->
     <div class="before-para">
         <h1 class="text-center"><?php echo $libTitrArt; ?></h1>
-        <div class="text-center"><a href="#scroll"><button>En lire plus ?</button></a></div>
+        <div class="text-center"><a class="button-lire" href="#scroll"><button>En lire plus ?</button></a></div>
         <h2 id="scroll"><?php echo $libAccrochArt; ?></h2>
         <img src="../../../src/images/<?php echo $urlPhotArt; ?>" alt="chien qui se fait promener">
         <p>Catégorie : Portrait<br>
@@ -224,29 +224,28 @@
         <div class="col-md-12">
             <h1>Commentaire</h1>
         </div>
-        <div class="col-md-12">
-                
-        <form action="<?php echo ROOT_URL . '/api/comments/create.php' ?>" method="post">
-            <label for="pseudoMemb">Pseudo :</label>
-            <input type="text" name="pseudoMemb" id="pseudoMemb" required>
-            <br>
+        <div class="col-md-12 add-comment">
+            <form action="<?php echo ROOT_URL . '/api/comments/create.php' ?>" method="post">
+                <label for="pseudoMemb">Pseudo :</label>
+                <input type="text" name="pseudoMemb" id="pseudoMemb" required>
+                <br>
 
+                <label for="article">Sélectionner l'article :</label>
+                <select name="article" id="article" required>
+                    <option value="1">Article Evenement</option>
+                    <option value="2">Article Portrait</option>
+                </select>
+                <br>
 
-            <label for="article">Sélectionner l'article :</label>
-            <select name="article" id="article"required>
-                <option value="1">Article Evenement</option>
-                <option value="2">Article Portrait</option>
-            </select>
-            <br>
+                <label for="comment">Commentaire :</label>
+                <textarea name="comment" id="libCom" maxlength="500" style="height: 200px" required></textarea>
+                <br>
 
-            <label for="comment">Commentaire :</label>
-            <textarea name="comment" id="libCom" maxlength="500" style="height: 200px" required></textarea>
+                <button type="submit" class="btn btn-primary button-comment">Poster mon commentaire </button>
+            </form>
 
-            <button type="submit" class="btn btn-primary ">Poster mon commentaire</button>
-        </form>
-
-
-</div>
+            
+        </div>
 </div>    
 </div>
 
