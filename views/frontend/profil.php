@@ -60,7 +60,7 @@ if (isset($_POST['deconnexion'])) {
     </div>
     <div method="post" action="" type="button-less-important" class="button-less-important">
       <br>
-        <button class="submit" name="deconnexion" onclick="return confirm('Est-ce que tu es sûr(e)?')">Changer de session</button>
+        <button class="submit" name="deconnexion">Changer de session</button>
         <p><br></p>
   </div>
     <div>
