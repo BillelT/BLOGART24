@@ -8,7 +8,7 @@ $libThem = ctrlSaisies($_POST['libThem']);
 
 $set_lib = "libThem = '$libThem'";
 $where_num = "numThem = $numThem";
-$them_lib = "thematique";
+$them_lib = "THEMATIQUE";
 
 sql_update($them_lib, $set_lib, $where_num);
 

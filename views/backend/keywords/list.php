@@ -9,7 +9,7 @@ if (!isset($_SESSION['numStat']) || $_SESSION['numStat'] !== 1 && $_SESSION['num
     exit();
 }
 //Load all keywords
-$MotCle = sql_select("motcle", "*");
+$MotCle = sql_select("MOTCLE", "*");
 ?>
 
 <!-- Bootstrap default layout to display all statuts in foreach -->

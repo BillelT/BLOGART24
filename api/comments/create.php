@@ -15,12 +15,12 @@ if (isset($_POST['pseudoMemb'], $_POST['comment'])) {
     $dtCreaCom = date("Y-m-d H:i:s");
 
     // Sélectionnez un article (à des fins de démonstration)
-    $article = sql_select('article', '*')[0];
+    $article = sql_select('ARTICLE', '*')[0];
 
     // Insérez dans la table comment avec les colonnes appropriées
     if (!isset($_SESSION['numStat']) || ($_SESSION['numStat'] !== 1 && $_SESSION['numStat'] !== 2)) {
         $insert_comment = sql_insert(
-            'comment',
+            'COMMENT',
             'dtCreaCom, pseudoMemb, libCom, numArt',
             [$dtCreaCom, $pseudoMemb, $libCom, $article['numArt']]
         );

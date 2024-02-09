@@ -11,7 +11,7 @@ if (!isset($_SESSION['numStat']) || $_SESSION['numStat'] !== 1 && $_SESSION['num
     exit();
 }
 
-$articles = sql_select('article INNER JOIN thematique ON article.numThem = thematique.numThem', '*');
+$articles = sql_select('ARTICLE INNER JOIN THEMATIQUE ON article.numThem = thematique.numThem', '*');
 
 
 
@@ -37,8 +37,8 @@ $articles = sql_select('article INNER JOIN thematique ON article.numThem = thema
                 <tbody>
                     <?php foreach($articles as $article){ 
                         $numArt = $article['numArt']; // QUEL ARTICLE NUM EST-IL QUESTION?
-                        $listMot = sql_select('article
-                        INNER JOIN motclearticle ON article.numArt = motclearticle.numArt
+                        $listMot = sql_select('ARTICLE
+                        INNER JOIN MOTCLEARTICLE ON article.numArt = motclearticle.numArt
                         INNER JOIN motcle ON motclearticle.numMotCle = motcle.numMotCle', 'article.numArt, libMotCle', "article.numArt = '$numArt'");
                         ?> 
                         <tr>

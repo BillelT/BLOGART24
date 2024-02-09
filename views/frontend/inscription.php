@@ -73,7 +73,7 @@ require '../../header.php';
                     <!-- ACCEPTER -->
                     <div class="box-input">
                     <input class="form-check-input" type="checkbox" id="accordMemb2" name="accordMemb2" value="OUI" />
-                    <label for="accordMemb2">J'accepte</label>
+                    <label for="accordMemb2">J'accepte les conditions générales d'utilisation</label>
                     </div>
                     <div>
                     <!-- STATUT -->

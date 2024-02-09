@@ -142,6 +142,7 @@ header nav a {
     transition: 0.4s ease-in-out;
 }
 
+
 .inscription:hover {
     color: #FFCE08;
     background: #051514;
@@ -195,12 +196,19 @@ header h2 {
     height: 28px;
     padding-left: 9.4%;
     text-align: left;
+    display: flex;
+    color: #fef5ea;
+    column-gap: 4px;
 }
 
-.ariane p {
+.ariane a {
     color: #fef5ea;
     font-size: 16px;
     text-decoration: underline;
+}
+
+.ariane a:hover {
+    text-decoration: none;
 }
 
 @media screen and (min-width:780px) {
@@ -256,8 +264,8 @@ header h2 {
         margin-top: 0;
     }
 
-    .inscription:hover {
-        border: 2px solid #FFCE08;
+    header .inscription:hover {
+        border: 1px solid #FFCE08;
     }
 
     .connect {
