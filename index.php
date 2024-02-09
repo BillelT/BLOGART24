@@ -1,5 +1,12 @@
 <?php
     require_once 'header.php';
+    $article1 = sql_select('ARTICLE', '*', "numArt = '1'");
+    $libTitrArt1 = $article1['libTitrArt'];
+    $libChapoArt1 = $article1['libTitrArt'];
+    $article2 = sql_select('ARTICLE', '*', "numArt = '1'");
+    $libTitrArt2 = $article2['libTitrArt'];
+    $libChapoArt2 = $article2['libTitrArt'];
+    
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -44,12 +51,9 @@
                     <img src="./src/images/francis-feytout.webp" class="card-img-top" alt="Francis Feytou">
                     <!-- Partie texte du premier article -->
                     <div class="card-body">
-                        <h2 class="card-title">FRANCIS FEYTOUT : </h2>
-                        <h3 class="card-subtitle">COMMENT PRENDRE SOIN D'UN ANIMAL EN PLEINE VILLE ?</h3>
-                        <p class="card-text">Découvrez le portrait de cet homme acteur de bons nombres d'actions et
-                            prises de positions au sein de la ville de Bordeaux.
-                            Allant des espaces verts pour votre chien, aux mesures prises en ville
-                            vous pourrez adopter sereinement votre futur compagnon.</p>
+                        <h2 class="card-title">PORTRAIT</h2>
+                        <h3 class="card-subtitle"><?php echo $libTitrArt2; ?></h3>
+                        <p class="card-text"><?php echo $libChapoArt2; ?></p>
                         <!-- Bouton du premier article -->
                         <a href="/views/frontend/articles/interview.php?numArt=2" class="btn_btn-primary">Lire la suite &#10140;</a>
                     </div>
@@ -59,12 +63,10 @@
                     <img src="./src/images/croquettes.webp" class="card-img-top" alt="La marche">
                     <!-- Partie texte du deuxième article -->
                     <div class="card-body">
-                        <h2 class="card-title">DES KM ET DES CROQUETTES : </h2>
-                        <h3 class="card-subtitle">MARCHER POUR AIDER LES REFUGES ANIMALIERS</h3>
+                        <h2 class="card-title">EVENEMENT</h2>
+                        <h3 class="card-subtitle"><?php echo $libTitrArt1; ?></h3>
 
-                        <p class="card-text">La deuxième édition de la Marche aux Croquettes s'invite à Bordeaux dans un
-                            contexte d'inflation. Découvrez comment participer afin d'aider à remplir
-                            les gamelles de nos amis à quatre pattes actuellement en refuges animaliers.</p>
+                        <p class="card-text"><?php echo $libChapoArt1; ?></p>
                         <!-- Bouton du deuxième article -->
                         <a href="/views/frontend/articles/evenement.php?numArt=1" class="btn_btn-primary">Lire la suite &#10140;</a>
                     </div>
