@@ -124,11 +124,21 @@
                 répondre à vos besoins et vous permettre de profiter du mieux que vous pouvez des dispositifs bordelais.
             </p>
             <div class="portrait">
-                <img src="./src/images/eve.png" width="60" height="60" alt="Eve Tissot">
-                <img src="./src/images/moi linkedin 1.png" width="60" height="60" alt="Billel Tighidet">
-                <img src="./src/images/antoine corberand.png" width="60" height="60" alt="Antoine Corberand">
-                <img src="./src/images/camille.png" width="60" height="60" alt="Camille Surget">
-                <img src="./src/images/antoine courcaud.png" width="60" height="60" alt="Antoine Courcaud">
+                <a href="https://www.linkedin.com/in/eve-tissot-a18a60295/">
+                    <img src="./src/images/eve.png" width="60" height="60" alt="Eve Tissot">
+                </a>
+                <a href="https://billeltighidet.com/">
+                    <img src="./src/images/moi linkedin 1.png" width="60" height="60" alt="Billel Tighidet">
+                </a>
+                <a href="https://www.linkedin.com/in/antoine-corberand-49898b294/">
+                    <img src="./src/images/antoine corberand.png" width="60" height="60" alt="Antoine Corberand">
+                </a>
+                <a href="https://www.linkedin.com/in/surget-camille-bordeaux/">
+                    <img src="./src/images/camille.png" width="60" height="60" alt="Camille Surget">
+                </a>
+                <a href="https://www.linkedin.com/in/antoine-courcaud/">
+                    <img src="./src/images/antoine courcaud.png" width="60" height="60" alt="Antoine Courcaud">
+                </a>
             </div>
         </section>
         <section class="container contact-faq">
