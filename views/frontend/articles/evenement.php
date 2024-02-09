@@ -107,7 +107,7 @@
         <div>
             <!-- le "header" de la section -->
             <div class="title-art">
-                <h3><?php echo $parag2Art; ?></h3>
+                <h3><?php echo $libSsTitr2Art; ?></h3>
             </div>
             <!-- partie "body 1" de la section -->
             <div>
