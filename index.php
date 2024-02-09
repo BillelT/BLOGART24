@@ -8,7 +8,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bord'Animaux</title>
-    <link rel="shortcut icon"  href="/src/images/logo bibble's header.png" type="image/x-icon" />
+    <link rel="shortcut icon"  href="/src/images/logo bibble's header.webp" type="image/x-icon" />
     <link rel="stylesheet" href="/src/css/index.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
@@ -41,7 +41,7 @@
             <div class="card-article">
                 <!-- Article 1 -->
                 <div class="card1">
-                    <img src="./src/images/francis feytout.png" class="card-img-top" alt="Francis Feytou">
+                    <img src="./src/images/francis-feytout.webp" class="card-img-top" alt="Francis Feytou">
                     <!-- Partie texte du premier article -->
                     <div class="card-body">
                         <h2 class="card-title">FRANCIS FEYTOUT : </h2>
@@ -56,7 +56,7 @@
                 </div>
                 <!-- Article 2 -->
                 <div class="card1">
-                    <img src="./src/images/croquettes.png" class="card-img-top" alt="La marche">
+                    <img src="./src/images/croquettes.webp" class="card-img-top" alt="La marche">
                     <!-- Partie texte du deuxième article -->
                     <div class="card-body">
                         <h2 class="card-title">DES KM ET DES CROQUETTES : </h2>
@@ -81,7 +81,7 @@
                             c'est possible grâce aux différents aménagements ! </h2>
             
                             <a href="/views/frontend/articles/interview.php?numArt=2">
-                                <img src="./src/images/aménagements animal.png" alt="chien guide">
+                                <img src="./src/images/aménagements-animal.webp" alt="chien guide">
                             </a>
                         <a href="/views/frontend/articles/interview.php?numArt=2">
                             <button>
@@ -92,7 +92,7 @@
                     <article class="article">
                         <h2>Les différentes associations et refuges bordelais </h2>
                         <a href="#">
-                            <img src="./src/images/associations et refuges.png" alt="association spa">
+                            <img src="./src/images/associations et refuges.webp" alt="association spa">
                         </a>
                         <a href="#">
                             <button>
