@@ -85,7 +85,7 @@
                             </a>
                         <a href="/views/frontend/articles/interview.php?numArt=2">
                             <button>
-                                En savoir plus <span> &#8594;</span>
+                                En savoir plus <span> &#10140;</span>
                             </button>
                         </a>
                     </article>
@@ -96,7 +96,7 @@
                         </a>
                         <a href="#">
                             <button>
-                                En savoir plus <span> &#8594;</span>
+                                En savoir plus <span> &#10140;</span>
                             </button>
                         </a>
                     </article>
