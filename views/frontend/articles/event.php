@@ -198,7 +198,7 @@
         </div>
     </section>
     <section class="contact-faq">
-        <h3>Contactez nous</h3>
+        <h3>Contactez-nous</h3>
         <!-- partie formulaire -->
         <!-- Nom -->
         <form action="/ma-page-de-traitement" method="post">
