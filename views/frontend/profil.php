@@ -1,5 +1,6 @@
 <?php 
 require '../../header.php';
+
 ?>
 <html lang="fr">
 <!DOCTYPE html>
@@ -23,30 +24,27 @@ require '../../header.php';
 
     <div class="title-profil">
       <h2>Bienvenue, </h2>
-        <h2>jeanjeandu33.</h2>
+        <h2><?php echo $_SESSION["pseudo"]; ?>.</h2>
     </div>
 
     <div>
       <p class="inscription-date">
-        Vous êtes inscrit depuis le 23/25/3045 
+        Vous êtes inscrit depuis le <?php echo $_SESSION["dtCreaMemb"]; ?>
       </p>
     </div>
     <div class="nom">
       <p for="exampleFormControlInput1" class="col-form-label">Nom :</p>
-      <p class="col-form-label name"> Jeannot</p>
+      <p class="col-form-label name"> <?php echo $_SESSION["nomMemb"]; ?></p>
     </div>
 
     <div class="prenom">
       <p for="exampleFormControlInput1" class="col-form-label">Prenom :</p>
-      <p class="col-form-label name"> Jean </p>
+      <p class="col-form-label name"> <?php echo $_SESSION["prenomMemb"]; ?> </p>
     </div>
 
     <div class="email">
       <p for="exampleFormControlInput1" class="col-form-label">Email :</p>
-      <p class="col-form-label name"> jeandu33@gmail.com </p>
-    </div>
-    <div>
-      <button type="button-less-important" class="button-less-important">Modifier</sbutton>
+      <p class="col-form-label name"><?php echo $_SESSION["eMailMemb"]; ?> </p>
     </div>
     <p><a class="link-opacity-100" href="#">Supprimer votre compte ?</a></p>
   </section>
