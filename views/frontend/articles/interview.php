@@ -108,7 +108,7 @@
         <div>
             <!-- le "header" de la section -->
             <div class="title-art">
-                <h3><?php echo $parag2Art; ?></h3>
+                <h3><?php echo $libSsTitr2Art; ?></h3>
             </div>
             <!-- partie "body 1" de la section -->
             <div>
@@ -185,7 +185,7 @@
         <!-- Article 1 -->
         <div class="card-article">
             <div class="card1">
-                <img src="../../../src/images/francis-feytout.webp" class="card-img-top" alt="tête de Francis">
+                <img src="../../../src/images/croquettes.webp" class="card-img-top" alt="tête de Francis">
                 <!-- Partie texte du premier article -->
                 <div class="card-body">
                     <h2 class="card-title"><?php $article2 = sql_select('ARTICLE', '*', "numArt = '1'")[0];

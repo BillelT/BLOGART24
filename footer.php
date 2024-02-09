@@ -54,7 +54,7 @@
                     <a href="/views/frontend/rgpd/Politiques.php">Politiques de confidentialité</a>
                 </li>
                 <li>
-                    <a href="/views/frontend/rgpd/CGU.php">CGU</a>
+                    <a href="/views/frontend/rgpd/cgu.php">CGU</a>
                 </li>
                 <li>
                     <a href="/views/frontend/rgpd/Mentions.php">Mentions légales</a>
