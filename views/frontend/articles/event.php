@@ -18,6 +18,8 @@
    } else {
     header('/index.php');
    }
+
+ 
 ?>
 <!doctype html>
 <html lang="en">
@@ -220,6 +222,7 @@
     
 
 
+
     <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -227,30 +230,29 @@
         </div>
         <div class="col-md-12">
                 
-        <form action="/api/comments/create.php" method="post">
+        <form action="<?php echo ROOT_URL . '/api/comments/create.php' ?>" method="post">
             <label for="pseudoMemb">Pseudo :</label>
-            <input type="text" id="pseudoMemb" name="pseudoMemb" required >
+            <input type="text" name="pseudoMemb" id="pseudoMemb" required>
 
-            <label for="password">Mot de passe :</label>
-            <input type="password" id="passMemb" name="password" required>
 
             <label for="article">Sélectionner l'article :</label>
-            <select id="article" name="article" required>
+            <select name="article" id="article"required>
                 <option value="1">Article Evenement</option>
                 <option value="2">Article Portrait</option>
             </select>
 
             <label for="comment">Commentaire :</label>
-            <textarea name="comment" required></textarea>
+            <textarea name="comment" id="libCom" required></textarea>
 
-            <input type="submit" value="Poster le commentaire">
+            <button type="submit" class="btn btn-primary ">Poster mon commentaire</button>
         </form>
 
 
 </div>
 </div>    
 </div>
-        
+
+
 
 
     <section class="other-comment">
