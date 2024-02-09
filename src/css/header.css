@@ -46,7 +46,7 @@ button {
 }
 
 header {
-    background: url(../images/bg\ header.png) no-repeat center;
+    background: url(../images/bg-header.webp) no-repeat center;
     background-size: cover;
     color: #fef5ea;
     grid-template-columns: 1fr 1fr 1fr;

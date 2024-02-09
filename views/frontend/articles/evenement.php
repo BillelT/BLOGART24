@@ -184,7 +184,7 @@
         <!-- Article 1 -->
         <div class="card-article">
             <div class="card1">
-                <img src="../../../src/images/francis_feytout.png" class="card-img-top" alt="tête de Francis">
+                <img src="../../../src/images/francis-feytout.webp" class="card-img-top" alt="tête de Francis">
                 <!-- Partie texte du premier article -->
                 <div class="card-body">
                     <h2 class="card-title"><?php $article2 = sql_select('article', '*', "numArt = '2'")[0];
