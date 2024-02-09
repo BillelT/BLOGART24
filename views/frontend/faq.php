@@ -36,12 +36,7 @@ require '../../header.php';
                 </h2>
                 <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <strong>This is the first item's accordion body.</strong> It is shown by default, until the
-                        collapse plugin adds the appropriate classes that we use to style each element. These classes
-                        control the overall appearance, as well as the showing and hiding via CSS transitions. You can
-                        modify any of this with custom CSS or overriding our default variables. It's also worth noting
-                        that just about any HTML can go within the <code>.accordion-body</code>, though the transition
-                        does limit overflow.
+                    Nous vous conseillons de vous abonner aux pages Facebook et Instagram de la ville de bordeaux et de suivre le site officiel de la ville également.  Vous pouvez aussi vous abonner à la newsletter pour avoir des informations directement par mail.  Pour plus d’infos il existe de nombreux blogs comme le notre qui renseignent sur l’actualité locale de la protection des animaux. 
                     </div>
                 </div>
             </div>
@@ -54,12 +49,7 @@ require '../../header.php';
                 </h2>
                 <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <strong>This is the second item's accordion body.</strong> It is hidden by default, until the
-                        collapse plugin adds the appropriate classes that we use to style each element. These classes
-                        control the overall appearance, as well as the showing and hiding via CSS transitions. You can
-                        modify any of this with custom CSS or overriding our default variables. It's also worth noting
-                        that just about any HTML can go within the <code>.accordion-body</code>, though the transition
-                        does limit overflow.
+                    Oui vous pouvez proposer du contenu via le formulaire de contact. 
                     </div>
                 </div>
             </div>
@@ -72,12 +62,7 @@ require '../../header.php';
                 </h2>
                 <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
-                        collapse plugin adds the appropriate classes that we use to style each element. These classes
-                        control the overall appearance, as well as the showing and hiding via CSS transitions. You can
-                        modify any of this with custom CSS or overriding our default variables. It's also worth noting
-                        that just about any HTML can go within the <code>.accordion-body</code>, though the transition
-                        does limit overflow.
+                    Non nous n’avons pas de réseaux sociaux. 
                     </div>
                 </div>
             </div>
@@ -90,14 +75,7 @@ require '../../header.php';
                 </h2>
                 <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
-                        collapse plugin adds the appropriate classes that we use to style each element. These classes
-                        control the overall appearance, as well as the showing and hiding via CSS transitions. You can
-                        modify any of this with custom CSS or overriding our default variables. It's also worth noting
-                        that
-                        just about any HTML can go within the <code>.accordion-body</code>, though the transition does
-                        limit
-                        overflow.
+                    Certains animaux peuvent s’adapter rapidement à vivre en ville. Cependant, il y a des animaux qui on besoin de plus d’espace. 
                     </div>
                 </div>
             </div>
@@ -110,14 +88,7 @@ require '../../header.php';
                 </h2>
                 <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
-                        collapse plugin adds the appropriate classes that we use to style each element. These classes
-                        control the overall appearance, as well as the showing and hiding via CSS transitions. You can
-                        modify any of this with custom CSS or overriding our default variables. It's also worth noting
-                        that
-                        just about any HTML can go within the <code>.accordion-body</code>, though the transition does
-                        limit
-                        overflow.
+                    La ville de Bordeaux possède divers aménagements avec des espaces verts qui permettent aux animaux de se promener, jouer. (Parc Bordelais, Jardin Public, Bassins à flot). Il y a aussi des cani-parcs qui laissent les chiens courir en liberté. 
                     </div>
                 </div>
             </div>
@@ -130,14 +101,7 @@ require '../../header.php';
                 </h2>
                 <div id="collapseSix" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
-                        collapse plugin adds the appropriate classes that we use to style each element. These classes
-                        control the overall appearance, as well as the showing and hiding via CSS transitions. You can
-                        modify any of this with custom CSS or overriding our default variables. It's also worth noting
-                        that
-                        just about any HTML can go within the <code>.accordion-body</code>, though the transition does
-                        limit
-                        overflow.
+                    Nous vous recommandons de vous rendre dans un refuge ou une association de protection des animaux. Vous pouvez aussi vous rendre sur des applications et site web qui laisse l’opportunité d’adopter des animaux gratuitement. N’oubliez jamais que prendre un animal est un engagement long terme qui avec tout les coûts d’alimentation et soins peut revenir cher. 
                     </div>
                 </div>
             </div>
@@ -151,14 +115,7 @@ require '../../header.php';
                 </h2>
                 <div id="collapseSeven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
-                        collapse plugin adds the appropriate classes that we use to style each element. These classes
-                        control the overall appearance, as well as the showing and hiding via CSS transitions. You can
-                        modify any of this with custom CSS or overriding our default variables. It's also worth noting
-                        that
-                        just about any HTML can go within the <code>.accordion-body</code>, though the transition does
-                        limit
-                        overflow.
+                    Les organisations tel que les refuges et associations qui recueillent des animaux errants et abandonnés sont un bon moyen pour adopter. L’association de la SPA est reconnue nationalement pour la protection des animaux. De plus quand on adopte dans des animaux via ces organisations les animaux sont en général vaccinés, identifiés et stérilisés. 
                     </div>
                 </div>
             </div>
@@ -171,14 +128,7 @@ require '../../header.php';
                 </h2>
                 <div id="collapseEight" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                     <div class="accordion-body">
-                        <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
-                        collapse plugin adds the appropriate classes that we use to style each element. These classes
-                        control the overall appearance, as well as the showing and hiding via CSS transitions. You can
-                        modify any of this with custom CSS or overriding our default variables. It's also worth noting
-                        that
-                        just about any HTML can go within the <code>.accordion-body</code>, though the transition does
-                        limit
-                        overflow.
+                    Non, il y a des lieux qui n’autorisent pas les chiens dans certains endroits publiques si ils ne sont pas tenues en laisse. Par exemple ils sont interdit dans les marchés, les plages et les transports en commun. Les chats eux ont plus de liberté pour se promener mais il est recommandé de les surveiller. 
                     </div>
                 </div>
             </div>
@@ -193,16 +143,7 @@ require '../../header.php';
                     </h2>
                     <div id="collapseNine" class="accordion-collapse collapse show" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <strong>This is the first item's accordion body.</strong> It is shown by default, until the
-                            collapse plugin adds the appropriate classes that we use to style each element. These
-                            classes
-                            control the overall appearance, as well as the showing and hiding via CSS transitions. You
-                            can
-                            modify any of this with custom CSS or overriding our default variables. It's also worth
-                            noting
-                            that just about any HTML can go within the <code>.accordion-body</code>, though the
-                            transition
-                            does limit overflow.
+                        La ville de Bordeaux a en effet mis en place des mesures pour contrer la prolifération des animaux abandonnés et errants. Une fourrière municipale a été crée et la ville a signé une convention avec la SPA qui leur permet de capturer et stériliser les chats errants. 
                         </div>
                     </div>
                 </div>
@@ -215,22 +156,12 @@ require '../../header.php';
                     </h2>
                     <div id="collapseTen" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <strong>This is the second item's accordion body.</strong> It is hidden by default, until
-                            the
-                            collapse plugin adds the appropriate classes that we use to style each element. These
-                            classes
-                            control the overall appearance, as well as the showing and hiding via CSS transitions. You
-                            can
-                            modify any of this with custom CSS or overriding our default variables. It's also worth
-                            noting
-                            that just about any HTML can go within the <code>.accordion-body</code>, though the
-                            transition
-                            does limit overflow.
+                        C’est le code rural qui légiste les animaux en ville. Ce dernier stipule que les propriétaires des animaux sont responsable des dégâts causés et que les animaux doivent être tenus en laisse sur la voie publique. Enfin, il y a aussi des réglementations par ville. Par exemple, la ville de Bordeaux interdit les chiens dans certains lieux publics. 
                         </div>
                     </div>
                 </div>
                 <!-- question 11 -->
-                <div class="accordion-item">
+                <div class="accordion-item">            
                     <h2 class="accordion-header">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseEleven" aria-expanded="false" aria-controls="collapseThree">
                             &#9745; Je connais un animal maltraité. que faire ?
@@ -238,16 +169,7 @@ require '../../header.php';
                     </h2>
                     <div id="collapseEleven" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
-                            collapse plugin adds the appropriate classes that we use to style each element. These
-                            classes
-                            control the overall appearance, as well as the showing and hiding via CSS transitions. You
-                            can
-                            modify any of this with custom CSS or overriding our default variables. It's also worth
-                            noting
-                            that just about any HTML can go within the <code>.accordion-body</code>, though the
-                            transition
-                            does limit overflow.
+                        Nous vous recommandons de contacter la police ou la SPA.
                         </div>
                     </div>
                 </div>
@@ -260,16 +182,7 @@ require '../../header.php';
                     </h2>
                     <div id="collapseTwelve" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
-                            collapse plugin adds the appropriate classes that we use to style each element. These
-                            classes
-                            control the overall appearance, as well as the showing and hiding via CSS transitions. You
-                            can
-                            modify any of this with custom CSS or overriding our default variables. It's also worth
-                            noting that
-                            just about any HTML can go within the <code>.accordion-body</code>, though the transition
-                            does limit
-                            overflow.
+                        Vous pouvez vous rendre dans des bars à chat et parcs canins. 
                         </div>
                     </div>
                 </div>
@@ -282,16 +195,7 @@ require '../../header.php';
                     </h2>
                     <div id="collapseThirteen" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
-                            collapse plugin adds the appropriate classes that we use to style each element. These
-                            classes
-                            control the overall appearance, as well as the showing and hiding via CSS transitions. You
-                            can
-                            modify any of this with custom CSS or overriding our default variables. It's also worth
-                            noting that
-                            just about any HTML can go within the <code>.accordion-body</code>, though the transition
-                            does limit
-                            overflow.
+                        En effet il y a de nombreux vétérinaires disponibles à Bordeaux. Pour plus d’infos rendrez-vous sur le site internet de l’Ordre des vétérinaires. 
                         </div>
                     </div>
                 </div>
@@ -304,16 +208,7 @@ require '../../header.php';
                     </h2>
                     <div id="collapseFourteen" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
-                            collapse plugin adds the appropriate classes that we use to style each element. These
-                            classes
-                            control the overall appearance, as well as the showing and hiding via CSS transitions. You
-                            can
-                            modify any of this with custom CSS or overriding our default variables. It's also worth
-                            noting that
-                            just about any HTML can go within the <code>.accordion-body</code>, though the transition
-                            does limit
-                            overflow.
+                        Les animaux ne sont pas autorisés. 
                         </div>
                     </div>
                 </div>
@@ -326,16 +221,7 @@ require '../../header.php';
                     </h2>
                     <div id="collapseFifteen" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
-                            collapse plugin adds the appropriate classes that we use to style each element. These
-                            classes
-                            control the overall appearance, as well as the showing and hiding via CSS transitions. You
-                            can
-                            modify any of this with custom CSS or overriding our default variables. It's also worth
-                            noting that
-                            just about any HTML can go within the <code>.accordion-body</code>, though the transition
-                            does limit
-                            overflow.
+                        Oui nous pouvons vous mettre en relation avec des propriétaires d’animaux à Bordeaux. 
                         </div>
                     </div>
                 </div>
@@ -348,16 +234,7 @@ require '../../header.php';
                     </h2>
                     <div id="collapseSixteen" class="accordion-collapse collapse" data-bs-parent="#accordionExample">
                         <div class="accordion-body">
-                            <strong>This is the third item's accordion body.</strong> It is hidden by default, until the
-                            collapse plugin adds the appropriate classes that we use to style each element. These
-                            classes
-                            control the overall appearance, as well as the showing and hiding via CSS transitions. You
-                            can
-                            modify any of this with custom CSS or overriding our default variables. It's also worth
-                            noting that
-                            just about any HTML can go within the <code>.accordion-body</code>, though the transition
-                            does limit
-                            overflow.
+                        Nous sommes une équipe qui renseigne les utilisateurs de notre blog sur la protection des animaux. Notre objectif est de fournir des informations claires et complètes. 
                         </div>
                     </div>
                 </div>
