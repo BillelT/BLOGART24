@@ -2,7 +2,7 @@
    require '../../../header.php';
    if (isset($_GET['numArt'])){
     $numArt = $_GET['numArt'];
-    $article = sql_select('ARTICLE', '*', "numArt ='$numArt'")[0];
+    $article = sql_select('article', '*', "numArt ='$numArt'")[0];
     $dtCreaArt = $article['dtCreaArt'];
     $libTitrArt = $article['libTitrArt'];
     $libChapoArt = $article['libChapoArt'];
@@ -18,6 +18,8 @@
    } else {
     header('/index.php');
    }
+
+   
 
  
 ?>
@@ -142,8 +144,8 @@
             <div class="div-mot-clef">
             <ul class="list-group list-group-horizontal">
             <?php 
-            $motcle = sql_select('MOTCLE INNER JOIN MOTCLEARTICLE ON motcle.numMotCle = motclearticle.numMotCle
-                INNER JOIN ARTICLE ON motclearticle.numArt = article.numArt', '*', "article.numArt ='$numArt'");
+            $motcle = sql_select('motcle INNER JOIN motclearticle ON motcle.numMotCle = motclearticle.numMotCle
+                INNER JOIN article ON motclearticle.numArt = article.numArt', '*', "article.numArt ='$numArt'");
                 foreach ($motcle as $mot){
                 echo '<li class="list-group-item">' . $mot['libMotCle'] . '</li>';
             }
@@ -185,7 +187,7 @@
                 <img src="../../../src/images/francis_feytout.png" class="card-img-top" alt="tête de Francis">
                 <!-- Partie texte du premier article -->
                 <div class="card-body">
-                    <h2 class="card-title"><?php $article2 = sql_select('ARTICLE', '*', "numArt = '2'")[0];
+                    <h2 class="card-title"><?php $article2 = sql_select('article', '*', "numArt = '2'")[0];
                     $libTitrArt2 = $article2['libTitrArt'];
                     $libChapoArt2 = $article2['libChapoArt'];
                     $libAccrochArt2 = $article2['libAccrochArt'];
@@ -200,7 +202,7 @@
         </div>
     </section>
     <section class="contact-faq">
-        <h3>Contactez-nous</h3>
+        <h3>Contactez nous</h3>
         <!-- partie formulaire -->
         <!-- Nom -->
         <form action="/ma-page-de-traitement" method="post">
@@ -221,35 +223,34 @@
     <!-- section autre commentaire -->
     
 
-
-
     <div class="container">
     <div class="row">
         <div class="col-md-12">
             <h1>Commentaire</h1>
         </div>
         <div class="col-md-12">
-                
-        <form action="<?php echo ROOT_URL . '/api/comments/create.php' ?>" method="post">
-            <label for="pseudoMemb">Pseudo :</label>
-            <input type="text" name="pseudoMemb" id="pseudoMemb" required>
+            <form action="<?php echo ROOT_URL . '/api/comments/create.php' ?>" method="post">
+                <label for="pseudoMemb">Pseudo :</label>
+                <input type="text" name="pseudoMemb" id="pseudoMemb" required>
+                <br>
 
+                <label for="article">Sélectionner l'article :</label>
+                <select name="article" id="article" required>
+                    <option value="1">Article Evenement</option>
+                    <option value="2">Article Portrait</option>
+                </select>
+                <br>
 
-            <label for="article">Sélectionner l'article :</label>
-            <select name="article" id="article"required>
-                <option value="1">Article Evenement</option>
-                <option value="2">Article Portrait</option>
-            </select>
+                <label for="comment">Commentaire :</label>
+                <textarea name="comment" id="libCom" maxlength="500" style="height: 200px" required></textarea>
+                <br>
 
-            <label for="comment">Commentaire :</label>
-            <textarea name="comment" id="libCom" required></textarea>
+                <button type="submit" class="btn btn-primary button-comment">Poster mon commentaire </button>
+            </form>
 
-            <button type="submit" class="btn btn-primary ">Poster mon commentaire</button>
-        </form>
-
-
-</div>
-</div>    
+            
+        </div>
+    </div>
 </div>
 
 
