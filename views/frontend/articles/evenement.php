@@ -1,5 +1,7 @@
 <?php 
    require '../../../header.php';
+   require_once '../../../functions/ctrlSaisies.php';
+   
    if (isset($_GET['numArt'])){
     $numArt = $_GET['numArt'];
     $article = sql_select('article', '*', "numArt ='$numArt'")[0];
@@ -8,10 +10,13 @@
     $libChapoArt = $article['libChapoArt'];
     $libAccrochArt = $article['libAccrochArt'];
     $parag1Art = $article['parag1Art'];
+    $parag1Art = BBCode($parag1Art);
     $libSsTitr1Art = $article['libSsTitr1Art'];
     $parag2Art = $article['parag2Art'];
+    $parag2Art = BBCode($parag2Art);
     $libSsTitr2Art = $article['libSsTitr2Art'];
     $parag3Art = $article['parag3Art'];
+    $parag3Art = BBCode($parag3Art);
     $libConclArt = $article['libConclArt'];
     $urlPhotArt = $article['urlPhotArt'];
     $numThem = $article['numThem'];
