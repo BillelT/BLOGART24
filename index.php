@@ -30,7 +30,7 @@
                 recensement d'associations, tous nos articles sont là pour vous rappeler qu'à Bordeaux, nos animaux
                 peuvent prospérer !</p>
 
-            <a href="/views/frontend/faq.php" class="faq">
+            <a href="/views/frontend/articles/faq.php" class="faq">
                 <button>
                     Voir la FAQ <span> &#8594;</span>
                 </button>
@@ -51,7 +51,7 @@
                             Allant des espaces verts pour votre chien, aux mesures prises en ville
                             vous pourrez adopter sereinement votre futur compagnon.</p>
                         <!-- Bouton du premier article -->
-                        <a href="/views/frontend/article-interview.php" class="btn_btn-primary">Lire la suite &#10140;</a>
+                        <a href="/views/frontend/articles/interview.php?numArt=2" class="btn_btn-primary">Lire la suite &#10140;</a>
                     </div>
                 </div>
                 <!-- Article 2 -->
@@ -66,7 +66,7 @@
                             contexte d'inflation. Découvrez comment participer afin d'aider à remplir
                             les gamelles de nos amis à quatre pattes actuellement en refuges animaliers.</p>
                         <!-- Bouton du deuxième article -->
-                        <a href="/views/frontend/article-event.php" class="btn_btn-primary">Lire la suite &#10140;</a>
+                        <a href="/views/frontend/articles/event.php?numArt=1" class="btn_btn-primary">Lire la suite &#10140;</a>
                     </div>
                 </div>
             </div>
@@ -124,11 +124,21 @@
                 répondre à vos besoins et vous permettre de profiter du mieux que vous pouvez des dispositifs bordelais.
             </p>
             <div class="portrait">
-                <img src="./src/images/eve.png" width="60" height="60" alt="Eve Tissot">
-                <img src="./src/images/moi linkedin 1.png" width="60" height="60" alt="Billel Tighidet">
-                <img src="./src/images/antoine corberand.png" width="60" height="60" alt="Antoine Corberand">
-                <img src="./src/images/camille.png" width="60" height="60" alt="Camille Surget">
-                <img src="./src/images/antoine courcaud.png" width="60" height="60" alt="Antoine Courcaud">
+                <a href="https://www.linkedin.com/in/eve-tissot-a18a60295/">
+                    <img src="./src/images/eve.png" width="60" height="60" alt="Eve Tissot">
+                </a>
+                <a href="https://billeltighidet.com/">
+                    <img src="./src/images/moi linkedin 1.png" width="60" height="60" alt="Billel Tighidet">
+                </a>
+                <a href="https://www.linkedin.com/in/antoine-corberand-49898b294/">
+                    <img src="./src/images/antoine corberand.png" width="60" height="60" alt="Antoine Corberand">
+                </a>
+                <a href="https://www.linkedin.com/in/surget-camille-bordeaux/">
+                    <img src="./src/images/camille.png" width="60" height="60" alt="Camille Surget">
+                </a>
+                <a href="https://www.linkedin.com/in/antoine-courcaud/">
+                    <img src="./src/images/antoine courcaud.png" width="60" height="60" alt="Antoine Courcaud">
+                </a>
             </div>
         </section>
         <section class="container contact-faq">

@@ -1,5 +1,17 @@
 <?php
 include '../../../header.php';
+
+
+if (isset($_GET['numCom'])){
+    $numCom = $_GET['numCom'];
+    $comment = sql_select('comment', '*', "numCom ='$numCom'")[0];
+    $pseudoMemb = $comment['pseudoMemb'];
+    $numArt = $comment['numArt'];
+    $libCom = $comment['libCom'];
+   } else {
+    header('/index.php');
+   }
+   
 ?>
 
 <!-- Bootstrap form to create a new member -->
@@ -98,5 +110,4 @@ console.log(document.getElementById("recaptcha"));
 }*/
 
 </script>
-
 

@@ -7,7 +7,7 @@ session_start();
 $pseudoMemb = ctrlSaisies($_POST['pseudoMemb']);
 $passMemb = ctrlSaisies($_POST['passMemb']);
 
-$search = sql_select('membre', '*', "pseudoMemb = '$pseudoMemb'");
+$search = sql_select('MEMBRE', '*', "pseudoMemb = '$pseudoMemb'");
 
 // TESTE SI LES CHAMPS SONT REMPLIS
 
@@ -35,7 +35,7 @@ if (!preg_match('/[0-9]/', $passMemb)){
 // TEST EMAIL MATCHE LE MDP 
 
 
-$search = sql_select('membre', '*', "pseudoMemb = '$pseudoMemb'");
+$search = sql_select('MEMBRE', '*', "pseudoMemb = '$pseudoMemb'");
 
 if ($search !== null && count($search) > 0) {
     $passwordHash = $search[0]['passMemb'];

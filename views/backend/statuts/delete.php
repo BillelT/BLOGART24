@@ -52,7 +52,7 @@ if(isset($_GET['numStat'])){
                     <select name="numStat" id="numStat">
                         <option value="">Choisir un statut</option>
                         <?php 
-                            $result = sql_select('statut');
+                            $result = sql_select('STATUT');
                             foreach($result as $req){
                                 echo '<option value="' . $req['numStat'] . '">' . $req['libStat'] . '</option>';
                             }

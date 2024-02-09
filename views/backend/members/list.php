@@ -8,7 +8,7 @@ if (!isset($_SESSION['numStat']) || $_SESSION['numStat'] !== 1 && $_SESSION['num
     exit();
 }
 //Load all keywords
-$member = sql_select("membre INNER JOIN statut ON membre.numStat = statut.numStat", "*");
+$member = sql_select("MEMBRE INNER JOIN STATUT ON membre.numStat = statut.numStat", "*");
 ?>
 
 <!-- Bootstrap default layout to display all statuts in foreach -->

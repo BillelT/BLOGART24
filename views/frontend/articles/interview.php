@@ -1,8 +1,8 @@
 <?php 
-   require '../../header.php';
+   require '../../../header.php';
    if (isset($_GET['numArt'])){
     $numArt = $_GET['numArt'];
-    $article = sql_select('article', '*', "numArt ='$numArt'")[0];
+    $article = sql_select('ARTICLE', '*', "numArt ='$numArt'")[0];
     $dtCreaArt = $article['dtCreaArt'];
     $libTitrArt = $article['libTitrArt'];
     $libChapoArt = $article['libChapoArt'];
@@ -17,15 +17,16 @@
     $numThem = $article['numThem'];
    } else {
     header('/index.php');
-   }
+   }    
 ?>
 <!doctype html>
-<html lang="fr-FR">
+<html lang="en">
+
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bord'Animaux - La marche aux Croquettes</title>
-    <link rel="stylesheet" href="/src/css/article-event.css">
+    <title>Bord'animaux</title>
+    <link rel="stylesheet" href="/src/css/article-interview.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,8 +42,8 @@
         <h1 class="text-center"><?php echo $libTitrArt; ?></h1>
         <div class="text-center"><a href="#scroll"><button>En lire plus ?</button></a></div>
         <h2 id="scroll"><?php echo $libAccrochArt; ?></h2>
-        <img src="../../src/images/<?php echo $urlPhotArt; ?>" alt="chien qui se fait promener">
-        <p>Catégorie : Evenement<br>
+        <img src="../../../src/images/<?php echo $urlPhotArt; ?>" alt="chien qui se fait promener">
+        <p>Catégorie : Portrait<br>
         <?php echo $dtCreaArt; ?>
         </p>
     </div>
@@ -62,9 +63,9 @@
                 <!-- premier paragraphe de la page article -->
                 <div class="container-paragraph">
                     <div class="div-guimet">
-                        <img class="guimet-gauche" src="../../src/images/guimet-gauche.svg" alt="petit guimet">
+                        <img class="guimet-gauche" src="../../../src/images/guimet-gauche.svg" alt="petit guimet">
                         <h3>Les gens donnent de moins en moins [...] en raison de l'inflation</h3>
-                        <img class="guimet-droite" src="../../src/images/guimet-droite.svg" alt="petit guimet">
+                        <img class="guimet-droite" src="../../../src/images/guimet-droite.svg" alt="petit guimet">
                     </div>
                     <div class="div-text-art">
                         <p><strong><?php echo $libChapoArt; ?></strong>
@@ -87,9 +88,9 @@
                 <div class="container-paragraph">
                     <!-- Petit texte avec les petites icones svg au dessus et en dessous -->
                     <div class="div-guimet">
-                        <img class="guimet-gauche" src="../../src/images/guimet-gauche.svg" alt="petit guimet">
+                        <img class="guimet-gauche" src="../../../src/images/guimet-gauche.svg" alt="petit guimet">
                         <h3>Chaque kilomètre parcouru est un repas offert aux animaux des refuges.</h3>
-                        <img class="guimet-droite" src="../../src/images/guimet-droite.svg" alt="petit guimet">
+                        <img class="guimet-droite" src="../../../src/images/guimet-droite.svg" alt="petit guimet">
                     </div>
                     <div class="div-text-art">
                         <p> <?php echo $parag2Art; ?>
@@ -109,9 +110,9 @@
                 <!--     paragraphe de la page article -->
                 <div class="container-paragraph">
                     <div class="div-guimet">
-                        <img class="guimet-gauche" src="../../src/images/guimet-gauche.svg" alt="petit guimet">
+                        <img class="guimet-gauche" src="../../../src/images/guimet-gauche.svg" alt="petit guimet">
                         <h3>Toutes les deux minutes, un animal est abandonné</h3>
-                        <img class="guimet-droite" src="../../src/images/guimet-droite.svg" alt="petit guimet">
+                        <img class="guimet-droite" src="../../../src/images/guimet-droite.svg" alt="petit guimet">
                     </div>
                     <div class="div-text-art">
                         <p> <?php echo $parag3Art; ?>
@@ -139,8 +140,8 @@
             <div class="div-mot-clef">
             <ul class="list-group list-group-horizontal">
             <?php 
-            $motcle = sql_select('motcle INNER JOIN motclearticle ON motcle.numMotCle = motclearticle.numMotCle
-                INNER JOIN article ON motclearticle.numArt = article.numArt', '*', "article.numArt ='$numArt'");
+            $motcle = sql_select('MOTCLE INNER JOIN MOTCLEARTICLE ON motcle.numMotCle = motclearticle.numMotCle
+                INNER JOIN ARTICLE ON motclearticle.numArt = article.numArt', '*', "article.numArt ='$numArt'");
                 foreach ($motcle as $mot){
                 echo '<li class="list-group-item">' . $mot['libMotCle'] . '</li>';
             }
@@ -162,13 +163,13 @@
         <!-- Partie bouton -->
         <div class="buttons">
             <a href="#"></a>
-            <button type="button" class="bouton-like"><img src="../../src/images/like.svg">Like</button>
+            <button type="button" class="bouton-like"><img src="../../../src/images/like.svg">Like</button>
             </a>
             <a href="#"></a>
-            <button type="button" class="bouton-partager"><img src="../../src/images/partager.svg">partager</button>
+            <button type="button" class="bouton-partager"><img src="../../../src/images/partager.svg">partager</button>
             </a>
             <a href="#"></a>
-            <button type="button" class="bouton-commentaire"><img src="../../src/images/commenter.svg">Commentaire</button>
+            <button type="button" class="bouton-commentaire"><img src="../../../src/images/commenter.svg">Commentaire</button>
             </a>
         </div>
 
@@ -179,15 +180,16 @@
         <!-- Article 1 -->
         <div class="card-article">
             <div class="card1">
-                <img src="../../src/images/francis_feytout.png" class="card-img-top" alt="tête de Francis">
+                <img src="../../../src/images/francis_feytout.png" class="card-img-top" alt="tête de Francis">
                 <!-- Partie texte du premier article -->
                 <div class="card-body">
-                    <h2 class="card-title">FRANCIS FEYTOUT : </h2>
-                    <h3 class="card-under-title">COMMENT PRENDRE SOIN D'UN ANIMAL EN PLEINE VILLE ?</h3>
-                    <p class="card-text">Découvrez le portrait de cet homme acteur de bons nombres d'actions et
-                        prises de positions au sein de la ville de Bordeaux.
-                        Allant des espaces verts pour votre chien, aux mesures prises en ville
-                        vous pourrez adopter sereinement votre futur compagnon.</p>
+                    <h2 class="card-title"><?php $article2 = sql_select('ARTICLE', '*', "numArt = '1'")[0];
+                    $libTitrArt2 = $article2['libTitrArt'];
+                    $libChapoArt2 = $article2['libChapoArt'];
+                    $libAccrochArt2 = $article2['libAccrochArt'];
+                    echo $libTitrArt2;?> </h2>
+                    <h3 class="card-under-title"><?php echo $libChapoArt; ?></h3>
+                    <p class="card-text"><?php echo $libAccrochArt2; ?></p>
                     <!-- Bouton du premier article -->
                     <a href="#" class="btn_btn-primary">Lire la suite &#10140;</a>
                 </div>
@@ -216,7 +218,7 @@
     <!-- section autre commentaire -->
     
 
-
+  
     <div class="container">
     <div class="row">
         <div class="col-md-12">
@@ -224,30 +226,27 @@
         </div>
         <div class="col-md-12">
                 
-        <form action="/api/comments/create.php" method="post">
+        <form action="<?php echo ROOT_URL . '/api/comments/create.php' ?>" method="post">
             <label for="pseudoMemb">Pseudo :</label>
-            <input type="text" id="pseudoMemb" name="pseudoMemb" required >
+            <input type="text" name="pseudoMemb" id="pseudoMemb" required>
 
-            <label for="password">Mot de passe :</label>
-            <input type="password" id="passMemb" name="password" required>
 
             <label for="article">Sélectionner l'article :</label>
-            <select id="article" name="article" required>
+            <select name="article" id="article"required>
                 <option value="1">Article Evenement</option>
                 <option value="2">Article Portrait</option>
             </select>
 
             <label for="comment">Commentaire :</label>
-            <textarea name="comment" required></textarea>
+            <textarea name="comment" id="libCom" required></textarea>
 
-            <input type="submit" value="Poster le commentaire">
+            <button type="submit" class="btn btn-primary ">Poster mon commentaire</button>
         </form>
 
 
 </div>
 </div>    
 </div>
-        
 
 
     <section class="other-comment">
@@ -263,7 +262,7 @@
                         Répondre &#10140;
                     </button>
                     <button type="button" class="bouton-like">
-                        <img src="../../src/images/like.svg"> Like &#10140;
+                        <img src="../../../src/images/like.svg"> Like &#10140;
                     </button>
                 </div>
             </div>
@@ -278,7 +277,7 @@
                         Répondre &#10140;
                     </button>
                     <button type="button" class="bouton-like">
-                        <img src="../../src/images/like.svg"> Like &#10140;
+                        <img src="../../../src/images/like.svg"> Like &#10140;
                     </button>
                 </div>
             </div>
@@ -290,7 +289,7 @@
         </div>
     </section>
     <?php 
-        require '../../footer.php';
+        require '../../../footer.php';
     ?>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous">

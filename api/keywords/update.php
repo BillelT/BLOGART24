@@ -8,7 +8,7 @@ $libMotCle = ctrlSaisies($_POST['libMotCle']);
 
 $set_lib = "libMotCle = '$libMotCle'";
 $where_num = "numMotCle = $numMotCle";
-$motcle_lib = "motcle";
+$motcle_lib = "MOTCLE";
 
 sql_update($motcle_lib, $set_lib, $where_num);
 
