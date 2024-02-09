@@ -32,7 +32,7 @@
 
             <a href="/views/frontend/articles/faq.php" class="faq">
                 <button>
-                    Voir la FAQ <span> &#8594;</span>
+                    Voir la FAQ <span> &#10140;</span>
                 </button>
             </a>
         </section>
