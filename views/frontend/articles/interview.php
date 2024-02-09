@@ -43,7 +43,7 @@
         <div class="text-center"><a href="#scroll"><button>En lire plus ?</button></a></div>
         <h2 id="scroll"><?php echo $libAccrochArt; ?></h2>
         <img src="../../src/images/<?php echo $urlPhotArt; ?>" alt="chien qui se fait promener">
-        <p>Catégorie : Evenement<br>
+        <p>Catégorie : Portrait<br>
         <?php echo $dtCreaArt; ?>
         </p>
     </div>
@@ -183,7 +183,7 @@
                 <img src="../../src/images/francis_feytout.png" class="card-img-top" alt="tête de Francis">
                 <!-- Partie texte du premier article -->
                 <div class="card-body">
-                    <h2 class="card-title"><?php $article2 = sql_select('article', '*', "numArt = '2'")[0];
+                    <h2 class="card-title"><?php $article2 = sql_select('article', '*', "numArt = '1'")[0];
                     $libTitrArt2 = $article2['libTitrArt'];
                     $libChapoArt2 = $article2['libChapoArt'];
                     $libAccrochArt2 = $article2['libAccrochArt'];
@@ -194,7 +194,6 @@
                     <a href="#" class="btn_btn-primary">Lire la suite &#10140;</a>
                 </div>
             </div>
-        </div>
         </div>
     </section>
     <section class="contact-faq">
