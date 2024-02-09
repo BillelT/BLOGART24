@@ -42,7 +42,12 @@ if ($search !== null && count($search) > 0) {
 
     if (password_verify($passMemb, $passwordHash)) {
         $_SESSION['numStat'] = $search[0]['numStat'];
-        $_SESSION['pseudo'] = $search[0]['pseudoMemb']; // Ajoutez cette ligne pour stocker le pseudo dans la session
+        $_SESSION['pseudo'] = $search[0]['pseudoMemb'];
+        $_SESSION['dtCreaMemb'] = $search[0]['dtCreaMemb'];
+        $_SESSION['nomMemb'] = $search[0]['nomMemb'];
+        $_SESSION['prenomMemb'] = $search[0]['prenomMemb'];
+        $_SESSION['EmailMemb'] = $search[0]['EmailMemb'];
+         // Ajoutez cette ligne pour stocker le pseudo dans la session
         echo 'Connexion réussie. Bienvenue, ' . $_SESSION['pseudo'] . '!';
     } else {
         echo 'Mot de passe incorrect.';

@@ -61,7 +61,7 @@
                 </li>
             </ul>
         </nav>
-        <img src="/src/images/footer logo bibble's.png" alt="logo Bibble'S">
+        <img src="/src/images/footer logo bibbles.webp" alt="logo Bibble'S">
         <p>Tous droits réservés - 2024</p>
     </footer>
 </body>

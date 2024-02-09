@@ -172,8 +172,8 @@
             <a href="#"></a>
             <button type="button" class="bouton-partager"><img src="../../../src/images/partager.svg">partager</button>
             </a>
-            <a href="#"></a>
-            <button type="button" class="bouton-commentaire"><img src="../../../src/images/commenter.svg">Commentaire</button>
+            <a href="#commentaire">
+            <button type="button" class="bouton-commentaire"><img src="../../../src/images/commenter.svg" >Commentaire</button>
             </a>
         </div>
 
@@ -184,7 +184,7 @@
         <!-- Article 1 -->
         <div class="card-article">
             <div class="card1">
-                <img src="../../../src/images/francis_feytout.png" class="card-img-top" alt="tête de Francis">
+                <img src="../../../src/images/francis-feytout.webp" class="card-img-top" alt="tête de Francis">
                 <!-- Partie texte du premier article -->
                 <div class="card-body">
                     <h2 class="card-title"><?php $article2 = sql_select('article', '*', "numArt = '2'")[0];
@@ -226,9 +226,9 @@
     <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <h1>Commentaire</h1>
+            <h1 id="commentaire">Commentaire</h1>
         </div>
-        <div class="col-md-12">
+        <div class="col-md-12 add-comment">
             <form action="<?php echo ROOT_URL . '/api/comments/create.php' ?>" method="post">
                 <label for="pseudoMemb">Pseudo :</label>
                 <input type="text" name="pseudoMemb" id="pseudoMemb" required>

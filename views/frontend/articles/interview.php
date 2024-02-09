@@ -180,7 +180,7 @@
         <!-- Article 1 -->
         <div class="card-article">
             <div class="card1">
-                <img src="../../../src/images/francis_feytout.png" class="card-img-top" alt="tête de Francis">
+                <img src="../../../src/images/francis-feytout.webp" class="card-img-top" alt="tête de Francis">
                 <!-- Partie texte du premier article -->
                 <div class="card-body">
                     <h2 class="card-title"><?php $article2 = sql_select('ARTICLE', '*', "numArt = '1'")[0];
@@ -224,29 +224,28 @@
         <div class="col-md-12">
             <h1>Commentaire</h1>
         </div>
-        <div class="col-md-12">
-                
-        <form action="<?php echo ROOT_URL . '/api/comments/create.php' ?>" method="post">
-            <label for="pseudoMemb">Pseudo :</label>
-            <input type="text" name="pseudoMemb" id="pseudoMemb" required>
-            <br>
+        <div class="col-md-12 add-comment">
+            <form action="<?php echo ROOT_URL . '/api/comments/create.php' ?>" method="post">
+                <label for="pseudoMemb">Pseudo :</label>
+                <input type="text" name="pseudoMemb" id="pseudoMemb" required>
+                <br>
 
+                <label for="article">Sélectionner l'article :</label>
+                <select name="article" id="article" required>
+                    <option value="1">Article Evenement</option>
+                    <option value="2">Article Portrait</option>
+                </select>
+                <br>
 
-            <label for="article">Sélectionner l'article :</label>
-            <select name="article" id="article"required>
-                <option value="1">Article Evenement</option>
-                <option value="2">Article Portrait</option>
-            </select>
-            <br>
+                <label for="comment">Commentaire :</label>
+                <textarea name="comment" id="libCom" maxlength="500" style="height: 200px" required></textarea>
+                <br>
 
-            <label for="comment">Commentaire :</label>
-            <textarea name="comment" id="libCom" maxlength="500" style="height: 200px" required></textarea>
+                <button type="submit" class="btn btn-primary button-comment">Poster mon commentaire </button>
+            </form>
 
-            <button type="submit" class="btn btn-primary ">Poster mon commentaire</button>
-        </form>
-
-
-</div>
+            
+        </div>
 </div>    
 </div>
 

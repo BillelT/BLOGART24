@@ -1,6 +1,18 @@
 <?php 
 require '../../header.php';
 
+if (isset($_POST['deconnexion'])) {
+    // Détruire la session
+    echo 'Vous allez être déconnecté';
+    
+    session_unset();
+    session_destroy();
+
+    // Rediriger l'utilisateur vers la page d'accueil
+    header("Location: accueil.php");
+    exit;
+}
+
 ?>
 <html lang="fr">
 <!DOCTYPE html>
@@ -9,7 +21,7 @@ require '../../header.php';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mon Profil</title>
-  <link rel="stylesheet" href="../css/profil.css">
+  <link rel="stylesheet" href="../../src/css/profil.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min">
   <link
     href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400&display=swap"
@@ -44,11 +56,19 @@ require '../../header.php';
 
     <div class="email">
       <p for="exampleFormControlInput1" class="col-form-label">Email :</p>
-      <p class="col-form-label name"><?php echo $_SESSION["eMailMemb"]; ?> </p>
+      <p class="col-form-label name"> jeandu33@gmail.com </p>
     </div>
-    <p><a class="link-opacity-100" href="#">Supprimer votre compte ?</a></p>
+    <div>
+      <button type="button-less-important" class="button-less-important">Modifier</sbutton>
+    </div>
+    <a class="link-opacity-100" style="padding-bottom:64px;" href="#">Supprimer votre compte ?</a>
   </section>
-  <?php 
+  
+
+  
+
+</body>
+</html>
+<?php 
 require '../../footer.php';
 ?>
-</body>
