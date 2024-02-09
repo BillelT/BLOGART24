@@ -8,7 +8,7 @@ require '../../header.php';
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Mon Profil</title>
-  <link rel="stylesheet" href="../css/profil.css">
+  <link rel="stylesheet" href="../../src/css/profil.css">
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min">
   <link
     href="https://fonts.googleapis.com/css2?family=K2D:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;1,200;1,300;1,400&display=swap"
@@ -45,10 +45,10 @@ require '../../header.php';
       <p for="exampleFormControlInput1" class="col-form-label">Email :</p>
       <p class="col-form-label name"> jeandu33@gmail.com </p>
     </div>
-    <div>
-      <button type="button-less-important" class="button-less-important">Modifier</sbutton>
+    <div style="text-align: center; padding-bottom:16px; ">
+      <button type="button-less-important" class="connect">Modifier</sbutton>
     </div>
-    <p><a class="link-opacity-100" href="#">Supprimer votre compte ?</a></p>
+    <a class="link-opacity-100" style="padding-bottom:64px;" href="#">Supprimer votre compte ?</a>
   </section>
   <?php 
 require '../../footer.php';
