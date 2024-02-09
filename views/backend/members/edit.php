@@ -9,7 +9,7 @@ if (!isset($_SESSION['numStat']) || $_SESSION['numStat'] !== 1 && $_SESSION['num
 }
 if(isset($_GET['numMemb'])){
     $numMemb = $_GET['numMemb'];
-    $membre = sql_select("MEMBRE", "pseudoMemb", "numMemb = $numMemb")[0];
+    $membre = sql_select("MEMBRE", "*", "numMemb = $numMemb")[0];
     $pseudoMemb = $membre['pseudoMemb'];
     $prenomMemb = $membre['prenomMemb'];
     $nomMemb = $membre['nomMemb'];
