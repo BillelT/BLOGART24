@@ -36,22 +36,22 @@ if (isset($_POST['deconnexion'])) {
 
     <div class="title-profil">
       <h2>Bienvenue, </h2>
-        <h2>jeanjeandu33.</h2>
+        <h2><?php echo $_SESSION["pseudo"]; ?>.</h2>
     </div>
 
     <div>
       <p class="inscription-date">
-        Vous êtes inscrit depuis le 23/25/3045 
+        Vous êtes inscrit depuis le <?php echo $_SESSION["dtCreaMemb"]; ?>
       </p>
     </div>
     <div class="nom">
       <p for="exampleFormControlInput1" class="col-form-label">Nom :</p>
-      <p class="col-form-label name"> Jeannot</p>
+      <p class="col-form-label name"> <?php echo $_SESSION["nomMemb"]; ?></p>
     </div>
 
     <div class="prenom">
       <p for="exampleFormControlInput1" class="col-form-label">Prenom :</p>
-      <p class="col-form-label name"> Jean </p>
+      <p class="col-form-label name"> <?php echo $_SESSION["prenomMemb"]; ?> </p>
     </div>
 
     <div class="email">
@@ -64,8 +64,7 @@ if (isset($_POST['deconnexion'])) {
         <p><br></p>
   </div>
     <div>
-      <p><br></p>
-      <button type="button-less-important" class="button-less-important">Modifier</button>
+      <button type="button-less-important" class="button-less-important">Modifier</sbutton>
     </div>
     <a class="link-opacity-100" style="padding-bottom:64px;" href="#">Supprimer votre compte ?</a>
   </section>
