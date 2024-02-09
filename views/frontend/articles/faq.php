@@ -259,7 +259,7 @@ require '../../../header.php';
                         Allant des espaces verts pour votre chien, aux mesures prises en ville
                         vous pourrez adopter sereinement votre futur compagnon.</p>
                     <!-- Bouton du premier article -->
-                    <a href="/views/frontend/article-interview.php" class="btn_btn-primary">Lire la suite &#10140;</a>
+                    <a href="/views/frontend/articles/interview.php" class="btn_btn-primary">Lire la suite &#10140;</a>
                 </div>
             </div>
             <!-- Article 2 -->
@@ -274,7 +274,7 @@ require '../../../header.php';
                         contexte d’inflation. Découvrez comment participer afin d’aider à remplir
                         les gamelles de nos amis à quatre pattes actuellement en refuges animaliers.</p>
                     <!-- Bouton du deuxième article -->
-                    <a href="/views/frontend/article-event.php" class="btn_btn-primary">Lire la suite &#10140;</a>
+                    <a href="/views/frontend/articles/evenement.php" class="btn_btn-primary">Lire la suite &#10140;</a>
                 </div>
             </div>
         </div>

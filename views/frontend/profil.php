@@ -46,10 +46,21 @@ require '../../header.php';
       <p class="col-form-label name"> jeandu33@gmail.com </p>
     </div>
     <div>
-      <button type="button-less-important" class="button-less-important">Modifier</sbutton>
+      <button type="button-less-important" class="button-less-important">Modifier</button>
     </div>
     <p><a class="link-opacity-100" href="#">Supprimer votre compte ?</a></p>
   </section>
+  <button class="submit" > Changer de session </button>
+  <?php
+ if (isset($_POST['deconnexion'])) {
+  // Détruire la session
+  session_destroy();
+  
+  // Rediriger l'utilisateur vers la page de connexion (ou une autre page appropriée)
+  header("Location: page_de_connexion.php");
+  exit();
+}
+  ?>
   <?php 
 require '../../footer.php';
 ?>
