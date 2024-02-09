@@ -45,6 +45,35 @@ a{
     letter-spacing: 140%;
     color: #051514;
 }
+/* bouton lire plus */
+.text-center {
+    padding-top: 64px;
+    padding-bottom: 64px;
+}
+
+.text-center .button-lire{
+    display: block;
+    margin: 32px auto 0;
+    width: 200px;
+    height: 42px;
+}
+
+.text-center .button-lire button {
+    color: #5C7142;
+    width: 100%;
+    height: 100%;
+    border-radius: 8px;
+    background: transparent;
+    transition: all 0.4s ease-in-out;
+    border: 1px solid #5C7142;
+}
+
+.text-center .button-lire button:hover {
+    background: #5C7142;
+    color: #fef5ea;
+    border: none;
+}
+
 /* première partie avant le paragraphe */
 .before-para p{
     text-align: center;

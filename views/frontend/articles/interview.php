@@ -40,7 +40,7 @@
     <!-- avant le paragraphe -->
     <div class="before-para">
         <h1 class="text-center"><?php echo $libTitrArt; ?></h1>
-        <div class="text-center"><a href="#scroll"><button>En lire plus ?</button></a></div>
+        <div class="text-center"><a class="button-lire" href="#scroll"><button>En lire plus ?</button></a></div>
         <h2 id="scroll"><?php echo $libAccrochArt; ?></h2>
         <img src="../../../src/images/<?php echo $urlPhotArt; ?>" alt="chien qui se fait promener">
         <p>Catégorie : Portrait<br>
