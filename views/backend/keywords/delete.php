@@ -67,3 +67,4 @@ if(isset($_GET['numMotCle'])){
 
 <?php 
 }
+include '../../../footer.php'; // contains the footer

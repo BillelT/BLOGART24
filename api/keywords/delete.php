@@ -4,9 +4,9 @@ require_once '../../functions/ctrlSaisies.php';
 
 $numMotCle = ctrlSaisies($_POST['numMotCle']);
 
-$presentArt = sql_select('MOTCLE', '*', null, null, '1');
+$presentArt = sql_select('MOTCLEARTICLE', 'numMotCle', "numMotCle = '$numMotCle'", null, '1');
 
-if ($presentArt != 0){
+if ($presentArt != null){
     echo '<br><p style="color:red">Ce mot-clé est encore utilisé dans un article. Veuillez le supprimer avant de procéder</p>.';
 
 } else {
